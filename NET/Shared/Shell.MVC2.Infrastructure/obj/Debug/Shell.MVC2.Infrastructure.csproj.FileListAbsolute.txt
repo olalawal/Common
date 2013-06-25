@@ -1,0 +1,15 @@
+E:\VisualStudio\GitHubShared\Anewluv\ShellMVC3\Infrastructure\Shell.MVC2.Infrastructure\bin\Debug\Shell.MVC2.Infrastructure.dll.config
+E:\VisualStudio\GitHubShared\Anewluv\ShellMVC3\Infrastructure\Shell.MVC2.Infrastructure\bin\Debug\Shell.MVC2.Infrastructure.dll
+E:\VisualStudio\GitHubShared\Anewluv\ShellMVC3\Infrastructure\Shell.MVC2.Infrastructure\bin\Debug\Shell.MVC2.Infrastructure.pdb
+E:\VisualStudio\GitHubShared\Anewluv\ShellMVC3\Infrastructure\Shell.MVC2.Infrastructure\bin\Debug\Omu.Awesome.Core.dll
+E:\VisualStudio\GitHubShared\Anewluv\ShellMVC3\Infrastructure\Shell.MVC2.Infrastructure\bin\Debug\RazorEngine.dll
+E:\VisualStudio\GitHubShared\Anewluv\ShellMVC3\Infrastructure\Shell.MVC2.Infrastructure\bin\Debug\WebActivator.dll
+E:\VisualStudio\GitHubShared\Anewluv\ShellMVC3\Infrastructure\Shell.MVC2.Infrastructure\obj\Debug\ResolveAssemblyReference.cache
+E:\VisualStudio\GitHubShared\Anewluv\ShellMVC3\Infrastructure\Shell.MVC2.Infrastructure\obj\Debug\Shell.MVC2.Infrastructure.dll
+E:\VisualStudio\GitHubShared\Anewluv\ShellMVC3\Infrastructure\Shell.MVC2.Infrastructure\obj\Debug\Shell.MVC2.Infrastructure.pdb
+E:\VisualStudio\GitHubShared\Common\NET\Shared\Shell.MVC2.Infrastructure\bin\Debug\Shell.MVC2.Infrastructure.dll.config
+E:\VisualStudio\GitHubShared\Common\NET\Shared\Shell.MVC2.Infrastructure\bin\Debug\Shell.MVC2.Infrastructure.dll
+E:\VisualStudio\GitHubShared\Common\NET\Shared\Shell.MVC2.Infrastructure\bin\Debug\Shell.MVC2.Infrastructure.pdb
+E:\VisualStudio\GitHubShared\Common\NET\Shared\Shell.MVC2.Infrastructure\obj\Debug\ResolveAssemblyReference.cache
+E:\VisualStudio\GitHubShared\Common\NET\Shared\Shell.MVC2.Infrastructure\obj\Debug\Shell.MVC2.Infrastructure.dll
+E:\VisualStudio\GitHubShared\Common\NET\Shared\Shell.MVC2.Infrastructure\obj\Debug\Shell.MVC2.Infrastructure.pdb
