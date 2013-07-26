@@ -10,6 +10,7 @@ using System.ServiceModel.Web;
 
 namespace Shell.MVC2.Services.Contracts
 {
+    //TESTgfdgfdgfdgfdgfdgfdgfdgfdgfdgfdgfdg
     // NOTE: You can use the "Rename" command on the "Refactor" menu to change the interface name "IMembersService" in both code and config file together.
     [ServiceContract]
     public interface IMemberService
@@ -23,90 +24,96 @@ namespace Shell.MVC2.Services.Contracts
 
         //initial profile stuffs
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
-        [WebGet(UriTemplate = "/getprofilebyusername/{username}", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]	
-        Shell.MVC2.Domain.Entities.Anewluv.profile getprofilebyusername(string username);
+        [WebInvoke(UriTemplate = "/getprofilebyusername", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
+        Shell.MVC2.Domain.Entities.Anewluv.profile getprofilebyusername(ProfileModel model);
 
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
-        [WebGet(UriTemplate = "/getprofiledatabyprofileid/{profileid}", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]	      
-        profiledata getprofiledatabyprofileid(string profileid);
+        [WebInvoke(UriTemplate = "/getprofileidbyopenid", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
+       int? getprofileidbyopenid(ProfileModel model);
+
+     
 
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
-        [WebGet(UriTemplate = "/getperfectmatchsearchsettingsbyprofileid/{profileid}", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]	
-        searchsetting getperfectmatchsearchsettingsbyprofileid(string profileid);
+        [WebInvoke(UriTemplate = "/getprofiledatabyprofileid", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]	      
+        profiledata getprofiledatabyprofileid(ProfileModel model);
+
+        [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
+        [WebInvoke(UriTemplate = "/getperfectmatchsearchsettingsbyprofileid", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]	
+        searchsetting getperfectmatchsearchsettingsbyprofileid(ProfileModel model);
         
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
         [WebInvoke(UriTemplate = "/createmyperfectmatchsearchsettingsbyprofileid", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-        searchsetting createmyperfectmatchsearchsettingsbyprofileid(string profileid);
+        searchsetting createmyperfectmatchsearchsettingsbyprofileid(ProfileModel model);
 
         //get full profile stuff    
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
-        [WebGet(UriTemplate = "/getgenderbyscreenname/{strScreenName}", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]	
-        string getgenderbyscreenname(string strScreenName);
+        [WebInvoke(UriTemplate = "/getgenderbyscreenname", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
+        string getgenderbyscreenname(ProfileModel model);
 
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
-        [WebGet(UriTemplate = "/getgenderbyphotoid/{photoid}", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]	
-        string getgenderbyphotoid(string photoid);
+        [WebInvoke(UriTemplate = "/getgenderbyphotoid", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
+        string getgenderbyphotoid(ProfileModel model);
         //TO DO this needs to be  linked to roles
 
         //Message and Email Quota stuff
         // Description:	Updates the users logout time
         // added 1/18/2010 ola lawal
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
-        [WebGet(UriTemplate = "/checkifquoutareachedandupdate/{profileid}", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]	
-        bool checkifquoutareachedandupdate(string profileid);
+        [WebInvoke(UriTemplate = "/checkifquoutareachedandupdate", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]	
+        bool checkifquoutareachedandupdate(ProfileModel model);
         
         //Activate, Valiate if Profile is Acivated Code and Create Mailbox Folders as well"
         //update the database i.e create folders and change profile status from guest to active ?!
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
-        [WebInvoke(UriTemplate = "/createmailboxfolders/{profileid}", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-        bool createmailboxfolders(string profileid);
+        [WebInvoke(UriTemplate = "/createmailboxfolders", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
+        bool createmailboxfolders(ProfileModel model);
         
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
-        [WebInvoke(UriTemplate = "/activateprofile/{profileid}", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-        bool activateprofile(string profileid);
+        [WebInvoke(UriTemplate = "/activateprofile", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
+        bool activateprofile(ProfileModel model);
 
         //updates the profile with a password that is presumed to be already encyrpted
          [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
-         [WebInvoke(UriTemplate = "/updatepassword/{profileid}/{encryptedpassword}", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-        bool updatepassword(string profileid, string encryptedpassword);
+         [WebInvoke(UriTemplate = "/updatepassword/{encryptedpassword}", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
+        bool updatepassword(ProfileModel model, string encryptedpassword);
 
          [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
-         [WebInvoke(UriTemplate = "/addnewopenidforprofile/{profileid}/{openidIdentifer}", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-        bool addnewopenidforprofile(string profileid, string openidIdentifer, string openidProvidername);
+         [WebInvoke(UriTemplate = "/addnewopenidforprofile", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
+        bool addnewopenidforprofile(ProfileModel model);
         
         //check if profile is activated 
          [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
-         [WebGet(UriTemplate = "/checkifprofileisactivated/{profileid}", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-         bool checkifprofileisactivated(string profileid);
+         [WebInvoke(UriTemplate = "/checkifprofileisactivated", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
+         bool checkifprofileisactivated(ProfileModel model);
         //check if mailbox folder exist
 
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
-        [WebGet(UriTemplate = "/checkifmailboxfoldersarecreated/{profileid}", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-         bool checkifmailboxfoldersarecreated(string profileid);
+        [WebInvoke(UriTemplate = "/checkifmailboxfoldersarecreated", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
+         bool checkifmailboxfoldersarecreated(ProfileModel model);
 
         //DateTimeFUcntiosn for longin etc "
         //********************************************
         // Description:	Updates the users logout time
         // added 1/18/2010 ola lawal
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
-        [WebGet(UriTemplate = "/updateuserlogouttime/{profileid}/{sessionid}", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]	
-        bool updateuserlogouttime(string profileid, string sessionid);
+        [WebInvoke(UriTemplate = "/updateuserlogouttimebyprofileid", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]	
+        bool updateuserlogouttimebyprofileid(ProfileModel model);
         
         //get the last time the user logged in from profile
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
-        [WebGet(UriTemplate = "/getmemberlastlogintime/{profileid}", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]	
-        Nullable<DateTime> getmemberlastlogintime(string profileid);
+        [WebInvoke(UriTemplate = "/getmemberlastlogintimebyprofileid", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
+        Nullable<DateTime> getmemberlastlogintimebyprofileid(ProfileModel model);
 
         //updates all the areas  that handle when a user logs in 
         // added 1/18/2010 ola lawal
         //also updates the last log in and profile data
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
-        [WebInvoke(UriTemplate = "/updateuserlogintime/{username}/{sessionid}", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-        bool updateuserlogintime(string username, string sessionid);
+        [WebInvoke(UriTemplate = "/updateuserlogintimebyprofileidandsessionid", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
+        bool updateuserlogintimebyprofileidandsessionid(ProfileModel model);
 
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
-        [WebInvoke(UriTemplate = "/updateuserlogintimebyprofileid/{profileid}/{sessionid}", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-        bool updateuserlogintimebyprofileid(string profileid, string sessionid);
+        [WebInvoke(UriTemplate = "/updateuserlogintimebyprofileid", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
+        bool updateuserlogintimebyprofileid(ProfileModel model);
 
         //date time functions '
         //***********************************************************
@@ -114,13 +121,13 @@ namespace Shell.MVC2.Services.Contracts
         //be it This Week,3 Weeks ago, 3 months Ago or In the last Six Months
         //Ola Lawal 7/10/2009 feel free to drill down even to the day
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
-        [WebGet(UriTemplate = "/getlastloggedinstring/{logindate}", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]	
+        [WebInvoke(UriTemplate = "/getlastloggedinstring/{logindate}", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]	
         string getlastloggedinstring(string logindate);
         
         //returns true if somone logged on
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
-        [WebGet(UriTemplate = "/getuseronlinestatus/{profileid}", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]	
-        bool getuseronlinestatus(string profileid);
+        [WebInvoke(UriTemplate = "/getuseronlinestatus", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]	
+        bool getuseronlinestatus(ProfileModel model);
 
         //other standard verifcation methods added here
         /// <summary>
@@ -128,45 +135,45 @@ namespace Shell.MVC2.Services.Contracts
         /// 5/5/2012 als added check that the screen name withoute spaces does not match an existing one with no spaces either
         /// </summary>      
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
-        [WebGet(UriTemplate = "/checkifscreennamealreadyexists/{screename}", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]	
-        bool checkifscreennamealreadyexists(string screename);
+        [WebInvoke(UriTemplate = "/checkifscreennamealreadyexists", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
+        bool checkifscreennamealreadyexists(ProfileModel model);
         
         //5-20-2012 added to check if a user email is registered  
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
-        [WebGet(UriTemplate = "/checkifusernamealreadyexists/{username}", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]	
-        bool checkifusernamealreadyexists(string username);
+        [WebInvoke(UriTemplate = "/checkifusernamealreadyexists", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
+        bool checkifusernamealreadyexists(ProfileModel model);
 
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
-        [WebGet(UriTemplate = "/validatesecurityansweriscorrect/{profileid}/{securityquestionid}/{strsecurityanswer}", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-        string validatesecurityansweriscorrect(string profileid, string securityquestionid, string strsecurityanswer);
+        [WebInvoke(UriTemplate = "/validatesecurityansweriscorrect", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
+        string validatesecurityansweriscorrect(ProfileModel model);
 
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
-        [WebGet(UriTemplate = "/getprofileidbyusername/{username}", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]	
-        int? getprofileidbyusername(string username);
+        [WebInvoke(UriTemplate = "/getprofileidbyusername", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
+        int? getprofileidbyusername(ProfileModel model);
 
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
-        [WebGet(UriTemplate = "/getprofileidbyscreenname/{screename}", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]	
-        int? getprofileidbyscreenname(string screename);
+        [WebInvoke(UriTemplate = "/getprofileidbyscreenname", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
+        int? getprofileidbyscreenname(ProfileModel model);
 
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
-        [WebGet(UriTemplate = "/getprofileidbyssessionid/{sessionid}", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]	
-        int? getprofileidbyssessionid(string sessionid);
+        [WebInvoke(UriTemplate = "/getprofileidbyssessionid", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
+        int? getprofileidbyssessionid(ProfileModel model);
 
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
-        [WebGet(UriTemplate = "/getusernamebyprofileid/{profileid}", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]	
-        string getusernamebyprofileid(string profileid);
+        [WebInvoke(UriTemplate = "/getusernamebyprofileid", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]	
+        string getusernamebyprofileid(ProfileModel model);
 
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
-        [WebGet(UriTemplate = "/getscreennamebyprofileid/{profileid}", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]	
-        string getscreennamebyprofileid(string profileid);
+        [WebInvoke(UriTemplate = "/getscreennamebyprofileid", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]	
+        string getscreennamebyprofileid(ProfileModel model);
 
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
-        [WebGet(UriTemplate = "/getscreennamebyusername/{username}", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]	
-        string getscreennamebyusername(string username);
+        [WebInvoke(UriTemplate = "/getscreennamebyusername", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
+        string getscreennamebyusername(ProfileModel model);
 
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
-        [WebGet(UriTemplate = "/checkifemailalreadyexists/{emailaddress}", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]	
-        bool checkifemailalreadyexists(string emailaddress);
+        [WebInvoke(UriTemplate = "/checkifemailalreadyexists", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
+        bool checkifemailalreadyexists(ProfileModel model);
         // added by Deshola on 5/17/2011       
         //   byte[] GetGalleryPhotobyPhotoID(Guid strPhotoID);   
         //   byte[] GetGalleryPhotobyProfileID(int strProfileID); 
@@ -179,8 +186,8 @@ namespace Shell.MVC2.Services.Contracts
         /// </summary>
 
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
-        [WebGet(UriTemplate = "/checkifactivationcodeisvalid/{profileid}/{activationcode}", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]	
-        bool checkifactivationcodeisvalid(string profileid, string activationcode);
+        [WebInvoke(UriTemplate = "/checkifactivationcodeisvalid", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]	
+        bool checkifactivationcodeisvalid(ProfileModel model);
         //  bool CheckForGalleryPhotobyProfileID(int strProfileID);
         //  bool CheckForUploadedPhotobyProfileID(int strProfileID);
 
@@ -188,16 +195,16 @@ namespace Shell.MVC2.Services.Contracts
         //Hereis where the members Repository stuff that was in the MVC project starts at
         //************************************************************************************
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
-        [WebGet(UriTemplate = "/getprofilebyprofileid/{profileid}", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]	
-        Shell.MVC2.Domain.Entities.Anewluv.profile getprofilebyprofileid(string profileid);
+        [WebInvoke(UriTemplate = "/getprofilebyprofileid", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]	
+        Shell.MVC2.Domain.Entities.Anewluv.profile getprofilebyprofileid(ProfileModel model);
 
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
-        [WebInvoke(UriTemplate = "/deactivateprofile/{profileid}", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-        bool deactivateprofile(string profileid);
+        [WebInvoke(UriTemplate = "/deactivateprofile", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
+        bool deactivateprofile(ProfileModel model);
 
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
-        [WebGet(UriTemplate = "/getprofilevisibilitysettingsbyprofileid/{profileid}", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]	
-        visiblitysetting getprofilevisibilitysettingsbyprofileid(string profileid);
+        [WebInvoke(UriTemplate = "/getprofilevisibilitysettingsbyprofileid", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]	
+        visiblitysetting getprofilevisibilitysettingsbyprofileid(ProfileModel model);
      
         //mapper calls that use the appfabric cache
     }

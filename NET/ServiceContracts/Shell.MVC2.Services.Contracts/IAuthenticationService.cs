@@ -21,21 +21,20 @@ namespace Shell.MVC2.Services.Contracts
     {
 
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
-        [WebGet(UriTemplate = "/validateuser/{username}/{password}", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-        bool validateuser(string username, string password); 
+        [WebInvoke(UriTemplate = "/validateuserbyusernamepassword", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
+        bool validateuserbyusernamepassword(ProfileModel profile); 
           
             //5-82012 updated to only valudate username
             //overide for validate user that uses just the username, this can be used for pass through auth where a user was already prevalidated via another method
              
         [OperationContract(Name = "validateuserbyusername"), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
-        [WebGet(UriTemplate = "/validateuser/{username}", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-         bool validateuser(string username);
-
-       
+        [WebInvoke(UriTemplate = "/validateuserbyusername", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
+        bool validateuserbyusername(ProfileModel profile);
+              
        
         [OperationContract(Name = "validateuserbyopenid"), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
-        [WebGet(UriTemplate = "/validateuser/{verifedemail}/{openididentifer}/{openidprovidername}", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]       
-        bool validateuser(string verifedemail, string openididentifer, string openidprovidername);
+        [WebInvoke(UriTemplate = "/validateuserbyopenid", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
+        bool validateuserbyopenid(ProfileModel profile);
 
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
         [WebGet(UriTemplate = "/applicationname", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]	      

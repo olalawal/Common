@@ -17,7 +17,7 @@ namespace Shell.MVC2.Infrastructure
     public class TemplateParser
     {
 
-        const string basepath = @"C:\temp\Sample Code\";
+        const string basepath = @"C:\Projects\Anewluv\emailtemplates\";
         // const string basepath = @"E:\VisualStudio\GitHubShared\";
         // const string membertemplateshomepath = @"E:\VisualStudio\GitHubShared\Anewluv\emailtemplates";
 
@@ -25,8 +25,8 @@ namespace Shell.MVC2.Infrastructure
  
         //Image1.ImageUrl = Request.ApplicationPath + "/images/Image1.gif";
        // Label2.Text = Image1.ImageUrl;
-       private static string admintemplateshomepath = basepath + "Webclients/AnewLuvWebClient/AnewLuv/Views/AdminTemplates";
-       private static string membertemplateshomepath =basepath + "Webclients/AnewLuvWebClient/AnewLuv/Views/MemberTemplates";
+       private static string admintemplateshomepath = basepath + "AdminTemplates";
+       private static string membertemplateshomepath =basepath + "MemberTemplates";
 
         //Implement this when ALL templales are in DB
         public static string RazorDBTemplate<T>(string templatestring, ref T myobject)

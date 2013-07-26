@@ -51,12 +51,12 @@ namespace Shell.MVC2.Services.Contracts
 
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
         [WebInvoke(UriTemplate = "/getdefaultquicksearchsettingsmembers", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-        MembersViewModel getdefaultquicksearchsettingsmembers(MembersViewModel Model);
+        MembersViewModel getdefaultquicksearchsettingsmembers(ProfileModel Model);
         //populate search settings for guests 
 
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
-        [WebInvoke(UriTemplate = "/createmyperfectmatchsearchsettingsbyprofileid", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-        MembersViewModel getdefaultsearchsettingsguest(MembersViewModel Model);
+        [WebInvoke(UriTemplate = "/getdefaultsearchsettingsguest", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
+        MembersViewModel getdefaultsearchsettingsguest(ProfileModel Model);
 
         //registration model mapping
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
@@ -116,17 +116,17 @@ namespace Shell.MVC2.Services.Contracts
         //this needs to be updated to search based on the user's prefered setting i.e thier looking for settings
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
         [WebInvoke(UriTemplate = "/getquickmatches", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-        List<MemberSearchViewModel> getquickmatches(MembersViewModel model);
+        List<MemberSearchViewModel> getquickmatches(ProfileModel model);
 
         //quick search for members in the same country for now, no more filters yet
         //this needs to be updated to search based on the user's prefered setting i.e thier looking for settings
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
         [WebInvoke(UriTemplate = "/getemailmatches", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-        List<MemberSearchViewModel> getemailmatches(MembersViewModel model);
+        List<MemberSearchViewModel> getemailmatches(ProfileModel model);
 
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
         [WebInvoke(UriTemplate = "/getquickmatcheswhenquickmatchesempty", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-        List<MemberSearchViewModel> getquickmatcheswhenquickmatchesempty(MembersViewModel model);
+        List<MemberSearchViewModel> getquickmatcheswhenquickmatchesempty(ProfileModel model);
 
     }
 
