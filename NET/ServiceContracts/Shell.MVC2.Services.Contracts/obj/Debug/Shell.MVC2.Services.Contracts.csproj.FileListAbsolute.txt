@@ -42,6 +42,8 @@ C:\Projects\Common\NET\ServiceContracts\Shell.MVC2.Services.Contracts\bin\Debug\
 C:\Projects\Common\NET\ServiceContracts\Shell.MVC2.Services.Contracts\bin\Debug\Shell.MVC2.Domain.Entities.pdb
 C:\Projects\Common\NET\ServiceContracts\Shell.MVC2.Services.Contracts\bin\Debug\EntityFramework.xml
 C:\Projects\Common\NET\ServiceContracts\Shell.MVC2.Services.Contracts\bin\Debug\Shell.MVC2.Infrastructure.pdb
+C:\Projects\Common\NET\ServiceContracts\Shell.MVC2.Services.Contracts\bin\Debug\RazorEngine.pdb
+C:\Projects\Common\NET\ServiceContracts\Shell.MVC2.Services.Contracts\bin\Debug\RazorEngine.xml
+C:\Projects\Common\NET\ServiceContracts\Shell.MVC2.Services.Contracts\obj\Debug\Shell.MVC2.Services.Contracts.csprojResolveAssemblyReference.cache
 C:\Projects\Common\NET\ServiceContracts\Shell.MVC2.Services.Contracts\obj\Debug\Shell.MVC2.Services.Contracts.dll
 C:\Projects\Common\NET\ServiceContracts\Shell.MVC2.Services.Contracts\obj\Debug\Shell.MVC2.Services.Contracts.pdb
-C:\Projects\Common\NET\ServiceContracts\Shell.MVC2.Services.Contracts\obj\Debug\Shell.MVC2.Services.Contracts.csprojResolveAssemblyReference.cache

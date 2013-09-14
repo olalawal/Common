@@ -59,11 +59,15 @@
     <ErrorReport>prompt</ErrorReport>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Omu.Awesome.Core">
-      <HintPath>..\..\Shell.MVC2\packages\MvcProjectAwesome.1.9\lib\40\Omu.Awesome.Core.dll</HintPath>
+    <Reference Include="Omu.Awesome.Core, Version=1.9.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\Anewluv\ShellMVC3\Shell.MVC2\packages\MvcProjectAwesome.1.9\lib\40\Omu.Awesome.Core.dll</HintPath>
     </Reference>
-    <Reference Include="RazorEngine, Version=3.0.8.0, Culture=neutral, PublicKeyToken=9ee697374c7e744a, processorArchitecture=MSIL">
-      <HintPath>..\..\..\RazorEngineStuff\RazorEngine-MVC4Compatible\nuget\RazorEngine.dll</HintPath>
+    <Reference Include="Omu.Awesome.Mvc">
+      <HintPath>..\..\..\..\Anewluv\ShellMVC3\Shell.MVC2\packages\MvcProjectAwesome.1.9\lib\40\Omu.Awesome.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="RazorEngine, Version=3.3.0.0, Culture=neutral, PublicKeyToken=9ee697374c7e744a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Anewluv\ShellMVC3\Shell.MVC2\packages\RazorEngine.3.3.0\lib\net40\RazorEngine.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
@@ -73,6 +77,10 @@
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Web.Mvc, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Web.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\..\..\..\Anewluv\ShellMVC3\Shell.MVC2\packages\Microsoft.AspNet.Razor.2.0.30506.0\lib\net40\System.Web.Razor.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -87,7 +95,7 @@
     <Compile Include="Akismet.NET\IValidator.cs" />
     <Compile Include="Akismet.NET\Validator.cs" />
     <Compile Include="ExtentionMethods\Channelfactoryhelper.cs" />
-    <Compile Include="Helpers\b64EncodeUserNamePassword.cs" />
+    <Compile Include="Helpers\b64Converters.cs" />
     <Compile Include="Helpers\ClassEncryption.cs" />
     <Compile Include="Helpers\Serialization.cs" />
     <Compile Include="JainRainAuthentication\Rpx.cs" />
@@ -102,6 +110,7 @@
     <Compile Include="Utils\TemplateParser.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="App_Start\" />
     <Folder Include="SignalR\" />
   </ItemGroup>
   <ItemGroup>
@@ -115,6 +124,20 @@
     <Content Include="Scripts\Awesome.min.js" />
     <Content Include="Scripts\jquery.form.js" />
     <Content Include="Scripts\jquery.form.min.js" />
+    <Content Include="Views\Shared\Awesome\AjaxCheckBoxList.ascx" />
+    <Content Include="Views\Shared\Awesome\AjaxDropdown.ascx" />
+    <Content Include="Views\Shared\Awesome\AjaxRadioList.ascx" />
+    <Content Include="Views\Shared\Awesome\Autocomplete.ascx" />
+    <Content Include="Views\Shared\Awesome\Confirm.ascx" />
+    <Content Include="Views\Shared\Awesome\header.ascx" />
+    <Content Include="Views\Shared\Awesome\Lookup.ascx" />
+    <Content Include="Views\Shared\Awesome\LookupList.ascx" />
+    <Content Include="Views\Shared\Awesome\LookupPopup.ascx" />
+    <Content Include="Views\Shared\Awesome\MultiLookup.ascx" />
+    <Content Include="Views\Shared\Awesome\MultiLookupPopup.ascx" />
+    <Content Include="Views\Shared\Awesome\Popup.ascx" />
+    <Content Include="Views\Shared\Awesome\PopupForm.ascx" />
+    <Content Include="Views\Shared\Awesome\SearchForm.ascx" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

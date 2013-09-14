@@ -1,0 +1,12 @@
+C:\Projects\Common\NET\Shared\Shell.MVC2.Infrastructure\bin\Release\Shell.MVC2.Infrastructure.dll.config
+C:\Projects\Common\NET\Shared\Shell.MVC2.Infrastructure\bin\Release\Shell.MVC2.Infrastructure.dll
+C:\Projects\Common\NET\Shared\Shell.MVC2.Infrastructure\bin\Release\Shell.MVC2.Infrastructure.pdb
+C:\Projects\Common\NET\Shared\Shell.MVC2.Infrastructure\bin\Release\Omu.Awesome.Core.dll
+C:\Projects\Common\NET\Shared\Shell.MVC2.Infrastructure\bin\Release\Omu.Awesome.Mvc.dll
+C:\Projects\Common\NET\Shared\Shell.MVC2.Infrastructure\bin\Release\RazorEngine.dll
+C:\Projects\Common\NET\Shared\Shell.MVC2.Infrastructure\bin\Release\System.Web.Razor.dll
+C:\Projects\Common\NET\Shared\Shell.MVC2.Infrastructure\bin\Release\RazorEngine.pdb
+C:\Projects\Common\NET\Shared\Shell.MVC2.Infrastructure\bin\Release\RazorEngine.xml
+C:\Projects\Common\NET\Shared\Shell.MVC2.Infrastructure\bin\Release\System.Web.Razor.xml
+C:\Projects\Common\NET\Shared\Shell.MVC2.Infrastructure\obj\Release\Shell.MVC2.Infrastructure.dll
+C:\Projects\Common\NET\Shared\Shell.MVC2.Infrastructure\obj\Release\Shell.MVC2.Infrastructure.pdb
