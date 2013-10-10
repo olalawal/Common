@@ -50,8 +50,8 @@ namespace Shell.MVC2.Services.Contracts
          PhotoModel getphotomodelbyphotoid(string photoid, string format);
 
          [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
-        [WebGet(UriTemplate = "/getphotomodelbyprofileid/{profileid}/{format}", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]	 
-         PhotoModel getphotomodelbyprofileid(string profileid, string format);
+         [WebGet(UriTemplate = "/getgalleryphotomodelbyprofileid/{profileid}/{format}", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
+        PhotoModel getgalleryphotomodelbyprofileid(string profileid, string format);
 
          [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
          [WebGet(UriTemplate = "/getphotomodelsbyprofileidandstatus/{profileid}/{status}/{format}", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]	 

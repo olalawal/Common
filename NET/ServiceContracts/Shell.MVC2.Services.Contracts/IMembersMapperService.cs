@@ -124,9 +124,9 @@ namespace Shell.MVC2.Services.Contracts
         [WebInvoke(UriTemplate = "/getemailmatches", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
         List<MemberSearchViewModel> getemailmatches(ProfileModel model);
 
-        [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
-        [WebInvoke(UriTemplate = "/getquickmatcheswhenquickmatchesempty", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-        List<MemberSearchViewModel> getquickmatcheswhenquickmatchesempty(ProfileModel model);
+        //[OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
+        //[WebInvoke(UriTemplate = "/getquickmatcheswhenquickmatchesempty", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
+        //List<MemberSearchViewModel> getquickmatcheswhenquickmatchesempty(ProfileModel model);
 
     }
 
