@@ -51,7 +51,7 @@ namespace Shell.MVC2.Services.Contracts
        
         //update the database i.e create folders and change profile status from guest to active ?!
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
-        [WebInvoke(UriTemplate = "/checkinterest/{profileid}/{targetprofileid}", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
+        [WebGet(UriTemplate = "/checkinterest/{profileid}/{targetprofileid}", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
         bool checkinterest(string profileid, string targetprofileid);
         
         //update the database i.e create folders and change profile status from guest to active ?!
@@ -130,7 +130,7 @@ namespace Shell.MVC2.Services.Contracts
 
         //update the database i.e create folders and change profile status from guest to active ?!
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
-        [WebInvoke(UriTemplate = "/checkpeek/{profileid}/{targetprofileid}", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
+        [WebGet(UriTemplate = "/checkpeek/{profileid}/{targetprofileid}", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
         bool checkpeek(string profileid, string targetprofileid);
 
         //update the database i.e create folders and change profile status from guest to active ?!
@@ -257,7 +257,7 @@ namespace Shell.MVC2.Services.Contracts
 
         //update the database i.e create folders and change profile status from guest to active ?!
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
-        [WebInvoke(UriTemplate = "/checklike/{profileid}/{targetprofileid}", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
+        [WebGet(UriTemplate = "/checklike/{profileid}/{targetprofileid}", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
         bool checklike(string profileid, string targetprofileid);
 
         //update the database i.e create folders and change profile status from guest to active ?!

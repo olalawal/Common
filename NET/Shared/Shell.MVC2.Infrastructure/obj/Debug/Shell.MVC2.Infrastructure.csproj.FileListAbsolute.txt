@@ -25,4 +25,3 @@ C:\Projects\Common\NET\Shared\Shell.MVC2.Infrastructure\bin\Debug\RazorEngine.xm
 C:\Projects\Common\NET\Shared\Shell.MVC2.Infrastructure\bin\Debug\System.Web.Razor.xml
 C:\Projects\Common\NET\Shared\Shell.MVC2.Infrastructure\obj\Debug\Shell.MVC2.Infrastructure.dll
 C:\Projects\Common\NET\Shared\Shell.MVC2.Infrastructure\obj\Debug\Shell.MVC2.Infrastructure.pdb
-C:\Projects\Common\NET\Shared\Shell.MVC2.Infrastructure\obj\Debug\Shell.MVC2.Infrastructure.csprojResolveAssemblyReference.cache
