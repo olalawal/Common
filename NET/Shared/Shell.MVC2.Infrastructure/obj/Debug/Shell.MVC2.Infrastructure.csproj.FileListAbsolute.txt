@@ -20,7 +20,6 @@ C:\Projects\Common\NET\Shared\Shell.MVC2.Infrastructure\bin\Debug\Omu.Awesome.Co
 C:\Projects\Common\NET\Shared\Shell.MVC2.Infrastructure\bin\Debug\Omu.Awesome.Mvc.dll
 C:\Projects\Common\NET\Shared\Shell.MVC2.Infrastructure\bin\Debug\RazorEngine.dll
 C:\Projects\Common\NET\Shared\Shell.MVC2.Infrastructure\bin\Debug\System.Web.Razor.dll
-C:\Projects\Common\NET\Shared\Shell.MVC2.Infrastructure\bin\Debug\RazorEngine.pdb
 C:\Projects\Common\NET\Shared\Shell.MVC2.Infrastructure\bin\Debug\RazorEngine.xml
 C:\Projects\Common\NET\Shared\Shell.MVC2.Infrastructure\bin\Debug\System.Web.Razor.xml
 C:\Projects\Common\NET\Shared\Shell.MVC2.Infrastructure\obj\Debug\Shell.MVC2.Infrastructure.dll

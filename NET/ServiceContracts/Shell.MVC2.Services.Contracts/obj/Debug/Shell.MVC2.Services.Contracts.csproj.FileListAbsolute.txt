@@ -24,12 +24,12 @@ E:\VisualStudio\GitHubShared\Common\NET\ServiceContracts\Shell.MVC2.Services.Con
 E:\VisualStudio\GitHubShared\Common\NET\ServiceContracts\Shell.MVC2.Services.Contracts\obj\Debug\ResolveAssemblyReference.cache
 E:\VisualStudio\GitHubShared\Common\NET\ServiceContracts\Shell.MVC2.Services.Contracts\obj\Debug\Shell.MVC2.Services.Contracts.dll
 E:\VisualStudio\GitHubShared\Common\NET\ServiceContracts\Shell.MVC2.Services.Contracts\obj\Debug\Shell.MVC2.Services.Contracts.pdb
-C:\Projects\Common\NET\ServiceContracts\Shell.MVC2.Services.Contracts\bin\Debug\Shell.MVC2.Services.Contracts.pdb
 C:\Projects\Common\NET\ServiceContracts\Shell.MVC2.Services.Contracts\bin\Debug\App.Debug.Config.transformed
 C:\Projects\Common\NET\ServiceContracts\Shell.MVC2.Services.Contracts\bin\Debug\App.Dev.Config.transformed
 C:\Projects\Common\NET\ServiceContracts\Shell.MVC2.Services.Contracts\bin\Debug\App.NoDataBaseTest.Config.transformed
 C:\Projects\Common\NET\ServiceContracts\Shell.MVC2.Services.Contracts\bin\Debug\App.Release.Config.transformed
 C:\Projects\Common\NET\ServiceContracts\Shell.MVC2.Services.Contracts\bin\Debug\Shell.MVC2.Services.Contracts.dll
+C:\Projects\Common\NET\ServiceContracts\Shell.MVC2.Services.Contracts\bin\Debug\Shell.MVC2.Services.Contracts.pdb
 C:\Projects\Common\NET\ServiceContracts\Shell.MVC2.Services.Contracts\bin\Debug\Dating.Server.Data.Web.dll
 C:\Projects\Common\NET\ServiceContracts\Shell.MVC2.Services.Contracts\bin\Debug\Shell.MVC2.Domain.Entities.dll
 C:\Projects\Common\NET\ServiceContracts\Shell.MVC2.Services.Contracts\bin\Debug\Shell.MVC2.Infrastructure.Entities.dll
