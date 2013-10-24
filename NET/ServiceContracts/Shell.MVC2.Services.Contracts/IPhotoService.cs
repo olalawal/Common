@@ -5,12 +5,13 @@ using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.Text;
 //using Dating.Server.Data.Models;
-using Shell.MVC2.Domain.Entities.Anewluv.ViewModels;
+
 using Shell.MVC2.Domain.Entities.Anewluv;
 using System.Web;
 using System.ServiceModel.Web;
 using System.IO;
 using Shell.MVC2.Services.Contracts.ServiceResponse;
+using Anewluv.Domain.Data.ViewModels;
 
 
 
@@ -92,25 +93,25 @@ namespace Shell.MVC2.Services.Contracts
 
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
         [WebGet(UriTemplate = "/deleteduserphoto/{photoid}", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-         AnewluvResponse deleteuserphoto(string photoid);
+         AnewluvMessages deleteuserphoto(string photoid);
 
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
         [WebGet(UriTemplate = "/makeuserphoto_private/{photoid}", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-        AnewluvResponse makeuserphoto_private(string photoid);
+        AnewluvMessages makeuserphoto_private(string photoid);
 
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
         [WebGet(UriTemplate = "/makeuserphoto_public/{photoid}", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-        AnewluvResponse makeuserphoto_public(string photoid);
+        AnewluvMessages makeuserphoto_public(string photoid);
 
         //9-18-2012 olawal when this is uploaded now we want to do the image conversions as well for the large photo and the thumbnail
         //since photo is only a row no big deal if duplicates but since conversion is required we must roll back if the photo already exists  
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
         [WebInvoke(UriTemplate = "/addphotos", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-        AnewluvResponse addphotos(PhotoUploadViewModel model);
+        AnewluvMessages addphotos(PhotoUploadViewModel model);
 
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
         [WebInvoke(UriTemplate = "/addsinglephoto/{profileid}", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-        AnewluvResponse addsinglephoto(PhotoUploadModel newphoto, string profileid);
+        AnewluvMessages addsinglephoto(PhotoUploadModel newphoto, string profileid);
 
         //[OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
         //[WebInvoke(UriTemplate = "/getgenericerroremail", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
@@ -151,8 +152,8 @@ namespace Shell.MVC2.Services.Contracts
         bool checkforuploadedphotobyprofileid(string profileid);
 
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
-        [WebGet(UriTemplate = "/getimagebytesfromurl/{imageUrl}/{source}", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-        string getimagebytesfromurl(string imageUrl, string source); 
+        [WebGet(UriTemplate = "/getimageb64stringfromurl/{imageUrl}/{source}", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
+        string getimageb64stringfromurl(string imageUrl, string source); 
      
 
     }

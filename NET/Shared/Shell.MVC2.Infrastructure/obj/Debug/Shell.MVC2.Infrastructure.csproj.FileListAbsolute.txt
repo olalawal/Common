@@ -13,6 +13,17 @@ E:\VisualStudio\GitHubShared\Common\NET\Shared\Shell.MVC2.Infrastructure\bin\Deb
 E:\VisualStudio\GitHubShared\Common\NET\Shared\Shell.MVC2.Infrastructure\obj\Debug\ResolveAssemblyReference.cache
 E:\VisualStudio\GitHubShared\Common\NET\Shared\Shell.MVC2.Infrastructure\obj\Debug\Shell.MVC2.Infrastructure.dll
 E:\VisualStudio\GitHubShared\Common\NET\Shared\Shell.MVC2.Infrastructure\obj\Debug\Shell.MVC2.Infrastructure.pdb
+C:\temp\Common\NET\Shared\Shell.MVC2.Infrastructure\bin\Debug\Shell.MVC2.Infrastructure.dll.config
+C:\temp\Common\NET\Shared\Shell.MVC2.Infrastructure\bin\Debug\Shell.MVC2.Infrastructure.dll
+C:\temp\Common\NET\Shared\Shell.MVC2.Infrastructure\bin\Debug\Shell.MVC2.Infrastructure.pdb
+C:\temp\Common\NET\Shared\Shell.MVC2.Infrastructure\bin\Debug\Omu.Awesome.Core.dll
+C:\temp\Common\NET\Shared\Shell.MVC2.Infrastructure\bin\Debug\Omu.Awesome.Mvc.dll
+C:\temp\Common\NET\Shared\Shell.MVC2.Infrastructure\bin\Debug\RazorEngine.dll
+C:\temp\Common\NET\Shared\Shell.MVC2.Infrastructure\bin\Debug\System.Web.Razor.dll
+C:\temp\Common\NET\Shared\Shell.MVC2.Infrastructure\bin\Debug\RazorEngine.xml
+C:\temp\Common\NET\Shared\Shell.MVC2.Infrastructure\bin\Debug\System.Web.Razor.xml
+C:\temp\Common\NET\Shared\Shell.MVC2.Infrastructure\obj\Debug\Shell.MVC2.Infrastructure.dll
+C:\temp\Common\NET\Shared\Shell.MVC2.Infrastructure\obj\Debug\Shell.MVC2.Infrastructure.pdb
 C:\Projects\Common\NET\Shared\Shell.MVC2.Infrastructure\bin\Debug\Shell.MVC2.Infrastructure.dll.config
 C:\Projects\Common\NET\Shared\Shell.MVC2.Infrastructure\bin\Debug\Shell.MVC2.Infrastructure.dll
 C:\Projects\Common\NET\Shared\Shell.MVC2.Infrastructure\bin\Debug\Shell.MVC2.Infrastructure.pdb
