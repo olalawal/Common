@@ -1,0 +1,43 @@
+﻿
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+# On branch master
+# Changes to be committed:
+#   (use "git reset HEAD <file>..." to unstage)
+#
+#	modified:   NET/ServiceContracts/Shell.MVC2.Services.Contracts/IGeoService.cs
+#	modified:   NET/ServiceContracts/Shell.MVC2.Services.Contracts/Shell.MVC2.Services.Contracts.csproj
+#	modified:   NET/ServiceContracts/Shell.MVC2.Services.Contracts/bin/Debug/Anewluv.Domain.Data.dll
+#	modified:   NET/ServiceContracts/Shell.MVC2.Services.Contracts/bin/Debug/Anewluv.Domain.Data.pdb
+#	modified:   NET/ServiceContracts/Shell.MVC2.Services.Contracts/bin/Debug/Dating.Server.Data.Web.dll
+#	modified:   NET/ServiceContracts/Shell.MVC2.Services.Contracts/bin/Debug/Dating.Server.Data.Web.pdb
+#	modified:   NET/ServiceContracts/Shell.MVC2.Services.Contracts/bin/Debug/EntityFramework.dll
+#	modified:   NET/ServiceContracts/Shell.MVC2.Services.Contracts/bin/Debug/EntityFramework.xml
+#	modified:   NET/ServiceContracts/Shell.MVC2.Services.Contracts/bin/Debug/Shell.MVC2.Domain.Entities.dll
+#	modified:   NET/ServiceContracts/Shell.MVC2.Services.Contracts/bin/Debug/Shell.MVC2.Domain.Entities.pdb
+#	modified:   NET/ServiceContracts/Shell.MVC2.Services.Contracts/bin/Debug/Shell.MVC2.Infrastructure.Entities.dll
+#	modified:   NET/ServiceContracts/Shell.MVC2.Services.Contracts/bin/Debug/Shell.MVC2.Infrastructure.Entities.pdb
+#	modified:   NET/ServiceContracts/Shell.MVC2.Services.Contracts/bin/Debug/Shell.MVC2.Infrastructure.dll
+#	modified:   NET/ServiceContracts/Shell.MVC2.Services.Contracts/bin/Debug/Shell.MVC2.Infrastructure.pdb
+#	modified:   NET/ServiceContracts/Shell.MVC2.Services.Contracts/bin/Debug/Shell.MVC2.Services.Contracts.dll
+#	modified:   NET/ServiceContracts/Shell.MVC2.Services.Contracts/bin/Debug/Shell.MVC2.Services.Contracts.pdb
+#	modified:   NET/ServiceContracts/Shell.MVC2.Services.Contracts/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
+#	modified:   NET/ServiceContracts/Shell.MVC2.Services.Contracts/obj/Debug/Shell.MVC2.Services.Contracts.csproj.FileListAbsolute.txt
+#	modified:   NET/ServiceContracts/Shell.MVC2.Services.Contracts/obj/Debug/Shell.MVC2.Services.Contracts.csprojResolveAssemblyReference.cache
+#	modified:   NET/ServiceContracts/Shell.MVC2.Services.Contracts/obj/Debug/Shell.MVC2.Services.Contracts.dll
+#	modified:   NET/ServiceContracts/Shell.MVC2.Services.Contracts/obj/Debug/Shell.MVC2.Services.Contracts.pdb
+#	modified:   NET/Shared/Shell.MVC2.Infrastructure/bin/Debug/Shell.MVC2.Infrastructure.dll
+#	modified:   NET/Shared/Shell.MVC2.Infrastructure/bin/Debug/Shell.MVC2.Infrastructure.pdb
+#	modified:   NET/Shared/Shell.MVC2.Infrastructure/obj/Debug/Shell.MVC2.Infrastructure.dll
+#	modified:   NET/Shared/Shell.MVC2.Infrastructure/obj/Debug/Shell.MVC2.Infrastructure.pdb
+#
+# Untracked files:
+#   (use "git add <file>..." to include in what will be committed)
+#
+#	NET/ServiceContracts/Shell.MVC2.Services.Contracts/bin/Debug/Anewluv.DataAccess.Interfaces.dll
+#	NET/ServiceContracts/Shell.MVC2.Services.Contracts/bin/Debug/Anewluv.DataAccess.Interfaces.pdb
+#	NET/ServiceContracts/Shell.MVC2.Services.Contracts/bin/Debug/Anewluv.DataAccess.dll
+#	NET/ServiceContracts/Shell.MVC2.Services.Contracts/bin/Debug/Anewluv.DataAccess.pdb
+#	NET/ServiceContracts/Shell.MVC2.Services.Contracts/bin/Debug/GeoData.Domain.dll
+#	NET/ServiceContracts/Shell.MVC2.Services.Contracts/bin/Debug/GeoData.Domain.pdb
+

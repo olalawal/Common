@@ -7,8 +7,10 @@ using System.ServiceModel.Web;
 
 using System.Text;
 using Dating.Server.Data.Models;
-using Shell.MVC2.Domain.Entities.Anewluv.ViewModels;
-using Shell.MVC2.Domain.Entities.Anewluv;
+using GeoData.Domain.Models.ViewModels;
+using Anewluv.Domain.Data.ViewModels;
+
+
 
 namespace Shell.MVC2.Services.Contracts
 {
@@ -72,9 +74,9 @@ namespace Shell.MVC2.Services.Contracts
         //gets the single geo code as string
 
 
-        [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
-        [WebGet(UriTemplate = "/getpostalcodesbycountrynamecity/{country}/{city}", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-        List<postalcode> getpostalcodesbycountrynamecity(string country, string city);
+        //[OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
+        //[WebGet(UriTemplate = "/getpostalcodesbycountrynamecity/{country}/{city}", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
+        //List<postalcode> getpostalcodesbycountrynamecity(string country, string city);
 
 
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
@@ -95,8 +97,8 @@ namespace Shell.MVC2.Services.Contracts
         // List<string> getcountrylist(string country);
 
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
-        [WebGet(UriTemplate = "/getfilteredcitiesbycountryandfilter/{country}/{filter}", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-        List<citystateprovince> getfilteredcitiesbycountryfilter(string country, string filter);
+        [WebGet(UriTemplate = "/getfilteredcitiesbycountryfilteroptionalpostalcode/{country}/{filter}/{postalcode}", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
+        List<citystateprovince> getfilteredcitiesbycountryfilteroptionalpostalcode(string country, string filter,string postalcode);
 
 
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
