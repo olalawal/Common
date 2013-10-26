@@ -4,9 +4,9 @@ using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.Text;
-using Shell.MVC2.Domain.Entities.Anewluv;
-using Shell.MVC2.Domain.Entities.Anewluv.ViewModels;
+using Anewluv.Domain.Data;
 using System.ServiceModel.Web;
+using Anewluv.Domain.Data.ViewModels;
 
 namespace Shell.MVC2.Services.Contracts
 {
@@ -25,7 +25,7 @@ namespace Shell.MVC2.Services.Contracts
         //initial profile stuffs
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
         [WebInvoke(UriTemplate = "/getprofilebyusername", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-        Shell.MVC2.Domain.Entities.Anewluv.profile getprofilebyusername(ProfileModel model);
+        profile getprofilebyusername(ProfileModel model);
 
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
         [WebInvoke(UriTemplate = "/getprofileidbyopenid", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
@@ -196,7 +196,7 @@ namespace Shell.MVC2.Services.Contracts
         //************************************************************************************
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
         [WebInvoke(UriTemplate = "/getprofilebyprofileid", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]	
-        Shell.MVC2.Domain.Entities.Anewluv.profile getprofilebyprofileid(ProfileModel model);
+        profile getprofilebyprofileid(ProfileModel model);
 
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
         [WebInvoke(UriTemplate = "/deactivateprofile", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]

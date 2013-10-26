@@ -105,6 +105,10 @@ namespace Shell.MVC2.Services.Contracts
         [WebGet(UriTemplate = "/getfilteredpostalcodesbycountrycityandfilter/{country}/{city}/{filter}", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
         List<postalcode> getfilteredpostalcodesbycountrycityfilter(string country, string city, string filter);
 
+        [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
+        [WebGet(UriTemplate = "/getdistancebetweenmembers/{lat1}/{lon1}/{lat2}/{lon2}/{unit}", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
+        double? getdistancebetweenmembers(string lat1, string lon1, string lat2, string lon2, string unit);
+
     }
 
 }

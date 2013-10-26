@@ -76,3 +76,11 @@ C:\Projects\Common\NET\ServiceContracts\Shell.MVC2.Services.Contracts\bin\Debug\
 C:\Projects\Common\NET\ServiceContracts\Shell.MVC2.Services.Contracts\bin\Debug\RazorEngine.xml
 C:\Projects\Common\NET\ServiceContracts\Shell.MVC2.Services.Contracts\obj\Debug\Shell.MVC2.Services.Contracts.dll
 C:\Projects\Common\NET\ServiceContracts\Shell.MVC2.Services.Contracts\obj\Debug\Shell.MVC2.Services.Contracts.pdb
+C:\temp\Common\NET\ServiceContracts\Shell.MVC2.Services.Contracts\bin\Debug\Anewluv.Domain.Data.dll
+C:\temp\Common\NET\ServiceContracts\Shell.MVC2.Services.Contracts\bin\Debug\GeoData.Domain.dll
+C:\temp\Common\NET\ServiceContracts\Shell.MVC2.Services.Contracts\bin\Debug\Anewluv.DataAccess.Interfaces.dll
+C:\temp\Common\NET\ServiceContracts\Shell.MVC2.Services.Contracts\bin\Debug\Anewluv.DataAccess.dll
+C:\temp\Common\NET\ServiceContracts\Shell.MVC2.Services.Contracts\bin\Debug\GeoData.Domain.pdb
+C:\temp\Common\NET\ServiceContracts\Shell.MVC2.Services.Contracts\bin\Debug\Anewluv.Domain.Data.pdb
+C:\temp\Common\NET\ServiceContracts\Shell.MVC2.Services.Contracts\bin\Debug\Anewluv.DataAccess.Interfaces.pdb
+C:\temp\Common\NET\ServiceContracts\Shell.MVC2.Services.Contracts\bin\Debug\Anewluv.DataAccess.pdb
