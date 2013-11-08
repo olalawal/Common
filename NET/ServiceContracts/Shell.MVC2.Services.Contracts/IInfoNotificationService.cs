@@ -9,7 +9,7 @@ using Shell.MVC2.Domain.Entities.Anewluv;
 using Shell.MVC2.Domain.Entities.Anewluv.ViewModels;
 using Shell.MVC2.Domain.Entities.Anewluv.ViewModels.Email;
 using System.ServiceModel.Web;
-using Shell.MVC2.Infrastructure.Entities.CustomErrorLogModel;
+using Nmedia.Infrastructure.Domain.Errorlog;
 using System.ServiceModel.Activation;
 
 namespace Shell.MVC2.Services.Contracts
@@ -22,13 +22,13 @@ namespace Shell.MVC2.Services.Contracts
 
 
         //[OperationContract]
-        //string WriteLogEntry(CustomErrorLog logEntry);
+        //string WriteLogEntry(Errorlog logEntry);
 
         
         //temporary method for use by designer to get the message information formated for them
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
         [WebInvoke(UriTemplate = "/senderrormessage/{addresstype}", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-        EmailModel senderrormessage(errorlog error, string addresstype);
+        EmailModel senderrormessage(Errorlog error, string addresstype);
 
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
         [WebInvoke(UriTemplate = "/sendcontactusemail", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]	      

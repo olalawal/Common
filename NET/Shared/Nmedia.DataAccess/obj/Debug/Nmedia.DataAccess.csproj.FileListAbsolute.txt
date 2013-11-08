@@ -1,0 +1,12 @@
+C:\temp\Common\NET\Shared\Nmedia.DataAccess\obj\Debug\Nmedia.DataAccess.csprojResolveAssemblyReference.cache
+C:\temp\Common\NET\Shared\Nmedia.DataAccess\bin\Debug\Nmedia.DataAccess.dll.config
+C:\temp\Common\NET\Shared\Nmedia.DataAccess\bin\Debug\Nmedia.DataAccess.dll
+C:\temp\Common\NET\Shared\Nmedia.DataAccess\bin\Debug\Nmedia.DataAccess.pdb
+C:\temp\Common\NET\Shared\Nmedia.DataAccess\bin\Debug\EntityFramework.dll
+C:\temp\Common\NET\Shared\Nmedia.DataAccess\bin\Debug\EntityFramework.SqlServer.dll
+C:\temp\Common\NET\Shared\Nmedia.DataAccess\bin\Debug\Nmedia.DataAccess.Interfaces.dll
+C:\temp\Common\NET\Shared\Nmedia.DataAccess\bin\Debug\Nmedia.DataAccess.Interfaces.pdb
+C:\temp\Common\NET\Shared\Nmedia.DataAccess\bin\Debug\EntityFramework.xml
+C:\temp\Common\NET\Shared\Nmedia.DataAccess\bin\Debug\EntityFramework.SqlServer.xml
+C:\temp\Common\NET\Shared\Nmedia.DataAccess\obj\Debug\Nmedia.DataAccess.dll
+C:\temp\Common\NET\Shared\Nmedia.DataAccess\obj\Debug\Nmedia.DataAccess.pdb

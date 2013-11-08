@@ -4,7 +4,7 @@ using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.Text;
-using Shell.MVC2.Infrastructure.Entities.CustomErrorLogModel ;
+using Nmedia.Infrastructure.Domain.Errorlog ;
 using System.ServiceModel.Web;
 
 namespace Shell.MVC2.Services.Contracts
@@ -18,13 +18,13 @@ namespace Shell.MVC2.Services.Contracts
          string GetData(string value);
  
         //[OperationContract]
-        //int WriteLogEntry(CustomErrorLog logEntry);
+        //int WriteLogEntry(Errorlog logEntry);
 
      
          [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
-         [ServiceKnownType(typeof(errorlog))]
+         [ServiceKnownType(typeof(Errorlog))]
          [WebInvoke(UriTemplate = "/WriteCompleteLogEntry", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-        int WriteCompleteLogEntry(errorlog logEntry);
+        int WriteCompleteLogEntry(Errorlog logEntry);
 
          [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
          [ServiceKnownType(typeof(logseverityEnum))]

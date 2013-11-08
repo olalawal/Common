@@ -34,7 +34,7 @@ namespace Shell.MVC2.Infrastructure
             dynamic config = new TemplateServiceConfiguration { Language = RazorEngine.Language.CSharp  };
             dynamic service = new RazorEngine.Templating.TemplateService(config);
             Razor.SetTemplateService(service);
-            //default'model to use CustomErrorLog
+            //default'model to use Errorlog
             //defualt template is the custom ErrorlogModel
             string defaulttemplate = "<html><head><title>Error Message Email</title></head><body>ErrorMessage: @Model.Message</body></html>";
             dynamic template = !string.IsNullOrEmpty(templatestring) ? templatestring : defaulttemplate;

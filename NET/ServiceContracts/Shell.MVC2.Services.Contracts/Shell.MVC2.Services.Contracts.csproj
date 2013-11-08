@@ -66,9 +66,6 @@
     <Compile Include="IChatService.cs" />
     <Compile Include="IMemberEditService.cs" />
     <Compile Include="ISearchEditService.cs" />
-    <Compile Include="ErrorHandling\ServiceFualt.cs">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="ILookupService.cs" />
     <Compile Include="IErrorLoggingService.cs" />
     <Compile Include="IGeoService.cs" />
