@@ -7,7 +7,7 @@ using System.Xml.Linq;
 
 
 
-namespace Shell.MVC2.Infastructure.JanRainAuthentication
+namespace Shell.MVC2.Infrastructure.JanRainAuthentication
 {
     public enum RpxReponseStatus
     {

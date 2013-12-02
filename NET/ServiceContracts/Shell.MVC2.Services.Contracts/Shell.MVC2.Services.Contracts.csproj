@@ -42,13 +42,7 @@
     <ErrorReport>prompt</ErrorReport>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Anewluv.Domain.Data">
-      <HintPath>..\..\..\..\Anewluv\ShellMVC3\Domain\Anewluv.Domain.Data\bin\Debug\Anewluv.Domain.Data.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="Shell.MVC2.Domain.Entities, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\Anewluv\ShellMVC3\Domain\Entities\Shell.MVC2.Domain.Entities\bin\Debug\Shell.MVC2.Domain.Entities.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data" />
@@ -84,13 +78,17 @@
     <Compile Include="ServiceResponse\AnewluvResponse.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\Anewluv\ShellMVC3\Dating.Server.Data.Web\Dating.Server.Data.Web.csproj">
-      <Project>{8EBF425E-D494-4599-BB7D-6C42BD182EF7}</Project>
-      <Name>Dating.Server.Data.Web</Name>
+    <ProjectReference Include="..\..\..\..\Anewluv\ShellMVC3\Domain\Anewluv.Domain.Data\Anewluv.Domain.Data.csproj">
+      <Project>{8E3079E3-2244-47B1-AB1F-EE171398666E}</Project>
+      <Name>Anewluv.Domain.Data</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\..\..\Anewluv\ShellMVC3\Domain\GeoData.Domain\GeoData.Domain.csproj">
       <Project>{01A79DCC-39CA-447E-A668-DD4206A8E5AA}</Project>
       <Name>GeoData.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Shared\Shell.MVC2.Infrastructure\Shell.MVC2.Infrastructure.csproj">
+      <Project>{D0FA8AA1-5A17-4C42-A92F-F1266CD01D7C}</Project>
+      <Name>Shell.MVC2.Infrastructure</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

@@ -25,7 +25,7 @@ namespace Anewluv.Web.NotificationService.ServiceHostFactories
            // container.Load<NinjectModules.ErrorlogContextModule>();
            // container.Load<NinjectModules.AnewLuvContextModule>();
            // container.Load<NinjectModules.ApiKeyContextModule>();        
-            container.Load<NinjectModules.NotificationServiceModule>();
+            container.Load<NinjectModules.AnewluvNotificationServiceModule>();
                            
             return container;
         }

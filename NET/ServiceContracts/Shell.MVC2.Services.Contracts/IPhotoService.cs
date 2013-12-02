@@ -6,12 +6,13 @@ using System.ServiceModel;
 using System.Text;
 //using Dating.Server.Data.Models;
 
-using Shell.MVC2.Domain.Entities.Anewluv;
+
 using System.Web;
 using System.ServiceModel.Web;
 using System.IO;
 using Shell.MVC2.Services.Contracts.ServiceResponse;
 using Anewluv.Domain.Data.ViewModels;
+
 
 
 

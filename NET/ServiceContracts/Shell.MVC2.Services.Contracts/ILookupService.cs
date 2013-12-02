@@ -6,9 +6,10 @@ using System.ServiceModel.Web;
 using System.ServiceModel;
 using System.Text;
 using System.Web.Security;
-using Dating.Server.Data.Models;
-using Shell.MVC2.Domain.Entities.Anewluv;
-using Shell.MVC2.Domain.Entities.Anewluv.ViewModels;
+using Anewluv.Domain.Data;
+//using Shell.MVC2.Domain.Entities.Anewluv;
+using Anewluv.Domain.Data.ViewModels;
+//using Shell.MVC2.Domain.Entities.Anewluv.ViewModels;
 
 
 namespace Shell.MVC2.Services.Contracts

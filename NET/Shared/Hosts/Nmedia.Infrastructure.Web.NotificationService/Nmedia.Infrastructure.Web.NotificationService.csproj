@@ -82,7 +82,7 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="NotificationService.svc" />
+    <Content Include="AnewluvNotificationService.svc" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -101,6 +101,14 @@
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\..\..\Anewluv\LoggingAndNotification\Services\Nmedia.Services.Contracts\Nmedia.Services.Contracts.csproj">
+      <Project>{2322C931-607A-46D5-BC71-BE6B25288B14}</Project>
+      <Name>Nmedia.Services.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\..\Anewluv\LoggingAndNotification\Services\Nmedia.Services.Notification\Nmedia.Services.Notification.csproj">
+      <Project>{E182CE72-8655-4026-B983-F226564C50C2}</Project>
+      <Name>Nmedia.Services.Notification</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\Infrastructure\Nmedia.Infrastructure.DependencyResolution.Ninject\Nmedia.Infrastructure.DependencyResolution.Ninject.csproj">
       <Project>{B848BD2C-BA7C-4B9F-A2EE-8501A05ACAE6}</Project>
       <Name>Nmedia.Infrastructure.DependencyResolution.Ninject</Name>

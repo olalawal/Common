@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace Shell.MVC2.Infastructure.JanRainAuthentication
+namespace Shell.MVC2.Infrastructure.JanRainAuthentication
 {
    
 

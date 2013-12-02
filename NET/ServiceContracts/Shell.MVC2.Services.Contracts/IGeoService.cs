@@ -6,7 +6,7 @@ using System.ServiceModel;
 using System.ServiceModel.Web;
 
 using System.Text;
-using Dating.Server.Data.Models;
+
 using GeoData.Domain.Models.ViewModels;
 using Anewluv.Domain.Data.ViewModels;
 

@@ -14,25 +14,25 @@ using Nmedia.Services.Contracts;
 
 namespace Nmedia.Infrastructure.DependencyResolution.Ninject.Modules
 {
-   public  class NotificationServiceModule : NinjectModule
+   public  class ApiKeyServiceModule : NinjectModule
     {
         public override void Load()
         {
             // IKernel kernel = new StandardKernel();
 
-            this.Bind<NotificationContext>().ToSelf().InRequestScope();
+            this.Bind<ApiKeyContext>().ToSelf().InRequestScope();
             //this.Bind<WellsFargo.DataAccess.Interfaces.IContext>().ToConstructor(x => new PromotionContext()).When(t => t.IsInjectingToRepositoryDataSourceOfNamespace("WellsFargo.Promotion.Services.PromotionService")).InTransientScope ();
             //this.Bind<WellsFargo.DataAccess.Interfaces.IContext>().ToMethod(ctx => ctx.Kernel.Get<PromotionContext>());//).ToMethod()(x => new PromotionContext()).When(t => t.IsInjectingToRepositoryDataSourceOfNamespace("WellsFargo.Promotion.Services.PromotionService")).InTransientScope();
 
             // var webApiEFRepository = kernel.Get<IRepository<Entity>>("WebApiEFRepository");
             //  this.Unbind(typeof(IUnitOfWork));
             //Kernel.Bind<IUnitOfWork>().ToConstructor(ctorArg => new EFUnitOfWork(ctorArg.Inject<WellsFargo.DataAccess.Interfaces.IContext>())).InTransientScope();
-            this.Bind<IUnitOfWork>().ToMethod(ctx => ctx.Kernel.Get<NotificationContext>()).When(t => t.IsInjectingToRepositoryDataSourceOfNamespace("WellsFargo.Services.Notification.NotificationService"));
+            this.Bind<IUnitOfWork>().ToMethod(ctx => ctx.Kernel.Get<ApiKeyContext>()).When(t => t.IsInjectingToRepositoryDataSourceOfNamespace("Nmedia.Services.Authorization.AnewLuvApiKeyAuthService"));
             // this.Unbind(typeof(DbContext));
-            this.Bind<DbContext>().ToMethod(ctx => ctx.Kernel.Get<NotificationContext>()).When(t => t.IsInjectingToRepositoryDataSourceOfNamespace("WellsFargo.Services.Notification.NotificationService"));
+            this.Bind<DbContext>().ToMethod(ctx => ctx.Kernel.Get<ApiKeyContext>()).When(t => t.IsInjectingToRepositoryDataSourceOfNamespace("Nmedia.Services.Authorization.AnewLuvApiKeyAuthService"));
 
             //the Unit of work module should already be loaded by now
-            this.Bind<IAnewluvNotificationService>().ToSelf().InRequestScope();
+            this.Bind<IApiKeyService>().ToSelf().InRequestScope();
 
         }
 

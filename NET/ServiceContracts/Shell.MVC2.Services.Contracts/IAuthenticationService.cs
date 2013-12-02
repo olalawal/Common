@@ -6,10 +6,11 @@ using System.ServiceModel.Web;
 using System.ServiceModel;
 using System.Text;
 using System.Web.Security;
-using Dating.Server.Data.Models;
-using Shell.MVC2.Domain.Entities.Anewluv;
-using Shell.MVC2.Domain.Entities.Anewluv.ViewModels;
+
+using Anewluv.Domain.Data;
+using Anewluv.Domain.Data.ViewModels;
 using Shell.MVC2.Services.Contracts.ServiceResponse;
+using Anewluv.Domain.Data.ViewModels;
 
 
 
@@ -19,6 +20,11 @@ namespace Shell.MVC2.Services.Contracts
     [ServiceContract]
     public interface IAuthenticationService                    
     {
+
+        [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
+        [ServiceKnownType(typeof(MembershipUser))]
+        [WebInvoke(UriTemplate = "/createuser", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
+        AnewluvResponse createuser(MembershipUserViewModel model);
 
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
         [WebInvoke(UriTemplate = "/validateuserbyusernamepassword", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
@@ -46,15 +52,12 @@ namespace Shell.MVC2.Services.Contracts
        // Method = "POST", BodyStyle = WebMessageBodyStyle.Bare)]	
 
 
-        [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
-        [ServiceKnownType(typeof(MembershipUser))]
-        [WebInvoke(UriTemplate = "/createuser", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-        AnewluvResponse  createuser(MembershipUserViewModel model);
+     
 
-        [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
-        [ServiceKnownType(typeof(AnewLuvMembershipUser))]
-        [WebInvoke(UriTemplate = "/createusercustom", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-        AnewLuvMembershipUser  createusercustom(MembershipUserViewModel model);
+        //[OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
+        //[ServiceKnownType(typeof(AnewLuvMembershipUser))]
+        //[WebInvoke(UriTemplate = "/createusercustom", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
+        //AnewLuvMembershipUser  createusercustom(MembershipUserViewModel model);
 
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
         [WebGet(UriTemplate = "/resetpassword/{profileid}/{answer}", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]	
@@ -63,9 +66,9 @@ namespace Shell.MVC2.Services.Contracts
             //handles reseting password duties.  First verifys that security uqestion was correct for the profile ID, the generated a password
             // using the local generatepassword method the send the encyrpted passwoerd and profile ID to the dating service so it can be updated in the DB
             //finally returns the new password to the calling functon or an empty string if failure.
-        [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
-        [WebGet(UriTemplate = "/resetpasswordcustom/{profileid}", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]	  
-         string resetpasswordcustom(string profileid) ;
+        //[OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
+        //[WebGet(UriTemplate = "/resetpasswordcustom/{profileid}", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]	  
+        // string resetpasswordcustom(string profileid) ;
 
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
         [ServiceKnownType(typeof(AnewLuvMembershipUser))]
@@ -79,9 +82,9 @@ namespace Shell.MVC2.Services.Contracts
            
             //custom remapped membership get user function
      
-        [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
-        [WebGet(UriTemplate = "/getusercustom/{username}/{userisonline}", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]	
-        AnewLuvMembershipUser getusercustom(string username, string  userisonline);
+        //[OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
+        //[WebGet(UriTemplate = "/getusercustom/{username}/{userisonline}", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]	
+        //AnewLuvMembershipUser getusercustom(string username, string  userisonline);
 
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
         [WebGet(UriTemplate = "/generatepassword", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]	                         

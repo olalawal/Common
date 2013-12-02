@@ -14,7 +14,7 @@ using System.Web.Script.Serialization ;
 using System.Web.Mvc;
 
 //TO DO movethis into the data project and extend it asa service 
-namespace Shell.MVC2.Infastructure.JanRainAuthentication
+namespace Shell.MVC2.Infrastructure.JanRainAuthentication
 {
     /// <summary>
     /// RPX Authentication Info

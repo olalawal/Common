@@ -4,8 +4,8 @@ using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.Text;
-using Shell.MVC2.Domain.Entities.Anewluv;
-using Shell.MVC2.Domain.Entities.Anewluv.ViewModels;
+using Anewluv.Domain.Data;
+using Anewluv.Domain.Data.ViewModels;
 using System.ServiceModel.Web;
 
 namespace Shell.MVC2.Services.Contracts

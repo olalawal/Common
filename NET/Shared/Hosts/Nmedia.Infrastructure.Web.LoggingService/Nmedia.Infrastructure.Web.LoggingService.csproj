@@ -103,6 +103,10 @@
       <Project>{2322C931-607A-46D5-BC71-BE6B25288B14}</Project>
       <Name>Nmedia.Services.Contracts</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\..\..\..\Anewluv\LoggingAndNotification\Services\Nmedia.Services.Logging\Nmedia.Services.Logging.csproj">
+      <Project>{BA0C8EF0-5259-4208-93F3-DB1494E0FA52}</Project>
+      <Name>Nmedia.Services.Logging</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\Infrastructure\Nmedia.Infrastructure.DependencyResolution.Ninject\Nmedia.Infrastructure.DependencyResolution.Ninject.csproj">
       <Project>{B848BD2C-BA7C-4B9F-A2EE-8501A05ACAE6}</Project>
       <Name>Nmedia.Infrastructure.DependencyResolution.Ninject</Name>

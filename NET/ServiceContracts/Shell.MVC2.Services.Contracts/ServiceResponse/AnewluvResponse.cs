@@ -5,7 +5,8 @@
     using System.Data;
     using System.Diagnostics;
     using System.Runtime.Serialization;
-    using Shell.MVC2.Domain.Entities.Anewluv;
+using Anewluv.Domain.Data;
+
 
 namespace Shell.MVC2.Services.Contracts.ServiceResponse
 {

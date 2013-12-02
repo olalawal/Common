@@ -54,10 +54,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Extentions\NinjectExtentions.cs" />
+    <Compile Include="Modules\ContextModules\ApiKeyContextModule.cs" />
     <Compile Include="Modules\ContextModules\ErrorlogContextModule.cs" />
     <Compile Include="Modules\ContextModules\NotificationContextModule.cs" />
+    <Compile Include="Modules\AnewluvApikeyAuthServiceModule.cs" />
     <Compile Include="Modules\ErrorlogServiceModule.cs" />
-    <Compile Include="Modules\NotificationServiceModule.cs" />
+    <Compile Include="Modules\AnewluvNotificationServiceModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

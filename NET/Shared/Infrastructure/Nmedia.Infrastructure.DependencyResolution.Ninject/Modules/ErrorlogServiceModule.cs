@@ -28,9 +28,9 @@ namespace Nmedia.Infrastructure.DependencyResolution.Ninject.Modules
             // var webApiEFRepository = kernel.Get<IRepository<Entity>>("WebApiEFRepository");
             //  this.Unbind(typeof(IUnitOfWork));
             //Kernel.Bind<IUnitOfWork>().ToConstructor(ctorArg => new EFUnitOfWork(ctorArg.Inject<WellsFargo.DataAccess.Interfaces.IContext>())).InTransientScope();
-            this.Bind<IUnitOfWork>().ToMethod(ctx => ctx.Kernel.Get<ErrorlogContext>()).When(t => t.IsInjectingToRepositoryDataSourceOfNamespace(" WellsFargo.Services.Logging.ErrorLoggingService"));
+            this.Bind<IUnitOfWork>().ToMethod(ctx => ctx.Kernel.Get<ErrorlogContext>()).When(t => t.IsInjectingToRepositoryDataSourceOfNamespace("Nmedia.Services.Logging.ErrorLoggingService"));
             // this.Unbind(typeof(DbContext));
-            this.Bind<DbContext>().ToMethod(ctx => ctx.Kernel.Get<ErrorlogContext>()).When(t => t.IsInjectingToRepositoryDataSourceOfNamespace(" WellsFargo.Services.Logging.ErrorLoggingService"));
+            this.Bind<DbContext>().ToMethod(ctx => ctx.Kernel.Get<ErrorlogContext>()).When(t => t.IsInjectingToRepositoryDataSourceOfNamespace("Nmedia.Services.Logging.ErrorLoggingService"));
 
             //the Unit of work module should already be loaded by now
             this.Bind<IErrorLoggingService>().ToSelf().InRequestScope();

@@ -9,6 +9,7 @@ using RazorEngine.Configuration;
 using RazorEngine.Templating;
 using System.IO;
 using System.Web;
+using System.Reflection;
 
 
 namespace Shell.MVC2.Infrastructure
@@ -31,10 +32,15 @@ namespace Shell.MVC2.Infrastructure
         //Implement this when ALL templales are in DB
         public static string RazorDBTemplate<T>(string templatestring, ref T myobject)
         {
+
+            templatestring = templatestring == "" ? (
+new System.Uri(Assembly.GetExecutingAssembly().CodeBase)
+).AbsolutePath + "\\RazorTemplateParser\\Templates\\" : templatestring;
+
             dynamic config = new TemplateServiceConfiguration { Language = RazorEngine.Language.CSharp  };
             dynamic service = new RazorEngine.Templating.TemplateService(config);
             Razor.SetTemplateService(service);
-            //default'model to use Errorlog
+            //default'model to use errorlog
             //defualt template is the custom ErrorlogModel
             string defaulttemplate = "<html><head><title>Error Message Email</title></head><body>ErrorMessage: @Model.Message</body></html>";
             dynamic template = !string.IsNullOrEmpty(templatestring) ? templatestring : defaulttemplate;
@@ -43,57 +49,53 @@ namespace Shell.MVC2.Infrastructure
         }
 
 
-        public static string RazorFileTemplate<T>(string filename, ref T myobject)
+        public static string RazorFileTemplate<T>(string filename, ref T myobject, string TemplatePath)
         {
-            string templatestring ="";
+
+
+            //string templatestring ="";
             //admintemplateshomepath = basepath + "/AdminTemplates";
-           // membertemplateshomepath = basepath + "/MemberTemplates";
-            try
-            {
-                dynamic config = new TemplateServiceConfiguration { Language = RazorEngine.Language.CSharp, Debug = true };
-                dynamic service = new RazorEngine.Templating.TemplateService(config);
-                Razor.SetTemplateService(service);
-
-
-
-
-                var admintemplatespath = Path.Combine(admintemplateshomepath, filename);
-                var membertemplatespath = Path.Combine(membertemplateshomepath , filename);
-                var sharedpath = Path.Combine(basepath , filename);
-                var validpath = "";
-                if (File.Exists(admintemplatespath))
+           // membertemplateshomepath = basepath + "/MemberTemplates";         
+           try
                 {
-                    validpath = admintemplatespath;
- 
+                    dynamic config = new TemplateServiceConfiguration { Language = RazorEngine.Language.CSharp, Debug = true };
+                    dynamic service = new RazorEngine.Templating.TemplateService(config);
+                    Razor.SetTemplateService(service);
+                    
+                    var admintemplatespath = Path.Combine(TemplatePath +"AdminTemplates", filename);
+                    var usertemplatespath = Path.Combine(TemplatePath + "UserTemplates", filename);
+                    var sharedpath = Path.Combine(TemplatePath, filename);
+                    var validpath = "";
+                    if (File.Exists(admintemplatespath))
+                    {
+                        validpath = admintemplatespath;
+
+                    }
+                    else if (File.Exists(usertemplatespath))
+                    {
+
+                        validpath = usertemplatespath;
+
+                    }
+                    else
+                    {
+                        validpath = sharedpath;
+                    }
+                    var templatestring = File.OpenText(validpath).ReadToEnd();
+
+
+                    dynamic result = Razor.Parse(templatestring, myobject);
+                    return result;
                 }
-                else if (File.Exists(membertemplatespath))
+
+
+
+                catch (Exception ex)
                 {
-
-                    validpath = membertemplatespath;
+                    var messge = ex.Message;
+                    throw;
 
                 }
-                else
-                {
-                    validpath = sharedpath;
-                }
-                templatestring = File.OpenText(validpath ).ReadToEnd();
-
-
-
-
-
-                dynamic result = Razor.Parse(templatestring, myobject);
-                return result;
-            }
-           
-           
-
-            catch (Exception ex)
-            {
-                var messge = ex.Message;
-                throw;
-
-            }
         }
 
         public string MyGenericSub<T>(ref List<T> MyList)

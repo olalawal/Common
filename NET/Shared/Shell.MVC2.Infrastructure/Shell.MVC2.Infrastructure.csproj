@@ -94,8 +94,9 @@
     <Compile Include="Akismet.NET\Comment.cs" />
     <Compile Include="Akismet.NET\IValidator.cs" />
     <Compile Include="Akismet.NET\Validator.cs" />
-    <Compile Include="WCFErrorHandling\ServiceFualt.cs" />
-    <Compile Include="ExtentionMethods\Channelfactoryhelper.cs" />
+    <Compile Include="WCF\CompletedAsyncResult.cs" />
+    <Compile Include="WCF\ServiceFualt.cs" />
+    <Compile Include="WCF\Channelfactoryhelper.cs" />
     <Compile Include="Helpers\b64Converters.cs" />
     <Compile Include="Helpers\ClassEncryption.cs" />
     <Compile Include="Helpers\Serialization.cs" />
@@ -112,6 +113,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Start\" />
+    <Folder Include="ExtentionMethods\" />
     <Folder Include="SignalR\" />
   </ItemGroup>
   <ItemGroup>
