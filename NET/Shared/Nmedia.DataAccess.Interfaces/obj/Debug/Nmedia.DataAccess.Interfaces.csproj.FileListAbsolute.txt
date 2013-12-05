@@ -7,7 +7,6 @@ C:\temp\Common\NET\Shared\Nmedia.DataAccess.Interfaces\bin\Debug\EntityFramework
 C:\temp\Common\NET\Shared\Nmedia.DataAccess.Interfaces\bin\Debug\EntityFramework.SqlServer.xml
 C:\temp\Common\NET\Shared\Nmedia.DataAccess.Interfaces\obj\Debug\Nmedia.DataAccess.Interfaces.dll
 C:\temp\Common\NET\Shared\Nmedia.DataAccess.Interfaces\obj\Debug\Nmedia.DataAccess.Interfaces.pdb
-C:\temp\Common\NET\Shared\Nmedia.DataAccess.Interfaces\obj\Debug\Nmedia.DataAccess.Interfaces.csprojResolveAssemblyReference.cache
 C:\Projects\Common\NET\Shared\Nmedia.DataAccess.Interfaces\bin\Debug\Nmedia.DataAccess.Interfaces.dll.config
 C:\Projects\Common\NET\Shared\Nmedia.DataAccess.Interfaces\bin\Debug\Nmedia.DataAccess.Interfaces.dll
 C:\Projects\Common\NET\Shared\Nmedia.DataAccess.Interfaces\bin\Debug\Nmedia.DataAccess.Interfaces.pdb

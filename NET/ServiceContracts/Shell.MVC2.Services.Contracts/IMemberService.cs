@@ -98,6 +98,8 @@ namespace Shell.MVC2.Services.Contracts
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
         [WebInvoke(UriTemplate = "/updateuserlogouttimebyprofileid", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]	
         bool updateuserlogouttimebyprofileid(ProfileModel model);
+
+
         
         //get the last time the user logged in from profile
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
@@ -109,19 +111,25 @@ namespace Shell.MVC2.Services.Contracts
         //also updates the last log in and profile data
 
         //TO DO convert to asynch
-        [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
+        [OperationContract(AsyncPattern = true), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
         [WebInvoke(UriTemplate = "/updateuserlogintimebyprofileidandsessionid", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-        bool updateuserlogintimebyprofileidandsessionid(ProfileModel model);
+        IAsyncResult Beginupdateuserlogintimebyprofileidandsessionid(ProfileModel model, AsyncCallback callback, object asyncState);
+
+        bool Endupdateuserlogintimebyprofileidandsessionid(IAsyncResult result);
 
         //TO DO convert to asynch
-        [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
+        [OperationContract(AsyncPattern=true), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
         [WebInvoke(UriTemplate = "/updateuserlogintimebyprofileid", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-        bool updateuserlogintimebyprofileid(ProfileModel model);
+        IAsyncResult Beginupdateuserlogintimebyprofileid(ProfileModel model, AsyncCallback callback, object asyncState);
+
+        bool Endupdateuserlogintimebyprofileid(IAsyncResult result);
 
          //TO DO convert to asynch
-        [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
+        [OperationContract(AsyncPattern=true), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
         [WebInvoke(UriTemplate = "/addprofileactvity", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-        bool addprofileactvity(profileactivity model);
+        IAsyncResult Beginaddprofileactvity(profileactivity model, AsyncCallback callback, object asyncState);
+
+        bool Endaddprofileactvity(IAsyncResult result);
 
         //date time functions '
         //***********************************************************

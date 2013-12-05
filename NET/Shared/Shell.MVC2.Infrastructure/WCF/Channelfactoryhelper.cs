@@ -15,16 +15,141 @@ using System.Web.Configuration;
 
 namespace Shell.MVC2.Infrastructure
 {
-    public class Channelfactoryhelper
+
+    /// <summary>
+    /// This delegate describes the method on the interface to be called.
+    /// </summary>
+    /// <typeparam name="T">This is the type of the interface</typeparam>
+    /// <param name="proxy">This is the method.</param>
+    public delegate void UseServiceDelegate<T>(T proxy);
+    /// <summary>
+    /// This delegate describes the method on the interface to be called.
+    /// </summary>
+    /// <typeparam name="T">This is the type of the interface</typeparam>
+    /// <param name="proxy">This is the method.</param>
+    /// <param name="obj">This is any object which may be used to identify execution instance.</param>
+    public delegate void UseServiceDelegateWithAsyncReturn<T>(T proxy, object obj);
+
+    public class WCFHelpers
     {
         /// <summary>
         /// A dictionary to hold looked-up endpoint names.
         /// </summary>
-        private static readonly IDictionary<Type, string> cachedEndpointNames = new Dictionary<Type, string>();
+        public static readonly IDictionary<Type, string> cachedEndpointNames = new Dictionary<Type, string>();
         /// <summary>
         /// Locking object.
         /// </summary>
-        private static readonly object cacheLocker = new object();
+        public static readonly object cacheLocker = new object();
+
+        /// <summary>
+        /// Gets the name of the endpoint.
+        /// </summary>
+        /// <returns>The name of the endpoint. using the contract name and aslo caches the result for future use</returns>
+        public static string GetEndpointName<T>()
+        {
+            var type = typeof(T);
+            var fullName = type.FullName;
+            var name = type.Name;
+            lock (cacheLocker)
+            {
+                if (cachedEndpointNames.ContainsKey(type))
+                {
+                    return cachedEndpointNames[type];
+                }
+
+                Configuration appConfig = GetDefaultConfig(); //ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
+                ServiceModelSectionGroup serviceModel = ServiceModelSectionGroup.GetSectionGroup(appConfig);
+                // BindingsSection oBinding = serviceModel2.Bindings;
+
+                //var serviceModel = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None).SectionGroups["system.serviceModel"] as ServiceModelSectionGroup;
+
+                if ((serviceModel != null) && !string.IsNullOrEmpty(fullName))
+                {
+                    foreach (var endpointName in serviceModel.Client.Endpoints.Cast<ChannelEndpointElement>().Where(endpoint => fullName.EndsWith(endpoint.Contract)).Select(endpoint => endpoint.Name))
+                    {
+                        cachedEndpointNames.Add(type, endpointName);
+                        return endpointName;
+                    }
+                }
+
+                //Old code where we get it from calling web config
+                // cachedEndpointNames.Add(type, name);
+                // return fullName;
+            }
+
+            throw new InvalidOperationException("Could not find endpoint element for type '" + fullName + "' in the ServiceModel client configuration section. This might be because no configuration file was found for your application, or because no endpoint element matching this name could be found in the client element.");
+        }
+
+        public static Configuration GetDefaultConfig()
+        {
+            Configuration cfg;
+            System.Web.HttpContext ctx = System.Web.HttpContext.Current;
+            //WCF services hosted in IIS... 
+            VirtualPathExtension p = null;
+            // try    
+            //  {        
+            //      p = OperationContext.Current.Host.Extensions.Find<VirtualPathExtension>(); 
+            //  }   
+            //  catch (Exception ex) 
+            //   {
+            //      throw;
+            //  }    
+            if (ctx != null)
+            {
+                cfg = WebConfigurationManager.OpenWebConfiguration(ctx.Request.ApplicationPath);
+
+            }
+            else if (p != null)
+            {
+                cfg = WebConfigurationManager.OpenWebConfiguration(p.VirtualPath);
+
+            }
+            else
+            {
+                //cfg = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
+                cfg = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
+            }
+            return cfg;
+        }
+
+        /// <summary>
+        /// Gets the channel factory.
+        /// </summary>
+        /// <returns>The channel factory.</returns>
+        public static ChannelFactory GetChannelFactory<T>(IDictionary<string, ChannelFactory<T>> mycachedFactories)
+        {
+            try
+            {
+                lock (WCFHelpers.cacheLocker)
+                {
+                    var endpointName = WCFHelpers.GetEndpointName<T>();
+
+                    if (mycachedFactories.ContainsKey(endpointName))
+                    {
+                        return mycachedFactories[endpointName];
+                    }
+
+                    var factory = new ChannelFactory<T>(endpointName);
+
+                    mycachedFactories.Add(endpointName, factory);
+                    return factory;
+                }
+            }
+            catch (Exception ex)
+            {
+                var message = ex.Message;
+                //find a way to communicate that we user the factory so we cannot log errors or anything
+                throw;
+            }
+
+
+        }
+
+    }
+
+    public class Channelfactoryhelper
+    {
+
 
         /// <summary>
         /// WCF proxys do not clean up properly if they throw an exception. This method ensures that the service 
@@ -38,7 +163,7 @@ namespace Shell.MVC2.Infrastructure
               Action<TIServiceContract> action)
         {
             Exception mostRecentEx = null;
-            var cf = new ChannelFactory<TIServiceContract>(GetEndpointName<TIServiceContract>());
+            var cf = new ChannelFactory<TIServiceContract>(WCFHelpers.GetEndpointName<TIServiceContract>());
             var channel = cf.CreateChannel();
             var clientChannel = (IClientChannel)channel;
 
@@ -120,8 +245,6 @@ namespace Shell.MVC2.Infrastructure
 
         }
 
-
-
         /// <summary>
         /// Delegate type of the service method to perform.
         /// </summary>
@@ -153,7 +276,7 @@ namespace Shell.MVC2.Infrastructure
             public static void Use(UseServiceDelegate<T> codeBlock)
             {
 
-                dynamic factory = GetChannelFactory();
+                dynamic factory = WCFHelpers.GetChannelFactory(cachedFactories);
                 // dynamic proxy = (IClientChannel)factory.CreateChannel();
                 //test 
                 IClientChannel proxy = (IClientChannel)factory.CreateChannel();
@@ -176,11 +299,12 @@ namespace Shell.MVC2.Infrastructure
                     {
                         using (OperationContextScope contextScope = new OperationContextScope(proxy))
                         {
+
                             //for rest endpoint
                             HttpRequestMessageProperty httpRequestProperty = new HttpRequestMessageProperty();
-                            httpRequestProperty.Headers.Add("Apikey", ApiKey);
-                            httpRequestProperty.Headers.Add(HttpRequestHeader.UserAgent, "my user agent");
-                            httpRequestProperty.Headers.Add(HttpRequestHeader.Authorization, Authheader);
+                            // httpRequestProperty.Headers.Add("Apikey", ApiKey);
+                            // httpRequestProperty.Headers.Add(HttpRequestHeader.UserAgent, "my user agent");
+                            // httpRequestProperty.Headers.Add(HttpRequestHeader.Authorization, Authheader);
                             OperationContext.Current.OutgoingMessageProperties[HttpRequestMessageProperty.Name] = httpRequestProperty;
                             //for soad
                             //MessageHeader auth = MessageHeader.CreateHeader("Authorization","", Authheader);
@@ -263,115 +387,230 @@ namespace Shell.MVC2.Infrastructure
 
             }
 
+        }
 
-            /// <summary>
-            /// Gets the channel factory.
-            /// </summary>
-            /// <returns>The channel factory.</returns>
-            private static ChannelFactory<T> GetChannelFactory()
+
+
+
+
+
+    }
+
+    #region "asych test code"
+
+
+    /// <summary>
+    /// Helper class for creating proxies at the client end for the exposed services.
+    /// Usage:  ProxyHelper<IService>.Use(serviceProxy =>
+    ///        {
+    ///            returnObject = serviceProxy.SomeMethod(parameters);
+    ///        },ChannelName);
+    /// </summary>
+    /// <typeparam name="T">This is the type of the interface.</typeparam>
+    public class LamdaProxyHelper<T>
+    {
+        /// <summary>
+        /// This is the channel proxy
+        /// </summary>
+        IClientChannel proxy = null;
+        /// <summary>
+        /// This is the callback method for an async call back.
+        /// </summary>
+        AsyncCallback callBack = null;
+        /// <summary>
+        /// This is the method to be executed.
+        /// </summary>
+        UseServiceDelegate<T> codeBlock = null;
+
+        /// <summary>
+        /// This is the store of the channel.
+        /// </summary>
+        private static IDictionary<string, ChannelFactory<T>> channelPool
+            = new Dictionary<string, ChannelFactory<T>>();
+
+        UseServiceDelegateWithAsyncReturn<T> codeBlockWithAsyncReturn = null;
+
+
+
+        /// <summary>
+        /// Invokes the method on the WCF interface with the given end point to 
+        /// create a channel
+        /// Usage
+        /// new ProxyHelper<InterfaceName>().Use(serviceProxy =>
+        ///         {
+        ///             value = serviceProxy.MethodName(params....);
+        ///         }, "WCFEndPoint");
+        /// </summary>
+        /// <param name="codeBlock">The WCF interface method of interface of type T
+        /// </param>
+        /// <param name="WCFEndPoint">The end point.</param>
+        public void Use(UseServiceDelegate<T> codeBlock)
+        {
+            try
             {
-                try
+                dynamic factory = WCFHelpers.GetChannelFactory(channelPool);
+                IClientChannel proxy = (IClientChannel)factory.CreateChannel();
+
+                //Create an instance of proxy
+                // this.proxy = WCFHelpers.GetChannelFactory<T>(channelPool) as IClientChannel;
+                if (this.proxy != null)
                 {
-                    lock (cacheLocker)
-                    {
-                        var endpointName = GetEndpointName<T>();
-
-                        if (cachedFactories.ContainsKey(endpointName))
-                        {
-                            return cachedFactories[endpointName];
-                        }
-
-                        var factory = new ChannelFactory<T>(endpointName);
-
-                        cachedFactories.Add(endpointName, factory);
-                        return factory;
-                    }
+                    //open the proxy
+                    this.proxy.Open();
+                    //Call the method
+                    codeBlock((T)this.proxy);
+                    this.proxy.Close();
                 }
-                catch (Exception ex)
-                {
-                    var message = ex.Message;
-                    //find a way to communicate that we user the factory so we cannot log errors or anything
-                    throw;
-                }
-
-
             }
-
-
-
+            catch (CommunicationException communicationException)
+            {
+                if (this.proxy != null)
+                {
+                    this.proxy.Abort();
+                }
+                throw communicationException;
+            }
+            catch (TimeoutException timeoutException)
+            {
+                if (this.proxy != null)
+                {
+                    this.proxy.Abort();
+                }
+                throw timeoutException;
+            }
+            catch (Exception ex)
+            {
+                if (this.proxy != null)
+                {
+                    this.proxy.Abort();
+                }
+                throw ex;
+            }
         }
 
         /// <summary>
-        /// Gets the name of the endpoint.
+        /// This method is called when the proxy is called using an
+        /// async method
         /// </summary>
-        /// <returns>The name of the endpoint. using the contract name and aslo caches the result for future use</returns>
-        private static string GetEndpointName<T>()
+        /// <param name="ar">The result</param>
+        private void AsyncResult(IAsyncResult ar)
         {
-            var type = typeof(T);
-            var fullName = type.FullName;
-            var name = type.Name;
-            lock (cacheLocker)
-            {
-                if (cachedEndpointNames.ContainsKey(type))
-                {
-                    return cachedEndpointNames[type];
-                }
-
-                Configuration appConfig = GetDefaultConfig(); //ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
-                ServiceModelSectionGroup serviceModel = ServiceModelSectionGroup.GetSectionGroup(appConfig);
-                // BindingsSection oBinding = serviceModel2.Bindings;
-
-                //var serviceModel = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None).SectionGroups["system.serviceModel"] as ServiceModelSectionGroup;
-
-                if ((serviceModel != null) && !string.IsNullOrEmpty(fullName))
-                {
-                    foreach (var endpointName in serviceModel.Client.Endpoints.Cast<ChannelEndpointElement>().Where(endpoint => fullName.EndsWith(endpoint.Contract)).Select(endpoint => endpoint.Name))
-                    {
-                        cachedEndpointNames.Add(type, endpointName);
-                        return endpointName;
-                    }
-                }
-
-                //Old code where we get it from calling web config
-                // cachedEndpointNames.Add(type, name);
-                // return fullName;
-            }
-
-            throw new InvalidOperationException("Could not find endpoint element for type '" + fullName + "' in the ServiceModel client configuration section. This might be because no configuration file was found for your application, or because no endpoint element matching this name could be found in the client element.");
+            //end the invocation
+            this.codeBlock.EndInvoke(ar);
+            //close the proxy
+            this.proxy.Close();
+            //callback the method
+            this.callBack(ar);
         }
 
-        private static Configuration GetDefaultConfig()
+        /// <summary>
+        /// Invokes the method on the WCF interface with the given end point to 
+        /// create a channel
+        /// Usage
+        /// new ProxyHelper<InterfaceName>().Use(serviceProxy =>
+        ///         {
+        ///             value = serviceProxy.MethodName(params....);
+        ///         }, "WCFEndPoint",callBackMethodName,id);
+        /// </summary>
+        /// <param name="codeBlock">The WCF interface method of interface of type T
+        /// </param>
+        /// <param name="WCFEndPoint">The end point.</param>
+        /// <param name="obj">The object instance used to identify in callback</param>
+        public void UseAsync(UseServiceDelegate<T> codeBlock, AsyncCallback callBack, object obj)
         {
-            Configuration cfg;
-            System.Web.HttpContext ctx = System.Web.HttpContext.Current;
-            //WCF services hosted in IIS... 
-            VirtualPathExtension p = null;
-            // try    
-            //  {        
-            //      p = OperationContext.Current.Host.Extensions.Find<VirtualPathExtension>(); 
-            //  }   
-            //  catch (Exception ex) 
-            //   {
-            //      throw;
-            //  }    
-            if (ctx != null)
+            try
             {
-                cfg = WebConfigurationManager.OpenWebConfiguration(ctx.Request.ApplicationPath);
+                dynamic factory = WCFHelpers.GetChannelFactory(channelPool);
+                IClientChannel proxy = (IClientChannel)factory.CreateChannel();
+                //this.proxy = WCFHelpers.GetChannelFactory<T>(channelPool) as IClientChannel;
+                if (this.proxy != null)
+                {
 
+                    this.proxy.Open();
+                    this.callBack = callBack;
+                    this.codeBlock = codeBlock;
+                    IAsyncResult result = codeBlock.BeginInvoke((T)this.proxy, AsyncResult, obj);
+                }
             }
-            else if (p != null)
+            catch (CommunicationException communicationException)
             {
-                cfg = WebConfigurationManager.OpenWebConfiguration(p.VirtualPath);
+                if (this.proxy != null)
+                {
+                    this.proxy.Abort();
+                }
+                throw communicationException;
+            }
+            catch (TimeoutException timeoutException)
+            {
+                if (this.proxy != null)
+                {
+                    this.proxy.Abort();
+                }
+                throw timeoutException;
+            }
+            catch (Exception ex)
+            {
+                if (this.proxy != null)
+                {
+                    this.proxy.Abort();
+                }
+                throw ex;
+            }
+        }
 
-            }
-            else
+        /// <summary>
+        /// This method calls the WCF Service in a new thread. The calling of other method for result is the 
+        /// responcibility of the client code
+        /// </summary>
+        /// <param name="codeBlock">The method on the WCF service to be called</param>
+        /// <param name="WCFEndPoint">This is the WCF end point</param>
+        /// <param name="obj">This is any object which may help in exeution of the async parameters</param>
+        public void UseAsyncWithReturnValue(UseServiceDelegateWithAsyncReturn<T> codeBlock, object obj)
+        {
+            try
             {
-                //cfg = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
-                cfg = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
+                dynamic factory = WCFHelpers.GetChannelFactory(channelPool);
+                IClientChannel proxy = (IClientChannel)factory.CreateChannel();
+                // this.proxy = WCFHelpers.GetChannelFactory<T>(channelPool) as IClientChannel;
+                if (this.proxy != null)
+                {
+                    this.codeBlockWithAsyncReturn = codeBlock;
+                    new Thread(() =>
+                    {   //Create a new thread and on the new thread call the methos
+                        codeBlock((T)this.proxy, obj);
+                        this.proxy.Close();
+                    }).Start();
+
+                }
             }
-            return cfg;
+            catch (CommunicationException communicationException)
+            {
+                if (this.proxy != null)
+                {
+                    this.proxy.Abort();
+                }
+                throw communicationException;
+            }
+            catch (TimeoutException timeoutException)
+            {
+                if (this.proxy != null)
+                {
+                    this.proxy.Abort();
+                }
+                throw timeoutException;
+            }
+            catch (Exception ex)
+            {
+                if (this.proxy != null)
+                {
+                    this.proxy.Abort();
+                }
+                throw ex;
+            }
+
         }
     }
+    #endregion
 }
 
 
