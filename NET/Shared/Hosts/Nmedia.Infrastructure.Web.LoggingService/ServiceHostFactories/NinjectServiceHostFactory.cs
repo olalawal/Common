@@ -10,7 +10,7 @@ using NinjectModules = Nmedia.Infrastructure.DependencyResolution.Ninject.Module
 
 
 
-namespace Anewluv.Web.LoggingService.ServiceHostFactories
+namespace Nmedia.Infrastructure.Web.Services.Logging.ServiceHostFactories
 {
     public class NinjectServiceHostFactory : InjectedServiceHostFactory<IKernel>
     {

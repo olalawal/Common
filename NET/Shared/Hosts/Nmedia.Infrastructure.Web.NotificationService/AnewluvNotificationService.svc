@@ -1,1 +1,2 @@
-﻿<%@ ServiceHost Factory="Anewluv.Web.NotificationService.ServiceHostFactories.NinjectServiceHostFactory" Service="Nmedia.Services.Notification.AnewluvNotificationService"  %>
+﻿<%@ ServiceHost Factory="Nmedia.Infrastructure.Web.Services.Notification.ServiceHostFactories.NinjectServiceHostFactory" Service="Nmedia.Services.Notification.AnewluvNotificationService"  %>
+                                                                                                                                

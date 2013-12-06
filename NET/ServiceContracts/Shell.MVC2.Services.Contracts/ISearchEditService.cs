@@ -8,7 +8,7 @@ using Anewluv.Domain.Data;
 using Anewluv.Domain.Data.ViewModels;
 using System.ServiceModel.Web;
 
-namespace Shell.MVC2.Services.Contracts
+namespace Anewluv.Services.Contracts
 {
     // NOTE: You can use the "Rename" command on the "Refactor" menu to change the interface name "IMembersService" in both code and config file together.
     [ServiceContract]

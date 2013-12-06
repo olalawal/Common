@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Runtime.Serialization;
 
-namespace Shell.MVC2.Services.Contracts.ServiceResponse
+namespace Anewluv.Services.Contracts.ServiceResponse
 {
     #region "Anewluv response Message Object"
     [Serializable(), System.Xml.Serialization.SoapType()]

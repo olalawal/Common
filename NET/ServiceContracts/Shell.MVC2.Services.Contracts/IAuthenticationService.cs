@@ -9,12 +9,12 @@ using System.Web.Security;
 
 using Anewluv.Domain.Data;
 using Anewluv.Domain.Data.ViewModels;
-using Shell.MVC2.Services.Contracts.ServiceResponse;
-using Anewluv.Domain.Data.ViewModels;
+using Anewluv.Services.Contracts.ServiceResponse;
 
 
 
-namespace Shell.MVC2.Services.Contracts
+
+namespace Anewluv.Services.Contracts
 {
     // NOTE: You can use the "Rename" command on the "Refactor" menu to change the interface name "IService1" in both code and config file together.
     [ServiceContract]

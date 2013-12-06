@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Nmedia.Infrastructure.Web.LoggingService")]
+[assembly: AssemblyTitle("Nmedia.Infrastructure.Web.Services.Logging")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Nmedia.Infrastructure.Web.LoggingService")]
+[assembly: AssemblyProduct("Nmedia.Infrastructure.Web.Services.Logging")]
 [assembly: AssemblyCopyright("Copyright ©  2012")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

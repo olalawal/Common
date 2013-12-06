@@ -9,7 +9,7 @@ using Ninject;
 using NinjectModules =  Nmedia.Infrastructure.DependencyResolution.Ninject.Modules;
 
 
-namespace Anewluv.Web.NotificationService.ServiceHostFactories
+namespace Nmedia.Infrastructure.Web.Services.Notification.ServiceHostFactories
 {
     public class NinjectServiceHostFactory : InjectedServiceHostFactory<IKernel>
     {

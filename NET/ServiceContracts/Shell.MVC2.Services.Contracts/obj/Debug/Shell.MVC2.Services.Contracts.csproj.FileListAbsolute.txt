@@ -61,6 +61,5 @@ C:\Projects\Common\NET\ServiceContracts\Shell.MVC2.Services.Contracts\bin\Debug\
 C:\Projects\Common\NET\ServiceContracts\Shell.MVC2.Services.Contracts\bin\Debug\Nmedia.DataAccess.Interfaces.pdb
 C:\Projects\Common\NET\ServiceContracts\Shell.MVC2.Services.Contracts\bin\Debug\Nmedia.DataAccess.pdb
 C:\Projects\Common\NET\ServiceContracts\Shell.MVC2.Services.Contracts\bin\Debug\RazorEngine.xml
-C:\Projects\Common\NET\ServiceContracts\Shell.MVC2.Services.Contracts\obj\Debug\Shell.MVC2.Services.Contracts.csprojResolveAssemblyReference.cache
 C:\Projects\Common\NET\ServiceContracts\Shell.MVC2.Services.Contracts\obj\Debug\Shell.MVC2.Services.Contracts.dll
 C:\Projects\Common\NET\ServiceContracts\Shell.MVC2.Services.Contracts\obj\Debug\Shell.MVC2.Services.Contracts.pdb

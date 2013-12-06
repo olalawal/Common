@@ -12,7 +12,7 @@ using Anewluv.Domain.Data.ViewModels;
 
 
 
-namespace Shell.MVC2.Services.Contracts
+namespace Anewluv.Services.Contracts
 {
     // NOTE: You can use the "Rename" command on the "Refactor" menu to change the interface name "IService1" in both code  config file together.
     [ServiceContract]

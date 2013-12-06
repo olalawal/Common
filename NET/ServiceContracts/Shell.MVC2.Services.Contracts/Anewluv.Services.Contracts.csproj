@@ -8,8 +8,8 @@
     <ProjectGuid>{EFC502AE-DD76-4278-8738-DD0B1F55A724}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Shell.MVC2.Services.Contracts</RootNamespace>
-    <AssemblyName>Shell.MVC2.Services.Contracts</AssemblyName>
+    <RootNamespace>Anewluv.Services.Contracts</RootNamespace>
+    <AssemblyName>Anewluv.Services.Contracts</AssemblyName>
     <ProjectTypeGuids>{3D9AD99F-2412-4246-B90B-4EAA41C64699};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <StartArguments>/client:"WcfTestClient.exe"</StartArguments>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>

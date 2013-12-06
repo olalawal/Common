@@ -5,7 +5,7 @@ using System.Text;
 using Anewluv.Domain.Data;
 
 
-namespace Shell.MVC2.Services.Contracts.ServiceResponse
+namespace Anewluv.Services.Contracts.ServiceResponse
 {
     public interface IResponse
     {

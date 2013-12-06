@@ -10,8 +10,8 @@
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Nmedia.Infrastructure.Web.NotificationService</RootNamespace>
-    <AssemblyName>Nmedia.Infrastructure.Web.NotificationService</AssemblyName>
+    <RootNamespace>Nmedia.Infrastructure.Web.Services.Notification</RootNamespace>
+    <AssemblyName>Nmedia.Infrastructure.Web.Services.Notification</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <UseIISExpress>false</UseIISExpress>
   </PropertyGroup>
@@ -124,7 +124,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>61717</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost/Anewluv.Web.NotificationService</IISUrl>
+          <IISUrl>http://localhost/Nmedia.Infrastructure.Web.Services.Notification</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
