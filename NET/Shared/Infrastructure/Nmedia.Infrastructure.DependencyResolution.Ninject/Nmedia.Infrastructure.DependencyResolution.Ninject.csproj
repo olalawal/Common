@@ -46,6 +46,7 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -63,6 +64,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\..\..\Anewluv\ApiAuthorization\Nmedia.Services.Authorization\Nmedia.Services.Authorization.csproj">
+      <Project>{086CE7EC-C6BF-49D0-88BD-F5C86624C289}</Project>
+      <Name>Nmedia.Services.Authorization</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\..\..\..\AnewLuv\LoggingAndNotification\Domain\Nmedia.Infrastructure.Domain\Nmedia.Infrastructure.Domain.csproj">
       <Project>{E2AF89FA-EAE4-4980-A9C5-149DACEDA4AB}</Project>
       <Name>Nmedia.Infrastructure.Domain</Name>
@@ -70,6 +75,14 @@
     <ProjectReference Include="..\..\..\..\..\AnewLuv\LoggingAndNotification\Services\Nmedia.Services.Contracts\Nmedia.Services.Contracts.csproj">
       <Project>{2322C931-607A-46D5-BC71-BE6B25288B14}</Project>
       <Name>Nmedia.Services.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\..\Anewluv\LoggingAndNotification\Services\Nmedia.Services.Logging\Nmedia.Services.Logging.csproj">
+      <Project>{BA0C8EF0-5259-4208-93F3-DB1494E0FA52}</Project>
+      <Name>Nmedia.Services.Logging</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\..\Anewluv\LoggingAndNotification\Services\Nmedia.Services.Notification\Nmedia.Services.Notification.csproj">
+      <Project>{E182CE72-8655-4026-B983-F226564C50C2}</Project>
+      <Name>Nmedia.Services.Notification</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\Nmedia.DataAccess.Interfaces\Nmedia.DataAccess.Interfaces.csproj">
       <Project>{DD605C08-413D-4A1E-AF62-8FAB15C47E55}</Project>

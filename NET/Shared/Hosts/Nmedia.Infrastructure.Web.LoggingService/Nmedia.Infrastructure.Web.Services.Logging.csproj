@@ -107,10 +107,6 @@
       <Project>{BA0C8EF0-5259-4208-93F3-DB1494E0FA52}</Project>
       <Name>Nmedia.Services.Logging</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\..\..\..\Anewluv\ShellMVC3\Components\Anewluv.Lib\Anewluv.Lib.csproj">
-      <Project>{7AED0F61-0992-42BA-AA92-148C163D7517}</Project>
-      <Name>Anewluv.Lib</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\Infrastructure\Nmedia.Infrastructure.DependencyResolution.Ninject\Nmedia.Infrastructure.DependencyResolution.Ninject.csproj">
       <Project>{B848BD2C-BA7C-4B9F-A2EE-8501A05ACAE6}</Project>
       <Name>Nmedia.Infrastructure.DependencyResolution.Ninject</Name>
