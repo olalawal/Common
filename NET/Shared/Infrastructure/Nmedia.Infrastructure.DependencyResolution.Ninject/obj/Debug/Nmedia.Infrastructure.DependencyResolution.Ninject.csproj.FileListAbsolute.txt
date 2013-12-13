@@ -47,10 +47,8 @@ C:\Projects\Common\NET\Shared\Infrastructure\Nmedia.Infrastructure.DependencyRes
 C:\Projects\Common\NET\Shared\Infrastructure\Nmedia.Infrastructure.DependencyResolution.Ninject\bin\Debug\Shell.MVC2.Infrastructure.dll
 C:\Projects\Common\NET\Shared\Infrastructure\Nmedia.Infrastructure.DependencyResolution.Ninject\bin\Debug\Nmedia.DataAccess.dll
 C:\Projects\Common\NET\Shared\Infrastructure\Nmedia.Infrastructure.DependencyResolution.Ninject\bin\Debug\Anewluv.Domain.Data.dll
-C:\Projects\Common\NET\Shared\Infrastructure\Nmedia.Infrastructure.DependencyResolution.Ninject\bin\Debug\Anewluv.Services.Contracts.dll
 C:\Projects\Common\NET\Shared\Infrastructure\Nmedia.Infrastructure.DependencyResolution.Ninject\bin\Debug\Omu.Awesome.Core.dll
 C:\Projects\Common\NET\Shared\Infrastructure\Nmedia.Infrastructure.DependencyResolution.Ninject\bin\Debug\RazorEngine.dll
-C:\Projects\Common\NET\Shared\Infrastructure\Nmedia.Infrastructure.DependencyResolution.Ninject\bin\Debug\GeoData.Domain.dll
 C:\Projects\Common\NET\Shared\Infrastructure\Nmedia.Infrastructure.DependencyResolution.Ninject\bin\Debug\Nmedia.Services.Authorization.pdb
 C:\Projects\Common\NET\Shared\Infrastructure\Nmedia.Infrastructure.DependencyResolution.Ninject\bin\Debug\Nmedia.Infrastructure.Domain.pdb
 C:\Projects\Common\NET\Shared\Infrastructure\Nmedia.Infrastructure.DependencyResolution.Ninject\bin\Debug\Nmedia.Services.Contracts.pdb
@@ -67,7 +65,5 @@ C:\Projects\Common\NET\Shared\Infrastructure\Nmedia.Infrastructure.DependencyRes
 C:\Projects\Common\NET\Shared\Infrastructure\Nmedia.Infrastructure.DependencyResolution.Ninject\bin\Debug\Shell.MVC2.Infrastructure.pdb
 C:\Projects\Common\NET\Shared\Infrastructure\Nmedia.Infrastructure.DependencyResolution.Ninject\bin\Debug\Nmedia.DataAccess.pdb
 C:\Projects\Common\NET\Shared\Infrastructure\Nmedia.Infrastructure.DependencyResolution.Ninject\bin\Debug\Anewluv.Domain.Data.pdb
-C:\Projects\Common\NET\Shared\Infrastructure\Nmedia.Infrastructure.DependencyResolution.Ninject\bin\Debug\Anewluv.Services.Contracts.pdb
-C:\Projects\Common\NET\Shared\Infrastructure\Nmedia.Infrastructure.DependencyResolution.Ninject\bin\Debug\GeoData.Domain.pdb
 C:\Projects\Common\NET\Shared\Infrastructure\Nmedia.Infrastructure.DependencyResolution.Ninject\obj\Debug\Nmedia.Infrastructure.DependencyResolution.Ninject.dll
 C:\Projects\Common\NET\Shared\Infrastructure\Nmedia.Infrastructure.DependencyResolution.Ninject\obj\Debug\Nmedia.Infrastructure.DependencyResolution.Ninject.pdb

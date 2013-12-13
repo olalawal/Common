@@ -22,8 +22,6 @@ C:\Projects\Common\NET\Shared\Hosts\Nmedia.Infrastructure.Web.LoggingService\bin
 C:\Projects\Common\NET\Shared\Hosts\Nmedia.Infrastructure.Web.LoggingService\bin\LoggingLibrary.dll
 C:\Projects\Common\NET\Shared\Hosts\Nmedia.Infrastructure.Web.LoggingService\bin\Anewluv.Lib.dll
 C:\Projects\Common\NET\Shared\Hosts\Nmedia.Infrastructure.Web.LoggingService\bin\Anewluv.Domain.Data.dll
-C:\Projects\Common\NET\Shared\Hosts\Nmedia.Infrastructure.Web.LoggingService\bin\Anewluv.Services.Contracts.dll
-C:\Projects\Common\NET\Shared\Hosts\Nmedia.Infrastructure.Web.LoggingService\bin\GeoData.Domain.dll
 C:\Projects\Common\NET\Shared\Hosts\Nmedia.Infrastructure.Web.LoggingService\bin\Nmedia.Services.Contracts.pdb
 C:\Projects\Common\NET\Shared\Hosts\Nmedia.Infrastructure.Web.LoggingService\bin\Nmedia.Services.Logging.pdb
 C:\Projects\Common\NET\Shared\Hosts\Nmedia.Infrastructure.Web.LoggingService\bin\Nmedia.Infrastructure.DependencyResolution.Ninject.pdb
@@ -42,7 +40,5 @@ C:\Projects\Common\NET\Shared\Hosts\Nmedia.Infrastructure.Web.LoggingService\bin
 C:\Projects\Common\NET\Shared\Hosts\Nmedia.Infrastructure.Web.LoggingService\bin\LoggingLibrary.pdb
 C:\Projects\Common\NET\Shared\Hosts\Nmedia.Infrastructure.Web.LoggingService\bin\Anewluv.Lib.pdb
 C:\Projects\Common\NET\Shared\Hosts\Nmedia.Infrastructure.Web.LoggingService\bin\Anewluv.Domain.Data.pdb
-C:\Projects\Common\NET\Shared\Hosts\Nmedia.Infrastructure.Web.LoggingService\bin\Anewluv.Services.Contracts.pdb
-C:\Projects\Common\NET\Shared\Hosts\Nmedia.Infrastructure.Web.LoggingService\bin\GeoData.Domain.pdb
 C:\Projects\Common\NET\Shared\Hosts\Nmedia.Infrastructure.Web.LoggingService\obj\Debug\Nmedia.Infrastructure.Web.Services.Logging.dll
 C:\Projects\Common\NET\Shared\Hosts\Nmedia.Infrastructure.Web.LoggingService\obj\Debug\Nmedia.Infrastructure.Web.Services.Logging.pdb

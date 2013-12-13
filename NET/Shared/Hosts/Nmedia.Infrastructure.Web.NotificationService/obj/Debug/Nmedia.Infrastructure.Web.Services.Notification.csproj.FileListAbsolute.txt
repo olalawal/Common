@@ -22,8 +22,6 @@ C:\Projects\Common\NET\Shared\Hosts\Nmedia.Infrastructure.Web.NotificationServic
 C:\Projects\Common\NET\Shared\Hosts\Nmedia.Infrastructure.Web.NotificationService\bin\LoggingLibrary.dll
 C:\Projects\Common\NET\Shared\Hosts\Nmedia.Infrastructure.Web.NotificationService\bin\Anewluv.Lib.dll
 C:\Projects\Common\NET\Shared\Hosts\Nmedia.Infrastructure.Web.NotificationService\bin\Anewluv.Domain.Data.dll
-C:\Projects\Common\NET\Shared\Hosts\Nmedia.Infrastructure.Web.NotificationService\bin\Anewluv.Services.Contracts.dll
-C:\Projects\Common\NET\Shared\Hosts\Nmedia.Infrastructure.Web.NotificationService\bin\GeoData.Domain.dll
 C:\Projects\Common\NET\Shared\Hosts\Nmedia.Infrastructure.Web.NotificationService\bin\Nmedia.Services.Contracts.pdb
 C:\Projects\Common\NET\Shared\Hosts\Nmedia.Infrastructure.Web.NotificationService\bin\Nmedia.Services.Notification.pdb
 C:\Projects\Common\NET\Shared\Hosts\Nmedia.Infrastructure.Web.NotificationService\bin\Nmedia.Infrastructure.DependencyResolution.Ninject.pdb
@@ -42,7 +40,5 @@ C:\Projects\Common\NET\Shared\Hosts\Nmedia.Infrastructure.Web.NotificationServic
 C:\Projects\Common\NET\Shared\Hosts\Nmedia.Infrastructure.Web.NotificationService\bin\LoggingLibrary.pdb
 C:\Projects\Common\NET\Shared\Hosts\Nmedia.Infrastructure.Web.NotificationService\bin\Anewluv.Lib.pdb
 C:\Projects\Common\NET\Shared\Hosts\Nmedia.Infrastructure.Web.NotificationService\bin\Anewluv.Domain.Data.pdb
-C:\Projects\Common\NET\Shared\Hosts\Nmedia.Infrastructure.Web.NotificationService\bin\Anewluv.Services.Contracts.pdb
-C:\Projects\Common\NET\Shared\Hosts\Nmedia.Infrastructure.Web.NotificationService\bin\GeoData.Domain.pdb
 C:\Projects\Common\NET\Shared\Hosts\Nmedia.Infrastructure.Web.NotificationService\obj\Debug\Nmedia.Infrastructure.Web.Services.Notification.dll
 C:\Projects\Common\NET\Shared\Hosts\Nmedia.Infrastructure.Web.NotificationService\obj\Debug\Nmedia.Infrastructure.Web.Services.Notification.pdb
