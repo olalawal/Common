@@ -27,7 +27,6 @@ C:\temp\Common\NET\Shared\Infrastructure\Nmedia.Infrastructure.DependencyResolut
 C:\temp\Common\NET\Shared\Infrastructure\Nmedia.Infrastructure.DependencyResolution.Ninject\obj\Debug\Nmedia.Infrastructure.DependencyResolution.Ninject.csprojResolveAssemblyReference.cache
 C:\temp\Common\NET\Shared\Infrastructure\Nmedia.Infrastructure.DependencyResolution.Ninject\obj\Debug\Nmedia.Infrastructure.DependencyResolution.Ninject.dll
 C:\temp\Common\NET\Shared\Infrastructure\Nmedia.Infrastructure.DependencyResolution.Ninject\obj\Debug\Nmedia.Infrastructure.DependencyResolution.Ninject.pdb
-C:\Projects\Common\NET\Shared\Infrastructure\Nmedia.Infrastructure.DependencyResolution.Ninject\obj\Debug\Nmedia.Infrastructure.DependencyResolution.Ninject.csprojResolveAssemblyReference.cache
 C:\Projects\Common\NET\Shared\Infrastructure\Nmedia.Infrastructure.DependencyResolution.Ninject\bin\Debug\Nmedia.Infrastructure.DependencyResolution.Ninject.dll.config
 C:\Projects\Common\NET\Shared\Infrastructure\Nmedia.Infrastructure.DependencyResolution.Ninject\bin\Debug\Nmedia.Infrastructure.DependencyResolution.Ninject.dll
 C:\Projects\Common\NET\Shared\Infrastructure\Nmedia.Infrastructure.DependencyResolution.Ninject\bin\Debug\Nmedia.Infrastructure.DependencyResolution.Ninject.pdb
@@ -65,5 +64,6 @@ C:\Projects\Common\NET\Shared\Infrastructure\Nmedia.Infrastructure.DependencyRes
 C:\Projects\Common\NET\Shared\Infrastructure\Nmedia.Infrastructure.DependencyResolution.Ninject\bin\Debug\Shell.MVC2.Infrastructure.pdb
 C:\Projects\Common\NET\Shared\Infrastructure\Nmedia.Infrastructure.DependencyResolution.Ninject\bin\Debug\Nmedia.DataAccess.pdb
 C:\Projects\Common\NET\Shared\Infrastructure\Nmedia.Infrastructure.DependencyResolution.Ninject\bin\Debug\Anewluv.Domain.Data.pdb
+C:\Projects\Common\NET\Shared\Infrastructure\Nmedia.Infrastructure.DependencyResolution.Ninject\obj\Debug\Nmedia.Infrastructure.DependencyResolution.Ninject.csprojResolveAssemblyReference.cache
 C:\Projects\Common\NET\Shared\Infrastructure\Nmedia.Infrastructure.DependencyResolution.Ninject\obj\Debug\Nmedia.Infrastructure.DependencyResolution.Ninject.dll
 C:\Projects\Common\NET\Shared\Infrastructure\Nmedia.Infrastructure.DependencyResolution.Ninject\obj\Debug\Nmedia.Infrastructure.DependencyResolution.Ninject.pdb

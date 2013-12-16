@@ -109,6 +109,10 @@
       <Project>{E182CE72-8655-4026-B983-F226564C50C2}</Project>
       <Name>Nmedia.Services.Notification</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\..\..\..\Anewluv\ShellMVC3\Components\Anewluv.Api\Anewluv.Api.csproj">
+      <Project>{1E78FD8F-5A46-4894-B7E9-9E572D558562}</Project>
+      <Name>Anewluv.Api</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\Infrastructure\Nmedia.Infrastructure.DependencyResolution.Ninject\Nmedia.Infrastructure.DependencyResolution.Ninject.csproj">
       <Project>{B848BD2C-BA7C-4B9F-A2EE-8501A05ACAE6}</Project>
       <Name>Nmedia.Infrastructure.DependencyResolution.Ninject</Name>
