@@ -12,6 +12,7 @@ using System.ServiceModel.Web;
 using System.IO;
 using Anewluv.Services.Contracts.ServiceResponse;
 using Anewluv.Domain.Data.ViewModels;
+using Anewluv.Domain.Data;
 
 
 

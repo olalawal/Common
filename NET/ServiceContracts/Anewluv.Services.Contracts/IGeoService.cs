@@ -9,6 +9,7 @@ using System.Text;
 
 using GeoData.Domain.Models.ViewModels;
 using Anewluv.Domain.Data.ViewModels;
+using GeoData.Domain.ViewModels;
 
 
 
@@ -20,8 +21,8 @@ namespace Anewluv.Services.Contracts
     {
 
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
-        [WebGet(UriTemplate = "/getcountrynamebycountryid/{countryid}", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-        string getcountrynamebycountryid(string countryid);
+        [WebInvoke(UriTemplate = "/getcountrynamebycountryid", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
+        string getcountrynamebycountryid(GeoModel model);
 
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
         [WebInvoke(UriTemplate = "/verifyorupdateregistrationgeodata/", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
@@ -43,34 +44,34 @@ namespace Anewluv.Services.Contracts
         ///       
 
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
-        [WebGet(UriTemplate = "/getpostalcodestatusbycountryname/{country}", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-        bool getpostalcodestatusbycountryname(string country);
+        [WebInvoke(UriTemplate = "/getpostalcodestatusbycountryname", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
+        bool getpostalcodestatusbycountryname(GeoModel model);
 
 
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
-        [WebGet(UriTemplate = "/getcountryidbycountryname/{country}", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-        int getcountryidbycountryname(string country);
+        [WebInvoke(UriTemplate = "/getcountryidbycountryname", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
+        int getcountryidbycountryname(GeoModel model);
 
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
-        [WebGet(UriTemplate = "/getcitystateprovincelistbycountrynamepostalcodefilter/{country}/{postalcode}/{filter}", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-        List<citystateprovince> getcitystateprovincelistbycountrynamepostalcodefilter(string country, string postalcode, string filter);
+        [WebInvoke(UriTemplate = "/getcitystateprovincelistbycountrynamepostalcodefilter", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
+        List<citystateprovince> getcitystateprovincelistbycountrynamepostalcodefilter(GeoModel model);
 
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
-        [WebGet(UriTemplate = "/getgpsdatalistbycountrycitypostalcode/{country}/{city}/{postalcode}", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-        List<gpsdata> getgpsdatalistbycountrycitypostalcode(string country, string city, string postalcode);
+        [WebInvoke(UriTemplate = "/getgpsdatalistbycountrycitypostalcode", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
+        List<gpsdata> getgpsdatalistbycountrycitypostalcode(GeoModel model);
 
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
-        [WebGet(UriTemplate = "/getgpsdatalistbycountrycity/{country}/{city}", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-        List<gpsdata> getgpsdatalistbycountrycity(string country, string city);
+        [WebInvoke(UriTemplate = "/getgpsdatalistbycountrycity", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
+        List<gpsdata> getgpsdatalistbycountrycity(GeoModel model);
 
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
-        [WebGet(UriTemplate = "/getgpsdatabycitycountrypostalcode/{country}/{city}/{postalcode}", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-        gpsdata getgpsdatabycitycountrypostalcode(string country, string city, string postalcode);
+        [WebInvoke(UriTemplate = "/getgpsdatabycitycountrypostalcode", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
+        gpsdata getgpsdatabycitycountrypostalcode(GeoModel model);
 
 
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
-        [WebGet(UriTemplate = "/getpostalcodesbycountrycityfilter/{country}/{city}/{filter}", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-        List<postalcode> getpostalcodesbycountrycityfilter(string country, string city, string filter);
+        [WebInvoke(UriTemplate = "/getpostalcodesbycountrycityfilter", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
+        List<postalcode> getpostalcodesbycountrycityfilter(GeoModel model);
         //gets the single geo code as string
 
 
@@ -80,34 +81,38 @@ namespace Anewluv.Services.Contracts
 
 
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
-        [WebGet(UriTemplate = "/validatepostalcodebycountrycitypostalcode/{country}/{city}/{postalcode}", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-        bool validatepostalcodebycountrycitypostalcode(string country, string city, string postalcode);
+        [WebInvoke(UriTemplate = "/validatepostalcodebycountrycitypostalcode", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
+        bool validatepostalcodebycountrycitypostalcode(GeoModel model);
 
 
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
-        [WebGet(UriTemplate = "/getpostalcodesbycountryandlatlong/{country}/{lattitude}/{longitude}", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-        List<postalcode> getpostalcodesbycountrylatlong(string country, string lattitude, string longitude);
+        [WebInvoke(UriTemplate = "/getpostalcodesbycountryandlatlong", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
+        List<postalcode> getpostalcodesbycountrylatlong(GeoModel model);
 
 
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
-        [WebGet(UriTemplate = "/getpostalcodesbycountrynamecityandstateprovince/{country}/{city}/{stateprovince}", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-        List<postalcode> getpostalcodesbycountrynamecitystateprovince(string country, string city, string stateprovince);
+        [WebInvoke(UriTemplate = "/getpostalcodesbycountrynamecityandstateprovince", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
+        List<postalcode> getpostalcodesbycountrynamecitystateprovince(GeoModel model);
 
         //TO DO move these lookups to geo
         // List<string> getcountrylist(string country);
 
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
-        [WebGet(UriTemplate = "/getfilteredcitiesbycountryfilteroptionalpostalcode/{country}/{filter}/{postalcode}", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-        List<citystateprovince> getfilteredcitiesbycountryfilteroptionalpostalcode(string country, string filter,string postalcode);
+        [WebInvoke(UriTemplate = "/getfilteredcitybycountryandpostalcodefilter", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
+        List<citystateprovince> getfilteredcitybycountryandpostalcodefilter(GeoModel model);
+
+        [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
+        [WebInvoke(UriTemplate = "/getfilteredcitybycountryandcityfilter", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
+        List<citystateprovince> getfilteredcitybycountryandcityfilter(GeoModel model);
 
 
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
-        [WebGet(UriTemplate = "/getfilteredpostalcodesbycountrycityandfilter/{country}/{city}/{filter}", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-        List<postalcode> getfilteredpostalcodesbycountrycityfilter(string country, string city, string filter);
+        [WebInvoke(UriTemplate = "/getfilteredpostalcodesbycountrycityandfilter", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
+        List<postalcode> getfilteredpostalcodesbycountrycityfilter(GeoModel model);
 
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
-        [WebGet(UriTemplate = "/getdistancebetweenmembers/{lat1}/{lon1}/{lat2}/{lon2}/{unit}", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-        double? getdistancebetweenmembers(string lat1, string lon1, string lat2, string lon2, string unit);
+        [WebInvoke(UriTemplate = "/getdistancebetweenmembers", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
+        double? getdistancebetweenmembers(GeoModel model);
 
     }
 
