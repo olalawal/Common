@@ -17,10 +17,10 @@ namespace Anewluv.Services.Contracts
     public interface ICommonService
     {
 
-     
+
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
-        [WebGet]
-         string getNETJSONdatefromISO(string isodate);
+        [WebInvoke(UriTemplate = "/getNETJSONdatefromISO", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
+        string getNETJSONdatefromISO(DateValidateModel date);
        
      
         

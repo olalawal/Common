@@ -28,36 +28,36 @@ namespace Anewluv.Services.Contracts
         bool updateprofilevisibilitysettings(visiblitysetting model);
 
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
-        [WebGet(UriTemplate = "/getbasicsettingsmodel/{profileid}", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-        BasicSettingsModel getbasicsettingsmodel(string profileid);
+        [WebInvoke(UriTemplate = "/getbasicsettingsmodel", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
+        BasicSettingsModel getbasicsettingsmodel(EditProfileModel editprofilemodel);
 
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
-        [WebGet(UriTemplate = "/getappearancesettingsmodel/{profileid}", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-        AppearanceSettingsModel getappearancesettingsmodel(string profileid);
+        [WebInvoke(UriTemplate = "/getappearancesettingsmodel", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
+        AppearanceSettingsModel getappearancesettingsmodel(EditProfileModel editprofilemodel);
 
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
-        [WebGet(UriTemplate = "/getlifestylesettingsmodel/{profileid}", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-        LifeStyleSettingsModel getlifestylesettingsmodel(string profileid);
+        [WebInvoke(UriTemplate = "/getlifestylesettingsmodel", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
+        LifeStyleSettingsModel getlifestylesettingsmodel(EditProfileModel editprofilemodel);
 
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
-        [WebGet(UriTemplate = "/getcharactersettingsmodel/{profileid}", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-        CharacterSettingsModel getcharactersettingsmodel(string profileid);
+        [WebInvoke(UriTemplate = "/getcharactersettingsmodel", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
+        CharacterSettingsModel getcharactersettingsmodel(EditProfileModel editprofilemodel);
 
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
-        [WebInvoke(UriTemplate = "/membereditbasicsettings/{profileid}", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]   
-        AnewluvMessages membereditbasicsettings(BasicSettingsModel newmodel, string profileid);
+        [WebInvoke(UriTemplate = "/membereditbasicsettings", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]   
+        AnewluvMessages membereditbasicsettings(EditProfileModel editprofilemodel);
 
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
-        [WebInvoke(UriTemplate = "/membereditappearancesettings/{profileid}", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]   
-        AnewluvMessages membereditappearancesettings(AppearanceSettingsModel newmodel, string profileid);
+        [WebInvoke(UriTemplate = "/membereditappearancesettings", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]   
+        AnewluvMessages membereditappearancesettings(EditProfileModel editprofilemodel);
 
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
-        [WebInvoke(UriTemplate = "/membereditlifestylesettings/{profileid}", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]   
-        AnewluvMessages membereditlifestylesettings(LifeStyleSettingsModel newmodel, string profileid);
+        [WebInvoke(UriTemplate = "/membereditlifestylesettings", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]   
+        AnewluvMessages membereditlifestylesettings(EditProfileModel editprofilemodel);
 
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
-        [WebInvoke(UriTemplate = "/membereditcharactersettings/{profileid}", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]   
-        AnewluvMessages membereditcharactersettings(CharacterSettingsModel newmodel, string profileid);
+        [WebInvoke(UriTemplate = "/membereditcharactersettings", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]   
+        AnewluvMessages membereditcharactersettings(EditProfileModel editprofilemodel);
 
     }
 }

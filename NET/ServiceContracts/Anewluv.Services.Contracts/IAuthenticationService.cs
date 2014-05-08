@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.Serialization;
-using System.ServiceModel.Web;
+
 using System.ServiceModel;
 using System.Text;
 using System.Web.Security;
@@ -10,6 +10,7 @@ using System.Web.Security;
 using Anewluv.Domain.Data;
 using Anewluv.Domain.Data.ViewModels;
 using Anewluv.Services.Contracts.ServiceResponse;
+using System.ServiceModel.Web;
 
 
 
@@ -22,8 +23,8 @@ namespace Anewluv.Services.Contracts
     {
 
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
-        [ServiceKnownType(typeof(MembershipUser))]
-        [WebInvoke(UriTemplate = "/createuser", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
+        [ServiceKnownType(typeof(MembershipUserViewModel))]
+        [WebInvoke(UriTemplate = "/createuser", ResponseFormat = WebMessageFormat.Json,  BodyStyle = WebMessageBodyStyle.Bare)]
         AnewluvResponse createuser(MembershipUserViewModel model);
 
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
@@ -89,6 +90,35 @@ namespace Anewluv.Services.Contracts
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
         [WebGet(UriTemplate = "/generatepassword", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]	                         
          string generatepassword()  ;
+
+        //validators duplicated in memberservcie
+        [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
+        [ServiceKnownType(typeof(AnewLuvMembershipUser))]
+        [WebInvoke(UriTemplate = "/checkifemailalreadyexists", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
+         bool checkifemailalreadyexists(ProfileModel model);
+
+        [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
+        [ServiceKnownType(typeof(AnewLuvMembershipUser))]
+        [WebInvoke(UriTemplate = "/checkifactivationcodeisvalid", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
+         bool checkifactivationcodeisvalid(ProfileModel model);
+
+        [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
+        [ServiceKnownType(typeof(AnewLuvMembershipUser))]
+        [WebInvoke(UriTemplate = "/checkifprofileisactivated", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
+         bool checkifprofileisactivated(ProfileModel model)  ;
+
+        [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
+        [ServiceKnownType(typeof(AnewLuvMembershipUser))]
+        [WebInvoke(UriTemplate = "/checkifusernamealreadyexists", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
+         bool checkifusernamealreadyexists(ProfileModel model)  ;
+
+        [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
+        [ServiceKnownType(typeof(AnewLuvMembershipUser))]
+        [WebInvoke(UriTemplate = "/checkifscreennamealreadyexists", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
+         bool checkifscreennamealreadyexists(ProfileModel model);
+        
+
+
 
         #region "Custom methods specific for AnewLuv"
 

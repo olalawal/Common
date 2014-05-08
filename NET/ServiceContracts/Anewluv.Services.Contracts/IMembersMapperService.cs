@@ -18,7 +18,7 @@ namespace Anewluv.Services.Contracts
 
         
 
-               [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
+         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
                [WebInvoke(UriTemplate = "/mapmembersearchviewmodel/{viewerprofileid}/{allphotos}", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
         MemberSearchViewModel mapmembersearchviewmodel(string viewerprofileid, MemberSearchViewModel modeltomap, string allphotos);
 
