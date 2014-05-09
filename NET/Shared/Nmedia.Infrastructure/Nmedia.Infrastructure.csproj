@@ -66,6 +66,12 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Anewluv.Domain.Data">
+      <HintPath>..\SharedDLLs\Anewluv.Domain.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Nmedia.Infrastructure.Domain.Data">
+      <HintPath>..\SharedDLLs\Nmedia.Infrastructure.Domain.Data.dll</HintPath>
+    </Reference>
     <Reference Include="Omu.Awesome.Core, Version=1.9.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\SharedDLLs\Omu.Awesome.Core.dll</HintPath>
@@ -86,9 +92,6 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
-    <Reference Include="WebActivator">
-      <HintPath>..\..\..\..\Anewluv\Nmedia.Anewluv.Services\packages\WebActivator.1.0.0.0\lib\WebActivator.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Akismet.NET\Comment.cs" />
@@ -129,16 +132,6 @@
     <Content Include="Scripts\Awesome.min.js" />
     <Content Include="Scripts\jquery.form.js" />
     <Content Include="Scripts\jquery.form.min.js" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\..\..\Anewluv\Nmedia.Anewluv.Services\Domain\Data\Anewluv.Domain.Data\Anewluv.Domain.Data.csproj">
-      <Project>{8e3079e3-2244-47b1-ab1f-ee171398666e}</Project>
-      <Name>Anewluv.Domain.Data</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\..\..\Anewluv\Nmedia.Infrastructure\LoggingNotificationApiAuth\Domain\Nmedia.Infrastructure.Domain.Data\Nmedia.Infrastructure.Domain.Data.csproj">
-      <Project>{59bc30af-1691-44ea-bffa-34b39e334e93}</Project>
-      <Name>Nmedia.Infrastructure.Domain.Data</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
