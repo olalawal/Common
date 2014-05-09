@@ -1,0 +1,29 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nmedia.Infrastructure", "Nmedia.Infrastructure.csproj", "{D0FA8AA1-5A17-4C42-A92F-F1266CD01D7C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Dev|Any CPU = Dev|Any CPU
+		Disconected|Any CPU = Disconected|Any CPU
+		NoCacheDebug|Any CPU = NoCacheDebug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D0FA8AA1-5A17-4C42-A92F-F1266CD01D7C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D0FA8AA1-5A17-4C42-A92F-F1266CD01D7C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D0FA8AA1-5A17-4C42-A92F-F1266CD01D7C}.Dev|Any CPU.ActiveCfg = Dev|Any CPU
+		{D0FA8AA1-5A17-4C42-A92F-F1266CD01D7C}.Dev|Any CPU.Build.0 = Dev|Any CPU
+		{D0FA8AA1-5A17-4C42-A92F-F1266CD01D7C}.Disconected|Any CPU.ActiveCfg = Disconected|Any CPU
+		{D0FA8AA1-5A17-4C42-A92F-F1266CD01D7C}.Disconected|Any CPU.Build.0 = Disconected|Any CPU
+		{D0FA8AA1-5A17-4C42-A92F-F1266CD01D7C}.NoCacheDebug|Any CPU.ActiveCfg = NoCacheDebug|Any CPU
+		{D0FA8AA1-5A17-4C42-A92F-F1266CD01D7C}.NoCacheDebug|Any CPU.Build.0 = NoCacheDebug|Any CPU
+		{D0FA8AA1-5A17-4C42-A92F-F1266CD01D7C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D0FA8AA1-5A17-4C42-A92F-F1266CD01D7C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
