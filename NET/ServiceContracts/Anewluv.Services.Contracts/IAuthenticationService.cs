@@ -11,6 +11,7 @@ using Anewluv.Domain.Data;
 using Anewluv.Domain.Data.ViewModels;
 using Anewluv.Services.Contracts.ServiceResponse;
 using System.ServiceModel.Web;
+using System.Threading.Tasks;
 
 
 
@@ -25,11 +26,11 @@ namespace Anewluv.Services.Contracts
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
         [ServiceKnownType(typeof(MembershipUserViewModel))]
         [WebInvoke(UriTemplate = "/createuser", ResponseFormat = WebMessageFormat.Json,  BodyStyle = WebMessageBodyStyle.Bare)]
-        AnewluvResponse createuser(MembershipUserViewModel model);
+        Task<AnewluvResponse> createuser(MembershipUserViewModel model);
 
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
         [WebInvoke(UriTemplate = "/validateuserbyusernamepassword", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-        bool validateuserbyusernamepassword(ProfileModel profile); 
+         Task<bool> validateuserbyusernamepassword(ProfileModel profile); 
           
             //5-82012 updated to only valudate username
             //overide for validate user that uses just the username, this can be used for pass through auth where a user was already prevalidated via another method
@@ -95,27 +96,27 @@ namespace Anewluv.Services.Contracts
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
         [ServiceKnownType(typeof(AnewLuvMembershipUser))]
         [WebInvoke(UriTemplate = "/checkifemailalreadyexists", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-         bool checkifemailalreadyexists(ProfileModel model);
+        Task<bool> checkifemailalreadyexists(ProfileModel model);
 
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
         [ServiceKnownType(typeof(AnewLuvMembershipUser))]
         [WebInvoke(UriTemplate = "/checkifactivationcodeisvalid", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-         bool checkifactivationcodeisvalid(ProfileModel model);
+        Task<bool> checkifactivationcodeisvalid(ProfileModel model);
 
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
         [ServiceKnownType(typeof(AnewLuvMembershipUser))]
         [WebInvoke(UriTemplate = "/checkifprofileisactivated", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-         bool checkifprofileisactivated(ProfileModel model)  ;
+        Task<bool> checkifprofileisactivated(ProfileModel model);
 
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
         [ServiceKnownType(typeof(AnewLuvMembershipUser))]
         [WebInvoke(UriTemplate = "/checkifusernamealreadyexists", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-         bool checkifusernamealreadyexists(ProfileModel model)  ;
+        Task<bool> checkifusernamealreadyexists(ProfileModel model);
 
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
         [ServiceKnownType(typeof(AnewLuvMembershipUser))]
         [WebInvoke(UriTemplate = "/checkifscreennamealreadyexists", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-         bool checkifscreennamealreadyexists(ProfileModel model);
+        Task<bool> checkifscreennamealreadyexists(ProfileModel model);
         
 
 

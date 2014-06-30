@@ -10,6 +10,7 @@ using System.Text;
 using GeoData.Domain.Models.ViewModels;
 using Anewluv.Domain.Data.ViewModels;
 using GeoData.Domain.ViewModels;
+using System.Threading.Tasks;
 
 
 
@@ -32,7 +33,7 @@ namespace Anewluv.Services.Contracts
 
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
         [WebGet(UriTemplate = "/getcountryandpostalcodestatuslist", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-        List<countrypostalcode> getcountryandpostalcodestatuslist();
+        Task <List<countrypostalcode>> getcountryandpostalcodestatuslist();
 
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
         [WebGet(UriTemplate = "/getcountrylist", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
@@ -71,7 +72,7 @@ namespace Anewluv.Services.Contracts
 
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
         [WebInvoke(UriTemplate = "/getpostalcodesbycountrycityfilter", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-        List<postalcode> getpostalcodesbycountrycityfilter(GeoModel model);
+        Task <List<postalcode>> getpostalcodesbycountrycityfilter(GeoModel model);
         //gets the single geo code as string
 
         //[OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
@@ -102,7 +103,7 @@ namespace Anewluv.Services.Contracts
 
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
         [WebInvoke(UriTemplate = "/getfilteredcitybycountryandcityfilter", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-        List<citystateprovince> getfilteredcitybycountryandcityfilter(GeoModel model);
+        Task<List<citystateprovince>> getfilteredcitybycountryandcityfilter(GeoModel model);
 
 
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]

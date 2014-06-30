@@ -8,6 +8,7 @@ using System.Text;
 using System.Web.Security;
 using Anewluv.Domain.Data;
 using Anewluv.Domain.Data.ViewModels;
+using System.Threading.Tasks;
 
 
 namespace Anewluv.Services.Contracts
@@ -20,7 +21,7 @@ namespace Anewluv.Services.Contracts
 
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
         [WebInvoke(UriTemplate = "/getNETJSONdatefromISO", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-        string getNETJSONdatefromISO(DateValidateModel date);
+        Task<string> getNETJSONdatefromISO(DateValidateModel date);
        
      
         

@@ -7,6 +7,7 @@ using System.Text;
 using Anewluv.Domain.Data;
 using System.ServiceModel.Web;
 using Anewluv.Domain.Data.ViewModels;
+using System.Threading.Tasks;
 
 namespace Anewluv.Services.Contracts
 {
@@ -124,6 +125,11 @@ namespace Anewluv.Services.Contracts
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
         [WebInvoke(UriTemplate = "/getemailmatches", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
         List<MemberSearchViewModel> getemailmatches(ProfileModel model);
+
+        [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
+        [WebInvoke(UriTemplate = "/getquicksearch", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
+        Task<List<MemberSearchViewModel>> getquicksearch(quicksearchmodel Model);
+
 
         //[OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
         //[WebInvoke(UriTemplate = "/getquickmatcheswhenquickmatchesempty", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
