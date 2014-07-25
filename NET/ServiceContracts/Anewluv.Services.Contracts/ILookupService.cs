@@ -19,9 +19,12 @@ namespace Anewluv.Services.Contracts
     public interface ILookupService
     {
 
+       
+
+
         #region "New Lookups"
 
-          [WebGet(UriTemplate = "/getphotostatusdescriptionlist", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]      
+        [WebGet(UriTemplate = "/getphotostatusdescriptionlist", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]      
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
         List<lu_photostatusdescription> getphotostatusdescriptionlist();
           [WebGet(UriTemplate = "/getabusetypelist", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]      
