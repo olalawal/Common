@@ -7,6 +7,7 @@ using System.Text;
 using Anewluv.Domain.Data;
 using System.ServiceModel.Web;
 using Anewluv.Domain.Data.ViewModels;
+using System.Threading.Tasks;
 
 namespace Anewluv.Services.Contracts
 {
@@ -66,11 +67,11 @@ namespace Anewluv.Services.Contracts
         //update the database i.e create folders and change profile status from guest to active ?!
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
         [WebInvoke(UriTemplate = "/createmailboxfolders", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-        bool createmailboxfolders(ProfileModel model);
+        Task<bool> createmailboxfolders(ProfileModel model);
 
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
         [WebInvoke(UriTemplate = "/activateprofile", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-        bool activateprofile(ProfileModel model);
+        Task<bool> activateprofile(ProfileModel model);
 
         //updates the profile with a password that is presumed to be already encyrpted
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
@@ -84,12 +85,12 @@ namespace Anewluv.Services.Contracts
         //check if profile is activated 
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
         [WebInvoke(UriTemplate = "/checkifprofileisactivated", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-        bool checkifprofileisactivated(ProfileModel model);
+        Task<bool> checkifprofileisactivated(ProfileModel model);
         //check if mailbox folder exist
 
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
         [WebInvoke(UriTemplate = "/checkifmailboxfoldersarecreated", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-        bool checkifmailboxfoldersarecreated(ProfileModel model);
+        Task<bool> checkifmailboxfoldersarecreated(ProfileModel model);
 
         //DateTimeFUcntiosn for longin etc "
         //********************************************
@@ -97,14 +98,14 @@ namespace Anewluv.Services.Contracts
         // added 1/18/2010 ola lawal
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
         [WebInvoke(UriTemplate = "/updateuserlogouttimebyprofileid", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-        bool updateuserlogouttimebyprofileid(ProfileModel model);
+        Task<bool> updateuserlogouttimebyprofileid(ProfileModel model);
 
 
 
         //get the last time the user logged in from profile
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
         [WebInvoke(UriTemplate = "/getmemberlastlogintimebyprofileid", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-        Nullable<DateTime> getmemberlastlogintimebyprofileid(ProfileModel model);
+        Task<DateTime?> getmemberlastlogintimebyprofileid(ProfileModel model);
 
         //updates all the areas  that handle when a user logs in 
         // added 1/18/2010 ola lawal
@@ -113,23 +114,20 @@ namespace Anewluv.Services.Contracts
         //TO DO convert to asynch
         [OperationContract(AsyncPattern = true), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
         [WebInvoke(UriTemplate = "/updateuserlogintimebyprofileidandsessionid", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-        IAsyncResult Beginupdateuserlogintimebyprofileidandsessionid(ProfileModel model, AsyncCallback callback, object asyncState);
+        Task<bool> updateuserlogintimebyprofileidandsessionid(ProfileModel model);
 
-        bool Endupdateuserlogintimebyprofileidandsessionid(IAsyncResult result);
+
 
         //TO DO convert to asynch
         [OperationContract(AsyncPattern = true), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
         [WebInvoke(UriTemplate = "/updateuserlogintimebyprofileid", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-        IAsyncResult Beginupdateuserlogintimebyprofileid(ProfileModel model, AsyncCallback callback, object asyncState);
-
-        bool Endupdateuserlogintimebyprofileid(IAsyncResult result);
+        Task<bool> updateuserlogintimebyprofileid(ProfileModel model);
 
         //TO DO convert to asynch
         [OperationContract(AsyncPattern = true), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
         [WebInvoke(UriTemplate = "/addprofileactvity", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-        IAsyncResult Beginaddprofileactvity(profileactivity model, AsyncCallback callback, object asyncState);
+        Task<bool> addprofileactvity(profileactivity model);
 
-        bool Endaddprofileactvity(IAsyncResult result);
 
         //date time functions '
         //***********************************************************

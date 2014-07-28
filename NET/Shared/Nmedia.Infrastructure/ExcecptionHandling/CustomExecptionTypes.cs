@@ -11,6 +11,9 @@ namespace Nmedia.Infrastructure.ExceptionHandling
     public class CustomExceptionTypes
     {
 
+
+       
+
         [Serializable]
         public class JavaScriptException : Exception
         {
@@ -46,6 +49,9 @@ namespace Nmedia.Infrastructure.ExceptionHandling
             {
 
             }
+
+
+          
 
             public AccountException(MembersViewModel model)
                 : base()

@@ -126,7 +126,7 @@ namespace Anewluv.Services.Contracts
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
         [ServiceKnownType(typeof(AnewluvMessages))]
         [WebInvoke(UriTemplate = "/activateprofile", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-        AnewluvResponse activateprofile(activateprofilemodel model);
+        Task<AnewluvResponse> activateprofile(activateprofilemodel model);
 
         #endregion
         
