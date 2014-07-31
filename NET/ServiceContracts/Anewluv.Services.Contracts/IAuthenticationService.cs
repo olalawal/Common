@@ -23,6 +23,7 @@ namespace Anewluv.Services.Contracts
     public interface IAuthenticationService                    
     {
 
+
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
         [ServiceKnownType(typeof(MembershipUserViewModel))]
         [WebInvoke(UriTemplate = "/createuser", ResponseFormat = WebMessageFormat.Json,  BodyStyle = WebMessageBodyStyle.Bare)]

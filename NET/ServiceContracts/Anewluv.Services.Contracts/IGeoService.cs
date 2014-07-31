@@ -21,6 +21,9 @@ namespace Anewluv.Services.Contracts
     public interface IGeoService
     {
 
+
+     
+
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
         [WebInvoke(UriTemplate = "/getcountrynamebycountryid", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
         string getcountrynamebycountryid(GeoModel model);
@@ -99,7 +102,7 @@ namespace Anewluv.Services.Contracts
 
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
         [WebInvoke(UriTemplate = "/getfilteredcitybycountryandpostalcodefilter", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-        List<citystateprovince> getfilteredcitybycountryandpostalcodefilter(GeoModel model);
+        Task<List<citystateprovince>> getfilteredcitybycountryandpostalcodefilter(GeoModel model);
 
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
         [WebInvoke(UriTemplate = "/getfilteredcitybycountryandcityfilter", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
