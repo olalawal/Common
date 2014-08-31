@@ -80,7 +80,7 @@ namespace Anewluv.Services.Contracts
           [WebGet(UriTemplate = "/getbodycssbypagename/{pagename}", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]      
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
         string getbodycssbypagename(string pagename);
-        //List<age> createagelist(); //not created by database 
+        //List<age> createagelist(); //not created by Initial Catalog= 
 
 
         #region "Criteria Appearance dropdowns"

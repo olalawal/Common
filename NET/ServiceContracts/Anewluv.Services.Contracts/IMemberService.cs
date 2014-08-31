@@ -64,7 +64,7 @@ namespace Anewluv.Services.Contracts
         bool checkifquoutareachedandupdate(ProfileModel model);
 
         //Activate, Valiate if Profile is Acivated Code and Create Mailbox Folders as well"
-        //update the database i.e create folders and change profile status from guest to active ?!
+        //update the Initial Catalog= i.e create folders and change profile status from guest to active ?!
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
         [WebInvoke(UriTemplate = "/createmailboxfolders", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
         Task<bool> createmailboxfolders(ProfileModel model);
@@ -196,7 +196,7 @@ namespace Anewluv.Services.Contracts
         // bool InsertPhotoCustom(Shell.MVC2.Domain.Entities.Anewluv.photo newphoto);
         // bool CheckIfPhotoCaptionAlreadyExists(int strProfileID, string strPhotoCaption);  
         /// <summary>
-        /// Determines wethare an activation code matches the value in the database for a given profileID
+        /// Determines wethare an activation code matches the value in the Initial Catalog= for a given profileID
         /// </summary>
 
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]

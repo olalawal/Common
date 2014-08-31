@@ -12,3 +12,9 @@ E:\Projects\Common\NET\ServiceContracts\Anewluv.Services.Contracts\bin\Release\E
 E:\Projects\Common\NET\ServiceContracts\Anewluv.Services.Contracts\obj\Release\Anewluv.Services.Contracts.csprojResolveAssemblyReference.cache
 E:\Projects\Common\NET\ServiceContracts\Anewluv.Services.Contracts\obj\Release\Anewluv.Services.Contracts.dll
 E:\Projects\Common\NET\ServiceContracts\Anewluv.Services.Contracts\obj\Release\Anewluv.Services.Contracts.pdb
+E:\Projects\Common\NET\ServiceContracts\Anewluv.Services.Contracts\bin\Release\Nmedia.DataAccess.Interfaces.dll
+E:\Projects\Common\NET\ServiceContracts\Anewluv.Services.Contracts\bin\Release\Nmedia.DataAccess.dll
+E:\Projects\Common\NET\ServiceContracts\Anewluv.Services.Contracts\bin\Release\GeoData.Domain.pdb
+E:\Projects\Common\NET\ServiceContracts\Anewluv.Services.Contracts\bin\Release\Anewluv.Domain.Data.pdb
+E:\Projects\Common\NET\ServiceContracts\Anewluv.Services.Contracts\bin\Release\Nmedia.DataAccess.Interfaces.pdb
+E:\Projects\Common\NET\ServiceContracts\Anewluv.Services.Contracts\bin\Release\Nmedia.DataAccess.pdb
