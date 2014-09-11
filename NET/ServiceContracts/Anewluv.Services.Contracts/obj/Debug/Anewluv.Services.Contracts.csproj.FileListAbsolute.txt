@@ -12,6 +12,7 @@ C:\temp\Common\NET\ServiceContracts\Anewluv.Services.Contracts\bin\Debug\EntityF
 C:\temp\Common\NET\ServiceContracts\Anewluv.Services.Contracts\obj\Debug\Anewluv.Services.Contracts.csprojResolveAssemblyReference.cache
 C:\temp\Common\NET\ServiceContracts\Anewluv.Services.Contracts\obj\Debug\Anewluv.Services.Contracts.dll
 C:\temp\Common\NET\ServiceContracts\Anewluv.Services.Contracts\obj\Debug\Anewluv.Services.Contracts.pdb
+E:\Projects\Common\NET\ServiceContracts\Anewluv.Services.Contracts\obj\Debug\Anewluv.Services.Contracts.csprojResolveAssemblyReference.cache
 E:\Projects\Common\NET\ServiceContracts\Anewluv.Services.Contracts\bin\Debug\Anewluv.Services.Contracts.dll
 E:\Projects\Common\NET\ServiceContracts\Anewluv.Services.Contracts\bin\Debug\Anewluv.Services.Contracts.pdb
 E:\Projects\Common\NET\ServiceContracts\Anewluv.Services.Contracts\bin\Debug\Anewluv.Domain.Data.dll
@@ -29,6 +30,5 @@ E:\Projects\Common\NET\ServiceContracts\Anewluv.Services.Contracts\bin\Debug\Ent
 E:\Projects\Common\NET\ServiceContracts\Anewluv.Services.Contracts\bin\Debug\Nmedia.DataAccess.Interfaces.pdb
 E:\Projects\Common\NET\ServiceContracts\Anewluv.Services.Contracts\bin\Debug\Nmedia.DataAccess.pdb
 E:\Projects\Common\NET\ServiceContracts\Anewluv.Services.Contracts\bin\Debug\RazorEngine.xml
-E:\Projects\Common\NET\ServiceContracts\Anewluv.Services.Contracts\obj\Debug\Anewluv.Services.Contracts.csprojResolveAssemblyReference.cache
 E:\Projects\Common\NET\ServiceContracts\Anewluv.Services.Contracts\obj\Debug\Anewluv.Services.Contracts.dll
 E:\Projects\Common\NET\ServiceContracts\Anewluv.Services.Contracts\obj\Debug\Anewluv.Services.Contracts.pdb
