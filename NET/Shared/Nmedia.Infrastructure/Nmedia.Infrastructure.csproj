@@ -99,6 +99,7 @@
     <Compile Include="Akismet.NET\Validator.cs" />
     <Compile Include="ExcecptionHandling\CustomExecptionTypes.cs" />
     <Compile Include="Helpers\Generatedlists.cs" />
+    <Compile Include="Helpers\GenerateRandomString.cs" />
     <Compile Include="WCF\CompletedAsyncResult.cs" />
     <Compile Include="WCF\ServiceFualt.cs" />
     <Compile Include="WCF\Channelfactoryhelper.cs" />
