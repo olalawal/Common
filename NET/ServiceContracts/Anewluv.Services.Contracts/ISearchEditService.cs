@@ -7,6 +7,7 @@ using System.Text;
 using Anewluv.Domain.Data;
 using Anewluv.Domain.Data.ViewModels;
 using System.ServiceModel.Web;
+using System.Threading.Tasks;
 
 namespace Anewluv.Services.Contracts
 {
@@ -23,47 +24,47 @@ namespace Anewluv.Services.Contracts
 
 
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
-        [WebGet(UriTemplate = "/getsearchsetting/{profileid}/{searchname}/{searchrank}", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]	
-        searchsetting getsearchsetting(string profileid, string searchname, string searchrank);
+        [WebGet(UriTemplate = "/getsearchsettings", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]	
+        Task<searchsetting> getsearchsettings(SearchSettingsViewModel model);
 
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
-        [WebGet(UriTemplate = "/getsearchsettings/{profileid}", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]	
-        List<searchsetting> getsearchsettings(string profileid);
+        [WebGet(UriTemplate = "/getallsearchsettingsbyprofileid", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]	
+        Task<List<searchsetting>> getallsearchsettingsbyprofileid(SearchSettingsViewModel model);
 
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
-        [WebGet(UriTemplate = "/getsearchsettingsviewmodel/{profileid}/{searchname}/{searchrank}", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]	
-        SearchSettingsViewModel getsearchsettingsviewmodel(string profileid, string searchname, string searchrank);
+        [WebGet(UriTemplate = "/getsearchsettingsviewmodel", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]	
+       Task<SearchSettingsViewModel> getsearchsettingsviewmodel(SearchSettingsViewModel model);
 
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
-        [WebGet(UriTemplate = "/getbasicsearchsettings/{searchid}", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]	
-        BasicSearchSettingsModel getbasicsearchsettings(string searchid);
+        [WebGet(UriTemplate = "/getbasicsearchsettings", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]	
+      Task< BasicSearchSettingsModel> getbasicsearchsettings(SearchSettingsViewModel model);
 
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
-        [WebGet(UriTemplate = "/getappearancesearchsettings/{searchid}", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]	
-        AppearanceSearchSettingsModel getappearancesearchsettings(string searchid);
+        [WebGet(UriTemplate = "/getappearancesearchsettings", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]	
+      Task<AppearanceSearchSettingsModel> getappearancesearchsettings(SearchSettingsViewModel model);
 
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
-        [WebGet(UriTemplate = "/getcharactersearchsettings/{searchid}", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]	
-        CharacterSearchSettingsModel getcharactersearchsettings(string searchid);
+        [WebGet(UriTemplate = "/getcharactersearchsettings", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]	
+        Task<CharacterSearchSettingsModel> getcharactersearchsettings(SearchSettingsViewModel model);
 
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
-        [WebGet(UriTemplate = "/getlifestylesearchsettings/{searchid}", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]	
-        LifeStyleSearchSettingsModel getlifestylesearchsettings(string searchid);
+        [WebGet(UriTemplate = "/getlifestylesearchsettings", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]	
+        Task<LifeStyleSearchSettingsModel> getlifestylesearchsettings(SearchSettingsViewModel model);
       
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
-        [WebInvoke(UriTemplate = "/editbasicsearchsettings/{searchid}", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]      
-        AnewluvMessages editbasicsearchsettings(BasicSearchSettingsModel newmodel, string searchid);
+        [WebInvoke(UriTemplate = "/updatebasicsearchsettings", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]      
+       Task<AnewluvMessages> updatebasicsearchsettings(BasicSearchSettingsModel model);
 
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
-        [WebInvoke(UriTemplate = "/editappearancesettings/{searchid}", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]   
-        AnewluvMessages editappearancesettings(AppearanceSearchSettingsModel newmodel, string searchid);
+        [WebInvoke(UriTemplate = "/updateappearancesearchsettings", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]   
+       Task<AnewluvMessages> updateappearancesearchsettings(AppearanceSearchSettingsModel model);
 
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
-        [WebInvoke(UriTemplate = "/editlifestylesettings/{searchid}", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]   
-        AnewluvMessages editlifestylesettings(LifeStyleSearchSettingsModel newmodel, string searchid);
+        [WebInvoke(UriTemplate = "/updatecharactersearchsettings", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]   
+       Task<AnewluvMessages> updatecharactersearchsettings(CharacterSearchSettingsModel model);
 
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
-        [WebInvoke(UriTemplate = "/editcharactersettings/{searchid}", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]   
-        AnewluvMessages editcharactersettings(CharacterSearchSettingsModel newmodel, string searchid);
+        [WebInvoke(UriTemplate = "/updatbasicsearchsettings", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
+        Task<AnewluvMessages> updatbasicsearchsettings(LifeStyleSearchSettingsModel model);
     }
 }

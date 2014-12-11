@@ -32,3 +32,9 @@ E:\Projects\Common\NET\ServiceContracts\Anewluv.Services.Contracts\bin\Debug\Nme
 E:\Projects\Common\NET\ServiceContracts\Anewluv.Services.Contracts\bin\Debug\RazorEngine.xml
 E:\Projects\Common\NET\ServiceContracts\Anewluv.Services.Contracts\obj\Debug\Anewluv.Services.Contracts.dll
 E:\Projects\Common\NET\ServiceContracts\Anewluv.Services.Contracts\obj\Debug\Anewluv.Services.Contracts.pdb
+C:\temp\Common\NET\ServiceContracts\Anewluv.Services.Contracts\bin\Debug\Nmedia.DataAccess.Interfaces.dll
+C:\temp\Common\NET\ServiceContracts\Anewluv.Services.Contracts\bin\Debug\Nmedia.DataAccess.dll
+C:\temp\Common\NET\ServiceContracts\Anewluv.Services.Contracts\bin\Debug\GeoData.Domain.pdb
+C:\temp\Common\NET\ServiceContracts\Anewluv.Services.Contracts\bin\Debug\Anewluv.Domain.Data.pdb
+C:\temp\Common\NET\ServiceContracts\Anewluv.Services.Contracts\bin\Debug\Nmedia.DataAccess.Interfaces.pdb
+C:\temp\Common\NET\ServiceContracts\Anewluv.Services.Contracts\bin\Debug\Nmedia.DataAccess.pdb
