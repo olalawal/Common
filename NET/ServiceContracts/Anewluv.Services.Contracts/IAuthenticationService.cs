@@ -31,10 +31,10 @@ namespace Anewluv.Services.Contracts
 
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
         [WebInvoke(UriTemplate = "/validateuserbyusernamepassword", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-         Task<bool> validateuserbyusernamepassword(ProfileModel profile); 
+        Task<bool> validateuserbyusernamepassword(ProfileModel profile); 
           
-            //5-82012 updated to only valudate username
-            //overide for validate user that uses just the username, this can be used for pass through auth where a user was already prevalidated via another method
+        //5-82012 updated to only valudate username
+        //overide for validate user that uses just the username, this can be used for pass through auth where a user was already prevalidated via another method
              
         [OperationContract(Name = "validateuserbyusername"), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
         [WebInvoke(UriTemplate = "/validateuserbyusername", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
@@ -128,6 +128,12 @@ namespace Anewluv.Services.Contracts
         [ServiceKnownType(typeof(AnewluvMessages))]
         [WebInvoke(UriTemplate = "/activateprofile", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
         Task<AnewluvResponse> activateprofile(activateprofilemodel model);
+
+        //new method that we want to use to return the profileID to validate somwhere else
+        [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
+        [WebInvoke(UriTemplate = "/getprofileidbyusernamepassword", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
+        Task<int> getprofileidbyusernamepassword(ProfileModel profile); 
+
 
         #endregion
         

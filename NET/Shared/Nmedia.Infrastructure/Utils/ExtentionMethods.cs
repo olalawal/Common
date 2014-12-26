@@ -5,10 +5,10 @@ using System.Web;
 using System.Linq.Expressions;
 using System.Text;
 
-using System.Web.Mvc;
+//using System.Web.Mvc;
 
 
-using Akismet.NET;
+//using Akismet.NET;
 using System.Configuration;
 
 
@@ -20,60 +20,8 @@ namespace Nmedia.Infrastructure
     {
 
 
-        public static List<SelectListItem> AddFirstItemToSelectListItems(List<SelectListItem> list, string Item)
-        {
-            // List<SelectListItem> _list = list.ToList();
-            list.Insert(0, new SelectListItem() { Value = "-1", Text = Item });
-            return list;
-        }
 
 
-        public static SelectList AddFirstItemToSelectList(SelectList list)
-        {
-            List<SelectListItem> _list = list.ToList();
-            _list.Insert(0, new SelectListItem() { Value = "-1", Text = "This Is First Item" });
-            return new SelectList((IEnumerable<SelectListItem>)_list, "Value", "Text");
-        } 
-
-
-
-        /// <summary>
-        /// This class add some extenssion methods for the <see cref="Akismet.NET.Comment"/>.
-        /// </summary>
-      
-            /// <summary>
-            /// Check if the input akismet comment is spam or not.
-            /// </summary>
-            /// <param name="comment">The input comment.</param>
-            /// <returns>True for a spam comment, false otherwise.</returns>
-            public static Boolean IsSpam(Comment comment)
-            {
-                Validator validator = new Validator(ConfigurationManager.AppSettings["AKISMET_KEY"]);
-                return validator.IsSpam(comment);
-            }
-
-
-            /// <summary>
-            /// Check if the input akismet comment is spam or not.
-            /// </summary>
-            /// <param name="comment">The input comment.</param>
-            /// <returns>True for a spam comment, false otherwise.</returns>
-            public static Boolean MessageContainsBannedChars(string value)
-            {
-
-                string stringToCheck = value;
-                string[] stringArray = { "yahoo", "gmail", "@", ".com",".net","hotmail","msn" };
-                string[] revArray = Array.ConvertAll<string, string>(stringArray, delegate(string s) { return s.ToUpper(); });
-
-                string[] combined = stringArray.Concat(revArray).ToArray();
-
-                if (combined.Any(stringToCheck.Contains))  
-                // Process... 
-                        return true;
-              
-
-                return false;
-             }
 
         //linq conditinal where helpers stuff
         public static IQueryable<TSource> WhereIf<TSource>(
@@ -222,48 +170,7 @@ namespace Nmedia.Infrastructure
               return ScreenName.Trim().Replace(" ", "");
         }
 
-        public static List<SelectListItem> ToSelectList<T>(
-         this IEnumerable<T> enumerable,
-         Func<T, string> text,
-         Func<T, string> value,
-         string defaultOption
-         )
-        {
-            var items = enumerable.Select(x => new SelectListItem
-            {
-                Text = text(x),
-                Value = value(x).ToString(),
-                Selected = false
-            }).ToList();
-
-            //items.Insert(0, new SelectListItem
-            //{
-            //    Text = defaultOption,
-            //    Value = "-1",
-            //    Selected = true
-            //});
-
-            return items;
-        } 
-
-
-
-        public class HttpContextFactory
-        {
-            private static HttpContextBase m_context;
-                public static HttpContextBase Current {
-                    get { if (m_context != null)    return m_context; 
-                    if (HttpContext.Current == null)        
-                        throw new InvalidOperationException("HttpContext is not available");
-                    return new HttpContextWrapper(HttpContext.Current);
-                }
-       } 
-            
-            public static void SetCurrentContext(HttpContextBase context)
-                { 
-                    m_context = context;
-                } 
-        }
+      
 
 
         /// <summary>

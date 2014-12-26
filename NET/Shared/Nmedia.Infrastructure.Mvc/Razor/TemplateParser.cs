@@ -1,0 +1,111 @@
+﻿using Microsoft.VisualBasic;
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Data;
+using System.Diagnostics;
+using RazorEngine;
+using RazorEngine.Configuration;
+using RazorEngine.Templating;
+using System.IO;
+using System.Web;
+using System.Reflection;
+
+
+namespace Nmedia.Infrastructure.Mvc
+{
+
+    public class TemplateParser
+    {
+
+        const string basepath = @"C:\Projects\Anewluv\emailtemplates\";
+        // const string basepath = @"E:\VisualStudio\GitHubShared\";
+        // const string membertemplateshomepath = @"E:\VisualStudio\GitHubShared\Anewluv\emailtemplates";
+
+       //private static  string  basepath   = HttpContext.Current.Server.MapPath("/");
+ 
+        //Image1.ImageUrl = Request.ApplicationPath + "/images/Image1.gif";
+       // Label2.Text = Image1.ImageUrl;
+       private static string admintemplateshomepath = basepath + "AdminTemplates";
+       private static string membertemplateshomepath =basepath + "MemberTemplates";
+
+        //Implement this when ALL templales are in DB
+        public static string RazorDBTemplate<T>(string templatestring, ref T myobject)
+        {
+
+            templatestring = templatestring == "" ? (
+new System.Uri(Assembly.GetExecutingAssembly().CodeBase)
+).AbsolutePath + "\\RazorTemplateParser\\Templates\\" : templatestring;
+
+            dynamic config = new TemplateServiceConfiguration { Language = RazorEngine.Language.CSharp  };
+            dynamic service = new RazorEngine.Templating.TemplateService(config);
+            Razor.SetTemplateService(service);
+            //default'model to use log
+            //defualt template is the custom logModel
+            string defaulttemplate = "<html><head><title>Error Message Email</title></head><body>ErrorMessage: @Model.Message</body></html>";
+            dynamic template = !string.IsNullOrEmpty(templatestring) ? templatestring : defaulttemplate;
+            dynamic result = Razor.Parse<object>(template, myobject);
+            return result;
+        }
+
+
+        public static string RazorFileTemplate<T>(string filename, ref T myobject, string TemplatePath)
+        {
+
+
+            //string templatestring ="";
+            //admintemplateshomepath = basepath + "/AdminTemplates";
+           // membertemplateshomepath = basepath + "/MemberTemplates";         
+           try
+                {
+                    dynamic config = new TemplateServiceConfiguration { Language = RazorEngine.Language.CSharp, Debug = true };
+                    dynamic service = new RazorEngine.Templating.TemplateService(config);
+                    Razor.SetTemplateService(service);
+                    
+                    var admintemplatespath = Path.Combine(TemplatePath +"AdminTemplates", filename);
+                    var usertemplatespath = Path.Combine(TemplatePath + "UserTemplates", filename);
+                    var sharedpath = Path.Combine(TemplatePath, filename);
+                    var validpath = "";
+                    if (File.Exists(admintemplatespath))
+                    {
+                        validpath = admintemplatespath;
+
+                    }
+                    else if (File.Exists(usertemplatespath))
+                    {
+
+                        validpath = usertemplatespath;
+
+                    }
+                    else
+                    {
+                        validpath = sharedpath;
+                    }
+                    var templatestring = File.OpenText(validpath).ReadToEnd();
+
+
+                    dynamic result = Razor.Parse(templatestring, myobject);
+                    return result;
+                }
+
+
+
+                catch (Exception ex)
+                {
+                    var messge = ex.Message;
+                    throw;
+
+                }
+        }
+
+        public string MyGenericSub<T>(ref List<T> MyList)
+        {
+
+            return "";
+        }
+
+
+
+    }
+
+}

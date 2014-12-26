@@ -10,11 +10,12 @@ using System.Xml;
 using System.Xml.XPath;
 
 using System.Linq;
-using System.Web.Script.Serialization ;
+using System.Web.Script.Serialization;
+//using System.Web.Script.Serialization ;//
 //using System.Web.Mvc;
 
 //TO DO movethis into the data project and extend it asa service 
-namespace Nmedia.Infrastructure.JanRainAuthentication
+namespace Nmedia.Infrastructure.Mvc.JanRainAuthentication
 {
     /// <summary>
     /// RPX Authentication Info
