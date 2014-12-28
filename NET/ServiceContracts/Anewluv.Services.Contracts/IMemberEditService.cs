@@ -44,6 +44,11 @@ namespace Anewluv.Services.Contracts
         [WebInvoke(UriTemplate = "/getcharactersettingsmodel", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
           Task<CharacterSettingsModel> getcharactersettingsmodel(EditProfileModel editprofilemodel);
 
+
+        [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
+        [WebInvoke(UriTemplate = "/membereditallsettings", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
+        Task<AnewluvMessages> membereditallsettings(EditProfileModel editprofilemodel);
+
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
         [WebInvoke(UriTemplate = "/membereditbasicsettings", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]   
           Task<AnewluvMessages> membereditbasicsettings(EditProfileModel editprofilemodel);
