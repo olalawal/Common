@@ -98,7 +98,7 @@ namespace Anewluv.Services.Contracts
         // added 1/18/2010 ola lawal
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
         [WebInvoke(UriTemplate = "/updateuserlogouttimebyprofileid", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-        Task<bool> updateuserlogouttimebyprofileid(ProfileModel model);
+        void updateuserlogouttimebyprofileid(ProfileModel model);
 
 
 
@@ -114,19 +114,19 @@ namespace Anewluv.Services.Contracts
         //TO DO convert to asynch
         [OperationContract(AsyncPattern = true), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
         [WebInvoke(UriTemplate = "/updateuserlogintimebyprofileidandsessionid", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-        Task<bool> updateuserlogintimebyprofileidandsessionid(ProfileModel model);
+        void updateuserlogintimebyprofileidandsessionid(ProfileModel model);
 
 
 
         //TO DO convert to asynch
         [OperationContract(AsyncPattern = true), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
         [WebInvoke(UriTemplate = "/updateuserlogintimebyprofileid", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-        Task<bool> updateuserlogintimebyprofileid(ProfileModel model);
+        void updateuserlogintimebyprofileid(ProfileModel model);
 
         //TO DO convert to asynch
         [OperationContract(AsyncPattern = true), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
         [WebInvoke(UriTemplate = "/addprofileactvity", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-        Task<bool> addprofileactvity(profileactivity model);
+        void addprofileactvity(profileactivity model);
 
 
         //date time functions '
