@@ -15,3 +15,5 @@ E:\Projects\Common\NET\ServiceContracts\Anewluv.Services.Contracts\bin\Debug\Nme
 E:\Projects\Common\NET\ServiceContracts\Anewluv.Services.Contracts\obj\Debug\Anewluv.Services.Contracts.csprojResolveAssemblyReference.cache
 E:\Projects\Common\NET\ServiceContracts\Anewluv.Services.Contracts\obj\Debug\Anewluv.Services.Contracts.dll
 E:\Projects\Common\NET\ServiceContracts\Anewluv.Services.Contracts\obj\Debug\Anewluv.Services.Contracts.pdb
+E:\Projects\Common\NET\ServiceContracts\Anewluv.Services.Contracts\bin\Debug\Nmedia.Infrastructure.Domain.Data.dll
+E:\Projects\Common\NET\ServiceContracts\Anewluv.Services.Contracts\bin\Debug\Nmedia.Infrastructure.Domain.Data.pdb

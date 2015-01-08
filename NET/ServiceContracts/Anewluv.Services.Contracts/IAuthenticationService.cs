@@ -132,7 +132,7 @@ namespace Anewluv.Services.Contracts
 
         //new method that we want to use to return the profileID to validate somwhere else
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
-        [WebInvoke(UriTemplate = "/getprofileidbyusernamepassword", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
+        [WebInvoke(UriTemplate = "/validateuserandgettoken", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
         Task<NmediaToken> validateuserandgettoken(ProfileModel profile); 
 
 
