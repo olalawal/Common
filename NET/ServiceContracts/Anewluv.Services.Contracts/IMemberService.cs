@@ -8,6 +8,7 @@ using Anewluv.Domain.Data;
 using System.ServiceModel.Web;
 using Anewluv.Domain.Data.ViewModels;
 using System.Threading.Tasks;
+using Anewluv.Domain.Data.Anewluv.ViewModels;
 
 namespace Anewluv.Services.Contracts
 {
@@ -67,7 +68,7 @@ namespace Anewluv.Services.Contracts
         //update the Initial Catalog= i.e create folders and change profile status from guest to active ?!
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
         [WebInvoke(UriTemplate = "/createmailboxfolders", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-        Task<bool> createmailboxfolders(ProfileModel model);
+        void createmailboxfolders(ProfileModel model);
 
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
         [WebInvoke(UriTemplate = "/activateprofile", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
@@ -126,7 +127,13 @@ namespace Anewluv.Services.Contracts
         //TO DO convert to asynch
         [OperationContract(AsyncPattern = true), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
         [WebInvoke(UriTemplate = "/addprofileactvity", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-        void addprofileactvity(profileactivity model);
+        void addprofileactvity(ActivityModel model);
+
+         //TO DO convert to asynch
+        [OperationContract(AsyncPattern = true), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
+        [WebInvoke(UriTemplate = "/addprofileactvitygeodata", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
+        void addprofileactvitygeodata(ActivityModel model);
+        
 
 
         //date time functions '
