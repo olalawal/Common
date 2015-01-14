@@ -68,7 +68,7 @@ namespace Anewluv.Services.Contracts
         //update the Initial Catalog= i.e create folders and change profile status from guest to active ?!
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
         [WebInvoke(UriTemplate = "/createmailboxfolders", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-        void createmailboxfolders(ProfileModel model);
+        Task createmailboxfolders(ProfileModel model);
 
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
         [WebInvoke(UriTemplate = "/activateprofile", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
@@ -99,7 +99,7 @@ namespace Anewluv.Services.Contracts
         // added 1/18/2010 ola lawal
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
         [WebInvoke(UriTemplate = "/updateuserlogouttimebyprofileid", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-        void updateuserlogouttimebyprofileid(ProfileModel model);
+        Task updateuserlogouttimebyprofileid(ProfileModel model);
 
 
 
@@ -115,24 +115,24 @@ namespace Anewluv.Services.Contracts
         //TO DO convert to asynch
         [OperationContract(AsyncPattern = true), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
         [WebInvoke(UriTemplate = "/updateuserlogintimebyprofileidandsessionid", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-        void updateuserlogintimebyprofileidandsessionid(ProfileModel model);
+        Task updateuserlogintimebyprofileidandsessionid(ProfileModel model);
 
 
 
         //TO DO convert to asynch
         [OperationContract(AsyncPattern = true), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
         [WebInvoke(UriTemplate = "/updateuserlogintimebyprofileid", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-        void updateuserlogintimebyprofileid(ProfileModel model);
+        Task updateuserlogintimebyprofileid(ProfileModel model);
 
         //TO DO convert to asynch
         [OperationContract(AsyncPattern = true), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
         [WebInvoke(UriTemplate = "/addprofileactvity", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-        void addprofileactvity(ActivityModel model);
+        Task addprofileactvity(ActivityModel model);
 
          //TO DO convert to asynch
         [OperationContract(AsyncPattern = true), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
         [WebInvoke(UriTemplate = "/addprofileactvitygeodata", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-        void addprofileactvitygeodata(ActivityModel model);
+        Task addprofileactvitygeodata(ActivityModel model);
         
 
 
