@@ -41,11 +41,11 @@ namespace Anewluv.Services.Contracts
 
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
         [WebInvoke(UriTemplate = "/getperfectmatchsearchsettingsbyprofileid", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-        searchsetting getperfectmatchsearchsettingsbyprofileid(ProfileModel model);
+        Task<searchsetting> getperfectmatchsearchsettingsbyprofileid(ProfileModel model);
 
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
         [WebInvoke(UriTemplate = "/createmyperfectmatchsearchsettingsbyprofileid", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-        searchsetting createmyperfectmatchsearchsettingsbyprofileid(ProfileModel model);
+        Task createmyperfectmatchsearchsettingsbyprofileid(ProfileModel model);
 
         //get full profile stuff    
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]

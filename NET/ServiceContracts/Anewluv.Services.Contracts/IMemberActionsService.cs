@@ -7,6 +7,7 @@ using System.Text;
 using System.ServiceModel.Web;
 using Anewluv.Domain.Data.ViewModels;
 using Anewluv.Domain.Data;
+using System.Threading.Tasks;
 
 
 namespace Anewluv.Services.Contracts
@@ -18,82 +19,82 @@ namespace Anewluv.Services.Contracts
         #region "Interest Methods"
 
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
-        [WebInvoke(UriTemplate = "/getmyrelationshipsfiltered/{profileid}", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]       
-        List<MemberSearchViewModel> getmyrelationshipsfiltered(string profileid, List<profilefiltertypeEnum> types);
+        [WebInvoke(UriTemplate = "/getmyrelationshipsfiltered", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
+        Task<List<MemberSearchViewModel>> getmyrelationshipsfiltered(ProfileModel model);
 
 
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
-        [WebGet(UriTemplate = "/getwhoiaminterestedincount/{profileid}", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-        int getwhoiaminterestedincount(string profileid);
+       [WebInvoke(UriTemplate ="/getwhoiaminterestedincount", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
+        Task<int> getwhoiaminterestedincount(ProfileModel model);
 
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
-        [WebGet(UriTemplate = "/getwhoisinterestedinmecount/{profileid}", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-        int getwhoisinterestedinmecount(string profileid);
+       [WebInvoke(UriTemplate ="/getwhoisinterestedinmecount", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
+        Task<int> getwhoisinterestedinmecount(ProfileModel model);
        
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
-        [WebGet(UriTemplate = "/getwhoisinterestedinmenewcount/{profileid}", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-        int getwhoisinterestedinmenewcount(string profileid);
+       [WebInvoke(UriTemplate ="/getwhoisinterestedinmenewcount", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
+       Task<int> getwhoisinterestedinmenewcount(ProfileModel model);
 
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
-        [WebGet(UriTemplate = "/getwhoiaminterestedin/{profileid}/{page}/{numberperpage}", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-        List<MemberSearchViewModel> getwhoiaminterestedin(string profileid, string page, string numberperpage);
+       [WebInvoke(UriTemplate ="/getwhoiaminterestedin", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
+        Task<List<MemberSearchViewModel>> getwhoiaminterestedin(ProfileModel model);
 
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
-        [WebGet(UriTemplate = "/getwhoisinterestedinme/{profileid}/{page}/{numberperpage}", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-        List<MemberSearchViewModel> getwhoisinterestedinme(string profileid, string page, string numberperpage);
+       [WebInvoke(UriTemplate ="/getwhoisinterestedinme", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
+        Task<List<MemberSearchViewModel>> getwhoisinterestedinme(ProfileModel model);
 
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
-        [WebGet(UriTemplate = "/getwhoisinterestedinmenew/{profileid}/{page}/{numberperpage}", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-        List<MemberSearchViewModel> getwhoisinterestedinmenew(string profileid, string page, string numberperpage);
+       [WebInvoke(UriTemplate ="/getwhoisinterestedinmenew", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
+        Task<List<MemberSearchViewModel>> getwhoisinterestedinmenew(ProfileModel model);
 
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
-        [WebGet(UriTemplate = "/getmutualinterests/{profileid}/{targetprofileid}", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-        List<MemberSearchViewModel> getmutualinterests(string profileid, string targetprofileid);
+       [WebInvoke(UriTemplate ="/getmutualinterests", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
+        Task<List<MemberSearchViewModel>> getmutualinterests(ProfileModel model);
        
         //update the Initial Catalog= i.e create folders and change profile status from guest to active ?!
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
-        [WebGet(UriTemplate = "/checkinterest/{profileid}/{targetprofileid}", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-        bool checkinterest(string profileid, string targetprofileid);
+       [WebInvoke(UriTemplate ="/checkinterest", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
+         Task<bool> checkinterest(ProfileModel model);
         
         //update the Initial Catalog= i.e create folders and change profile status from guest to active ?!
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
-        [WebInvoke(UriTemplate = "/addinterest/{profileid}/{targetprofileid}", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-        bool addinterest(string profileid, string targetprofileid);
+        [WebInvoke(UriTemplate = "/addinterest", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
+         Task addinterest(ProfileModel model);
 
         //update the Initial Catalog= i.e create folders and change profile status from guest to active ?!
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
-        [WebInvoke(UriTemplate = "/removeinterestbyprofileid/{profileid}/{interestprofile_id}", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-        bool removeinterestbyprofileid(string profileid, string interestprofile_id);
+        [WebInvoke(UriTemplate = "/removeinterestbyprofileid", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
+         Task removeinterestbyprofileid(ProfileModel model);
 
         //update the Initial Catalog= i.e create folders and change profile status from guest to active ?!
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
-        [WebInvoke(UriTemplate = "/removeinterestbyinterestprofileid/{interestprofile_id}/{profileid}", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-        bool removeinterestbyinterestprofileid(string interestprofile_id, string profileid);
+        [WebInvoke(UriTemplate = "/removeinterestbyinterestprofileid", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
+         Task removeinterestbyinterestprofileid(ProfileModel model);
 
         //update the Initial Catalog= i.e create folders and change profile status from guest to active ?!
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
-        [WebInvoke(UriTemplate = "/restoreinterestbyprofileid/{profileid}/{interestprofile_id}", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-        bool restoreinterestbyprofileid(string profileid, string interestprofile_id);
+        [WebInvoke(UriTemplate = "/restoreinterestbyprofileid", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
+         Task restoreinterestbyprofileid(ProfileModel model);
 
         //update the Initial Catalog= i.e create folders and change profile status from guest to active ?!
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
-        [WebInvoke(UriTemplate = "/restoreinterestbyinterestprofileid/{interestprofile_id}/{profileid}", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-        bool restoreinterestbyinterestprofileid(string interestprofile_id, string profileid);
+        [WebInvoke(UriTemplate = "/restoreinterestbyinterestprofileid", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
+         Task restoreinterestbyinterestprofileid(ProfileModel model);
 
         //update the Initial Catalog= i.e create folders and change profile status from guest to active ?!
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
-        [WebInvoke(UriTemplate = "/removeinterestsbyprofileidandscreennames/{profileid}", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-        bool removeinterestsbyprofileidandscreennames(string profileid, List<String> screennames);
+        [WebInvoke(UriTemplate = "/removeinterestsbyprofileidandscreennames", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
+         Task removeinterestsbyprofileidandscreennames(ProfileModel model);
 
         //update the Initial Catalog= i.e create folders and change profile status from guest to active ?!
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
-        [WebInvoke(UriTemplate = "/restoreinterestsbyprofileidandscreennames/{profileid}", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-        bool restoreinterestsbyprofileidandscreennames(string profileid, List<String> screennames);
+        [WebInvoke(UriTemplate = "/restoreinterestsbyprofileidandscreennames", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
+         Task restoreinterestsbyprofileidandscreennames(ProfileModel model);
 
         //update the Initial Catalog= i.e create folders and change profile status from guest to active ?!
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
-        [WebInvoke(UriTemplate = "/updateinterestviewstatus/{profileid}", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-        bool updateinterestviewstatus(string profileid, string targetprofileid);
+        [WebInvoke(UriTemplate = "/updateinterestviewstatus", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
+         Task updateinterestviewstatus(ProfileModel model);
 
 
 
@@ -102,204 +103,204 @@ namespace Anewluv.Services.Contracts
         #region "peek methods"
 
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
-        [WebGet(UriTemplate = "/getwhoipeekedatcount/{profileid}", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-        int getwhoipeekedatcount(string profileid);
+       [WebInvoke(UriTemplate ="/getwhoipeekedatcount", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
+       Task<int> getwhoipeekedatcount(ProfileModel model);
 
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
-        [WebGet(UriTemplate = "/getwhopeekedatmecount/{profileid}", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-        int getwhopeekedatmecount(string profileid);
+       [WebInvoke(UriTemplate ="/getwhopeekedatmecount", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
+       Task<int> getwhopeekedatmecount(ProfileModel model);
 
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
-        [WebGet(UriTemplate = "/getwhopeekedatmenewcount/{profileid}", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-        int getwhopeekedatmenewcount(string profileid);
+       [WebInvoke(UriTemplate ="/getwhopeekedatmenewcount", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
+       Task<int> getwhopeekedatmenewcount(ProfileModel model);
 
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
-        [WebGet(UriTemplate = "/getwhopeekedatme/{profileid}/{page}/{numberperpage}", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-        List<MemberSearchViewModel> getwhopeekedatme(string profileid, string page, string numberperpage);
+       [WebInvoke(UriTemplate ="/getwhopeekedatme", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
+        Task<List<MemberSearchViewModel>> getwhopeekedatme(ProfileModel model);
 
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
-        [WebGet(UriTemplate = "/getwhopeekedatmenew/{profileid}/{page}/{numberperpage}", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-        List<MemberSearchViewModel> getwhopeekedatmenew(string profileid, string page, string numberperpage);
+       [WebInvoke(UriTemplate ="/getwhopeekedatmenew", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
+        Task<List<MemberSearchViewModel>> getwhopeekedatmenew(ProfileModel model);
 
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
-        [WebGet(UriTemplate = "/getwhoipeekedat/{profileid}/{page}/{numberperpage}", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-        List<MemberSearchViewModel> getwhoipeekedat(string profileid, string page, string numberperpage);
+       [WebInvoke(UriTemplate ="/getwhoipeekedat", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
+        Task<List<MemberSearchViewModel>> getwhoipeekedat(ProfileModel model);
 
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
-        [WebGet(UriTemplate = "/getmutualpeeks/{profileid}/{targetprofileid}", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-        List<MemberSearchViewModel> getmutualpeeks(string profileid, string targetprofileid);
-
-        //update the Initial Catalog= i.e create folders and change profile status from guest to active ?!
-        [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
-        [WebGet(UriTemplate = "/checkpeek/{profileid}/{targetprofileid}", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-        bool checkpeek(string profileid, string targetprofileid);
+       [WebInvoke(UriTemplate ="/getmutualpeeks", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
+        Task<List<MemberSearchViewModel>> getmutualpeeks(ProfileModel model);
 
         //update the Initial Catalog= i.e create folders and change profile status from guest to active ?!
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
-        [WebInvoke(UriTemplate = "/addpeek/{profileid}/{targetprofileid}", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-        bool addpeek(string profileid, string targetprofileid);
+       [WebInvoke(UriTemplate ="/checkpeek", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
+         Task<bool> checkpeek(ProfileModel model);
 
         //update the Initial Catalog= i.e create folders and change profile status from guest to active ?!
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
-        [WebInvoke(UriTemplate = "/removepeekbyprofileid/{profileid}/{peekprofile_id}", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-        bool removepeekbyprofileid(string profileid, string peekprofile_id);
+        [WebInvoke(UriTemplate = "/addpeek", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
+         Task addpeek(ProfileModel model);
 
         //update the Initial Catalog= i.e create folders and change profile status from guest to active ?!
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
-        [WebInvoke(UriTemplate = "/removepeekbypeekprofileid/{peekprofile_id}/{profileid}", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-        bool removepeekbypeekprofileid(string peekprofile_id, string profileid);
+        [WebInvoke(UriTemplate = "/removepeekbyprofileid", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
+         Task removepeekbyprofileid(ProfileModel model);
+
+        //update the Initial Catalog= i.e create folders and change profile status from guest to active ?!
+        [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
+        [WebInvoke(UriTemplate = "/removepeekbypeekprofileid", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
+         Task removepeekbypeekprofileid(ProfileModel model);
         
         //update the Initial Catalog= i.e create folders and change profile status from guest to active ?!
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
-        [WebInvoke(UriTemplate = "/restorepeekbyprofileid/{profileid}/{peekprofile_id}", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-        bool restorepeekbyprofileid(string profileid, string peekprofile_id);
+        [WebInvoke(UriTemplate = "/restorepeekbyprofileid", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
+         Task restorepeekbyprofileid(ProfileModel model);
 
         //update the Initial Catalog= i.e create folders and change profile status from guest to active ?!
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
-        [WebInvoke(UriTemplate = "/restorepeekbypeekprofileid/{peekprofile_id}/{profileid}", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-        bool restorepeekbypeekprofileid(string peekprofile_id, string profileid);
+        [WebInvoke(UriTemplate = "/restorepeekbypeekprofileid", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
+         Task restorepeekbypeekprofileid( ProfileModel model);
 
         //update the Initial Catalog= i.e create folders and change profile status from guest to active ?!
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
-        [WebInvoke(UriTemplate = "/removepeeksbyprofileidandscreennames/{profileid}", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-        bool removepeeksbyprofileidandscreennames(string profileid, List<String> screennames);
+        [WebInvoke(UriTemplate = "/removepeeksbyprofileidandscreennames", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
+         Task removepeeksbyprofileidandscreennames(ProfileModel model);
 
         //update the Initial Catalog= i.e create folders and change profile status from guest to active ?!
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
-        [WebInvoke(UriTemplate = "/restorepeeksbyprofileidandscreennames/{profileid}", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-        bool restorepeeksbyprofileidandscreennames(string profileid, List<String> screennames);
+        [WebInvoke(UriTemplate = "/restorepeeksbyprofileidandscreennames", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
+         Task restorepeeksbyprofileidandscreennames(ProfileModel model);
 
         //update the Initial Catalog= i.e create folders and change profile status from guest to active ?!
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
-        [WebInvoke(UriTemplate = "/updatepeekviewstatus/{profileid}/{targetprofileid}", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-        bool updatepeekviewstatus(string profileid, string targetprofileid);
+        [WebInvoke(UriTemplate = "/updatepeekviewstatus", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
+         Task updatepeekviewstatus(ProfileModel model);
 
         #endregion
 
         #region "block methods"
 
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
-        [WebGet(UriTemplate = "/getwhoiblockedcount/{profileid}", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-        int getwhoiblockedcount(string profileid);
+       [WebInvoke(UriTemplate ="/getwhoiblockedcount", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
+       Task<int> getwhoiblockedcount(ProfileModel model);
 
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
-        [WebGet(UriTemplate = "/getwhoiblocked/{profileid}/{page}/{numberperpage}", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-        List<MemberSearchViewModel> getwhoiblocked(string profileid, string page, string numberperpage);
+       [WebInvoke(UriTemplate ="/getwhoiblocked", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
+        Task<List<MemberSearchViewModel>> getwhoiblocked(ProfileModel model);
 
 
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
-        [WebGet(UriTemplate = "/getmutualblocks/{profileid}/{targetprofileid}", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-        List<MemberSearchViewModel> getmutualblocks(string profileid, string targetprofileid);
+       [WebInvoke(UriTemplate ="/getmutualblocks", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
+        Task<List<MemberSearchViewModel>> getmutualblocks(ProfileModel model);
 
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
-        [WebGet(UriTemplate = "/checkblock/{profileid}/{targetprofileid}", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-        bool checkblock(string profileid, string targetprofileid);
+       [WebInvoke(UriTemplate ="/checkblock", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
+         Task<bool> checkblock(ProfileModel model);
 
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
-        [WebGet(UriTemplate = "/addblock/{profileid}/{targetprofileid}", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-        bool addblock(string profileid, string targetprofileid);
+       [WebInvoke(UriTemplate ="/addblock", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
+        Task addblock(ProfileModel model);
 
         //update the Initial Catalog= i.e create folders and change profile status from guest to active ?!
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
-        [WebInvoke(UriTemplate = "/removeblock/{profileid}/{blockprofile_id}", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-        bool removeblock(string profileid, string blockprofile_id);
+        [WebInvoke(UriTemplate = "/removeblock", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
+         Task removeblock(ProfileModel model);
 
         //update the Initial Catalog= i.e create folders and change profile status from guest to active ?!
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
-        [WebInvoke(UriTemplate = "/restoreblock/{profileid}/{blockprofile_id}", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-        bool restoreblock(string profileid, string blockprofile_id);
+        [WebInvoke(UriTemplate = "/restoreblock", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
+         Task restoreblock(ProfileModel model);
 
         //update the Initial Catalog= i.e create folders and change profile status from guest to active ?!
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
-        [WebInvoke(UriTemplate = "/removeblocksbyscreennames/{profileid}", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-        bool removeblocksbyscreennames(string profileid, List<String> screennames);
+        [WebInvoke(UriTemplate = "/removeblocksbyscreennames", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
+         Task removeblocksbyscreennames(ProfileModel model);
 
         //update the Initial Catalog= i.e create folders and change profile status from guest to active ?!
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
-        [WebInvoke(UriTemplate = "/restoreblocksbyscreennames/{profileid}", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-        bool restoreblocksbyscreennames(string profileid, List<String> screennames);
+        [WebInvoke(UriTemplate = "/restoreblocksbyscreennames", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
+         Task restoreblocksbyscreennames(ProfileModel model);
 
         //update the Initial Catalog= i.e create folders and change profile status from guest to active ?!
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
-        [WebInvoke(UriTemplate = "/updateblockreviewstatus/{profileid}/{targetprofileid}/{reviewerid}", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-        bool updateblockreviewstatus(string profileid, string targetprofileid, string reviewerid);
+        [WebInvoke(UriTemplate = "/updateblockreviewstatus", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
+         Task updateblockreviewstatus(ProfileModel model);
 
         #endregion
 
         #region "Like methods"
 
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
-        [WebGet(UriTemplate = "/getwhoilikecount/{profileid}", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-        int getwhoilikecount(string profileid);
+       [WebInvoke(UriTemplate ="/getwhoilikecount", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
+       Task<int> getwhoilikecount(ProfileModel model);
 
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
-        [WebGet(UriTemplate = "/getwholikesmecount/{profileid}", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-        int getwholikesmecount(string profileid);
+       [WebInvoke(UriTemplate ="/getwholikesmecount", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
+       Task<int> getwholikesmecount(ProfileModel model);
 
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
-        [WebGet(UriTemplate = "/getwhoislikesmenewcount/{profileid}", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-        int getwhoislikesmenewcount(string profileid);
+       [WebInvoke(UriTemplate ="/getwhoislikesmenewcount", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
+       Task<int> getwhoislikesmenewcount(ProfileModel model);
 
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
-        [WebGet(UriTemplate = "/getwholikesmenew/{profileid}/{page}/{numberperpage}", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-        List<MemberSearchViewModel> getwholikesmenew(string profileid, string page, string numberperpage);
+       [WebInvoke(UriTemplate ="/getwholikesmenew", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
+        Task<List<MemberSearchViewModel>> getwholikesmenew(ProfileModel model);
 
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
-        [WebGet(UriTemplate = "/getwholikesme/{profileid}/{page}/{numberperpage}", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-        List<MemberSearchViewModel> getwholikesme(string profileid, string page, string numberperpage);
+       [WebInvoke(UriTemplate ="/getwholikesme", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
+        Task<List<MemberSearchViewModel>> getwholikesme(ProfileModel model);
 
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
-        [WebGet(UriTemplate = "/getwhoilike/{profileid}/{page}/{numberperpage}", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-        List<MemberSearchViewModel> getwhoilike(string profileid, string page, string numberperpage);
+       [WebInvoke(UriTemplate ="/getwhoilike", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
+        Task<List<MemberSearchViewModel>> getwhoilike(ProfileModel model);
 
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
-        [WebGet(UriTemplate = "/getmutuallikes/{profileid}/{targetprofileid}", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-        List<MemberSearchViewModel> getmutuallikes(string profileid, string targetprofileid);
-
-        //update the Initial Catalog= i.e create folders and change profile status from guest to active ?!
-        [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
-        [WebGet(UriTemplate = "/checklike/{profileid}/{targetprofileid}", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-        bool checklike(string profileid, string targetprofileid);
+       [WebInvoke(UriTemplate ="/getmutuallikes", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
+        Task<List<MemberSearchViewModel>> getmutuallikes(ProfileModel model);
 
         //update the Initial Catalog= i.e create folders and change profile status from guest to active ?!
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
-        [WebInvoke(UriTemplate = "/addlike/{profileid}/{targetprofileid}", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-        bool addlike(string profileid, string targetprofileid);
+       [WebInvoke(UriTemplate ="/checklike", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
+         Task<bool> checklike(ProfileModel model);
 
         //update the Initial Catalog= i.e create folders and change profile status from guest to active ?!
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
-        [WebInvoke(UriTemplate = "/removelikebyprofileid/{profileid}/{likeprofile_id}", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-        bool removelikebyprofileid(string profileid, string likeprofile_id);
+        [WebInvoke(UriTemplate = "/addlike", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
+         Task addlike(ProfileModel model);
 
         //update the Initial Catalog= i.e create folders and change profile status from guest to active ?!
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
-        [WebInvoke(UriTemplate = "/removelikebylikeprofileid/{likeprofile_id}/{profileid}", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-        bool removelikebylikeprofileid(string likeprofile_id, string profileid);
+        [WebInvoke(UriTemplate = "/removelikebyprofileid", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
+         Task removelikebyprofileid(ProfileModel model);
 
         //update the Initial Catalog= i.e create folders and change profile status from guest to active ?!
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
-        [WebInvoke(UriTemplate = "/restorelikebyprofileid/{profileid}/{likeprofile_id}", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-        bool restorelikebyprofileid(string profileid, string likeprofile_id);
+        [WebInvoke(UriTemplate = "/removelikebylikeprofileid", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
+         Task removelikebylikeprofileid( ProfileModel model);
 
         //update the Initial Catalog= i.e create folders and change profile status from guest to active ?!
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
-        [WebInvoke(UriTemplate = "/restorelikebylikeprofileid/{likeprofile_id}/{profileid}", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-        bool restorelikebylikeprofileid(string likeprofile_id, string profileid);
+        [WebInvoke(UriTemplate = "/restorelikebyprofileid", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
+         Task restorelikebyprofileid(ProfileModel model);
 
         //update the Initial Catalog= i.e create folders and change profile status from guest to active ?!
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
-        [WebInvoke(UriTemplate = "/removelikesbyprofileidandscreennames/{profileid}", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-        bool removelikesbyprofileidandscreennames(string profileid, List<String> screennames);
+        [WebInvoke(UriTemplate = "/restorelikebylikeprofileid", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
+         Task restorelikebylikeprofileid( ProfileModel model);
 
         //update the Initial Catalog= i.e create folders and change profile status from guest to active ?!
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
-        [WebInvoke(UriTemplate = "/restorelikesbyprofileidandscreennames/{profileid}", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-        bool restorelikesbyprofileidandscreennames(string profileid, List<String> screennames);
+        [WebInvoke(UriTemplate = "/removelikesbyprofileidandscreennames", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
+         Task removelikesbyprofileidandscreennames(ProfileModel model);
 
         //update the Initial Catalog= i.e create folders and change profile status from guest to active ?!
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
-        [WebInvoke(UriTemplate = "/updatelikeviewstatus/{profileid}/{targetprofileid}", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-        bool updatelikeviewstatus(string profileid, string targetprofileid);
+        [WebInvoke(UriTemplate = "/restorelikesbyprofileidandscreennames", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
+         Task restorelikesbyprofileidandscreennames(ProfileModel model);
+
+        //update the Initial Catalog= i.e create folders and change profile status from guest to active ?!
+        [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
+        [WebInvoke(UriTemplate = "/updatelikeviewstatus", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
+         Task updatelikeviewstatus(ProfileModel model);
 
 
         #endregion

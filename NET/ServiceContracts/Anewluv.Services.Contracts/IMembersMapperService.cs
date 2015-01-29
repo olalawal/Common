@@ -17,43 +17,28 @@ namespace Anewluv.Services.Contracts
     {
         
 
-        
-
-         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
-               [WebInvoke(UriTemplate = "/mapmembersearchviewmodel/{viewerprofileid}/{allphotos}", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-        MemberSearchViewModel mapmembersearchviewmodel(string viewerprofileid, MemberSearchViewModel modeltomap, string allphotos);
-
-              [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
-              [WebInvoke(UriTemplate = "/mapmembersearchviewmodels/{viewerprofileid}/{allphotos}", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-               List<MemberSearchViewModel> mapmembersearchviewmodels(string viewerprofileid, List<MemberSearchViewModel> modelstomap, string allphotos);
+    
 
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
-        [WebGet(UriTemplate = "/getmembersearchviewmodel/{viewerprofileid}/{profileid}/{allphotos}", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-              MemberSearchViewModel getmembersearchviewmodel(string viewerprofileid, string profileid, string allphotos);
+        [WebInvoke(UriTemplate = "/getmembersearchviewmodel", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
+              Task<MemberSearchViewModel> getmembersearchviewmodel(ProfileModel model);
 
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
-        [WebInvoke(UriTemplate = "/getmembersearchviewmodels/{viewerprofileid}/{allphotos}", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-        List<MemberSearchViewModel> getmembersearchviewmodels(string viewerprofileid, List<int> profileids, string allphotos);
+        [WebInvoke(UriTemplate = "/getmembersearchviewmodels", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
+        Task<List<MemberSearchViewModel>> getmembersearchviewmodels(ProfileModel model);
 
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
-        [WebGet(UriTemplate = "/getprofilebrowsemodel/{viewerprofileid}/{profileid}/{allphotos}", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-        ProfileBrowseModel getprofilebrowsemodel(string viewerprofileid, string profileid,string allphotos);
+        [WebInvoke(UriTemplate = "/getprofilebrowsemodel", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
+        Task<ProfileBrowseModel> getprofilebrowsemodel(ProfileModel model);
 
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
-        [WebInvoke(UriTemplate = "/getprofilebrowsemodels/{viewerprofileid}/{allphotos}", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-        List<ProfileBrowseModel> getprofilebrowsemodels(string viewerprofileid, List<int> profileids,string allphotos);
-
-        [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
-        [WebGet(UriTemplate = "/getprofilecriteriamodel/{profileid}", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-        ProfileCriteriaModel getprofilecriteriamodel(string profileid);       //overload for above
-
-        [OperationContract(Name = "getprofilecriteriamodelempty"), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
-        [WebGet(UriTemplate = "/getprofilecriteriamodel", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-        ProfileCriteriaModel getprofilecriteriamodel();
+        [WebInvoke(UriTemplate = "/getprofilebrowsemodels", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
+        Task<List<ProfileBrowseModel>> getprofilebrowsemodels(ProfileModel model);
+      
 
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
         [WebInvoke(UriTemplate = "/getdefaultquicksearchsettingsmembers", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-        MembersViewModel getdefaultquicksearchsettingsmembers(ProfileModel Model);
+        Task<MembersViewModel> getdefaultquicksearchsettingsmembers(ProfileModel Model);
         //populate search settings for guests 
 
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
@@ -82,8 +67,8 @@ namespace Anewluv.Services.Contracts
         MembersViewModel updatememberdata(MembersViewModel model);
         
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
-        [WebInvoke(UriTemplate = "/updatememberdatabyprofileid/{profileid}", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-        MembersViewModel updatememberdatabyprofileid(string profileid);
+        [WebInvoke(UriTemplate = "/updatememberdatabyprofileid", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
+        Task<MembersViewModel> updatememberdatabyprofileid(ProfileModel model);
 
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
         [WebInvoke(UriTemplate = "/updateguestdata", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
@@ -99,14 +84,10 @@ namespace Anewluv.Services.Contracts
         MembersViewModel getguestdata(string sessionid);
 
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
-        [WebGet(UriTemplate = "/getmemberdata/{profileid}", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-        MembersViewModel getmemberdata(string profileid);
+        [WebInvoke(UriTemplate = "/getmemberdata", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
+        MembersViewModel getmemberdata(ProfileModel model);
 
-        //mapping functions for members VM
-        [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
-        [WebGet(UriTemplate = "/mapmember/{profileid}", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-        MembersViewModel mapmember(string profileid);
-      
+          
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
         [WebGet(UriTemplate = "/mapguest", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
         MembersViewModel mapguest();
@@ -118,13 +99,13 @@ namespace Anewluv.Services.Contracts
         //this needs to be updated to search based on the user's prefered setting i.e thier looking for settings
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
         [WebInvoke(UriTemplate = "/getquickmatches", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-        List<MemberSearchViewModel> getquickmatches(ProfileModel model);
+        Task<List<MemberSearchViewModel>> getquickmatches(ProfileModel model);
 
         //quick search for members in the same country for now, no more filters yet
         //this needs to be updated to search based on the user's prefered setting i.e thier looking for settings
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
         [WebInvoke(UriTemplate = "/getemailmatches", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-        List<MemberSearchViewModel> getemailmatches(ProfileModel model);
+        Task<List<MemberSearchViewModel>> getemailmatches(ProfileModel model);
 
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
         [WebInvoke(UriTemplate = "/getquicksearch", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]

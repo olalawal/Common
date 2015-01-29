@@ -91,6 +91,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DependencyInjection\customproperties.cs" />
     <Compile Include="DTOs\listitem.cs" />
     <Compile Include="ExcecptionHandling\CustomExecptionTypes.cs" />
     <Compile Include="Helpers\Generatedlists.cs" />
