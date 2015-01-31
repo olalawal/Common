@@ -16,6 +16,15 @@ namespace Anewluv.Services.Contracts
     [ServiceContract]
     public interface IMemberActionsService
     {
+        #region "Agregate functions"
+
+        [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
+        [WebInvoke(UriTemplate = "/getmemberactionsbyprofileid", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
+        Task<MemberActionsModel> getmemberactionsbyprofileid(ProfileModel model);
+
+        #endregion
+
+
         #region "Interest Methods"
 
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
