@@ -4,10 +4,8 @@ E:\Projects\Common\NET\ServiceContracts\Anewluv.Services.Contracts\bin\Release\A
 E:\Projects\Common\NET\ServiceContracts\Anewluv.Services.Contracts\bin\Release\GeoData.Domain.dll
 E:\Projects\Common\NET\ServiceContracts\Anewluv.Services.Contracts\bin\Release\Nmedia.Infrastructure.dll
 E:\Projects\Common\NET\ServiceContracts\Anewluv.Services.Contracts\bin\Release\Omu.Awesome.Core.dll
-E:\Projects\Common\NET\ServiceContracts\Anewluv.Services.Contracts\bin\Release\RazorEngine.dll
 E:\Projects\Common\NET\ServiceContracts\Anewluv.Services.Contracts\bin\Release\EntityFramework.dll
 E:\Projects\Common\NET\ServiceContracts\Anewluv.Services.Contracts\bin\Release\Nmedia.Infrastructure.pdb
-E:\Projects\Common\NET\ServiceContracts\Anewluv.Services.Contracts\bin\Release\RazorEngine.xml
 E:\Projects\Common\NET\ServiceContracts\Anewluv.Services.Contracts\bin\Release\EntityFramework.xml
 E:\Projects\Common\NET\ServiceContracts\Anewluv.Services.Contracts\obj\Release\Anewluv.Services.Contracts.csprojResolveAssemblyReference.cache
 E:\Projects\Common\NET\ServiceContracts\Anewluv.Services.Contracts\obj\Release\Anewluv.Services.Contracts.dll
@@ -18,3 +16,7 @@ E:\Projects\Common\NET\ServiceContracts\Anewluv.Services.Contracts\bin\Release\G
 E:\Projects\Common\NET\ServiceContracts\Anewluv.Services.Contracts\bin\Release\Anewluv.Domain.Data.pdb
 E:\Projects\Common\NET\ServiceContracts\Anewluv.Services.Contracts\bin\Release\Nmedia.DataAccess.Interfaces.pdb
 E:\Projects\Common\NET\ServiceContracts\Anewluv.Services.Contracts\bin\Release\Nmedia.DataAccess.pdb
+E:\Projects\Common\NET\ServiceContracts\Anewluv.Services.Contracts\bin\Release\Nmedia.Infrastructure.Domain.Data.dll
+E:\Projects\Common\NET\ServiceContracts\Anewluv.Services.Contracts\bin\Release\Nmedia.WCFHelpers.dll
+E:\Projects\Common\NET\ServiceContracts\Anewluv.Services.Contracts\bin\Release\Nmedia.Infrastructure.Domain.Data.pdb
+E:\Projects\Common\NET\ServiceContracts\Anewluv.Services.Contracts\bin\Release\Nmedia.WCFHelpers.pdb

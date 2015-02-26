@@ -29,7 +29,7 @@ namespace Anewluv.Services.Contracts
 
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
         [WebInvoke(UriTemplate = "/getmyrelationshipsfiltered", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-        Task<List<MemberSearchViewModel>> getmyrelationshipsfiltered(ProfileModel model);
+        Task<SearchResultsViewModel> getmyrelationshipsfiltered(ProfileModel model);
 
 
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
@@ -46,19 +46,19 @@ namespace Anewluv.Services.Contracts
 
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
        [WebInvoke(UriTemplate ="/getwhoiaminterestedin", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-        Task<List<MemberSearchViewModel>> getwhoiaminterestedin(ProfileModel model);
+        Task<SearchResultsViewModel> getwhoiaminterestedin(ProfileModel model);
 
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
        [WebInvoke(UriTemplate ="/getwhoisinterestedinme", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-        Task<List<MemberSearchViewModel>> getwhoisinterestedinme(ProfileModel model);
+        Task<SearchResultsViewModel> getwhoisinterestedinme(ProfileModel model);
 
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
        [WebInvoke(UriTemplate ="/getwhoisinterestedinmenew", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-        Task<List<MemberSearchViewModel>> getwhoisinterestedinmenew(ProfileModel model);
+        Task<SearchResultsViewModel> getwhoisinterestedinmenew(ProfileModel model);
 
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
        [WebInvoke(UriTemplate ="/getmutualinterests", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-        Task<List<MemberSearchViewModel>> getmutualinterests(ProfileModel model);
+        Task<SearchResultsViewModel> getmutualinterests(ProfileModel model);
        
         //update the Initial Catalog= i.e create folders and change profile status from guest to active ?!
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
@@ -125,19 +125,19 @@ namespace Anewluv.Services.Contracts
 
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
        [WebInvoke(UriTemplate ="/getwhopeekedatme", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-        Task<List<MemberSearchViewModel>> getwhopeekedatme(ProfileModel model);
+        Task<SearchResultsViewModel> getwhopeekedatme(ProfileModel model);
 
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
        [WebInvoke(UriTemplate ="/getwhopeekedatmenew", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-        Task<List<MemberSearchViewModel>> getwhopeekedatmenew(ProfileModel model);
+        Task<SearchResultsViewModel> getwhopeekedatmenew(ProfileModel model);
 
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
        [WebInvoke(UriTemplate ="/getwhoipeekedat", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-        Task<List<MemberSearchViewModel>> getwhoipeekedat(ProfileModel model);
+        Task<SearchResultsViewModel> getwhoipeekedat(ProfileModel model);
 
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
        [WebInvoke(UriTemplate ="/getmutualpeeks", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-        Task<List<MemberSearchViewModel>> getmutualpeeks(ProfileModel model);
+        Task<SearchResultsViewModel> getmutualpeeks(ProfileModel model);
 
         //update the Initial Catalog= i.e create folders and change profile status from guest to active ?!
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
@@ -194,12 +194,12 @@ namespace Anewluv.Services.Contracts
 
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
        [WebInvoke(UriTemplate ="/getwhoiblocked", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-        Task<List<MemberSearchViewModel>> getwhoiblocked(ProfileModel model);
+        Task<SearchResultsViewModel> getwhoiblocked(ProfileModel model);
 
 
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
        [WebInvoke(UriTemplate ="/getmutualblocks", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-        Task<List<MemberSearchViewModel>> getmutualblocks(ProfileModel model);
+        Task<SearchResultsViewModel> getmutualblocks(ProfileModel model);
 
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
        [WebInvoke(UriTemplate ="/checkblock", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
@@ -252,19 +252,19 @@ namespace Anewluv.Services.Contracts
 
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
        [WebInvoke(UriTemplate ="/getwholikesmenew", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-        Task<List<MemberSearchViewModel>> getwholikesmenew(ProfileModel model);
+        Task<SearchResultsViewModel> getwholikesmenew(ProfileModel model);
 
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
        [WebInvoke(UriTemplate ="/getwholikesme", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-        Task<List<MemberSearchViewModel>> getwholikesme(ProfileModel model);
+        Task<SearchResultsViewModel> getwholikesme(ProfileModel model);
 
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
        [WebInvoke(UriTemplate ="/getwhoilike", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-        Task<List<MemberSearchViewModel>> getwhoilike(ProfileModel model);
+        Task<SearchResultsViewModel> getwhoilike(ProfileModel model);
 
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
        [WebInvoke(UriTemplate ="/getmutuallikes", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-        Task<List<MemberSearchViewModel>> getmutuallikes(ProfileModel model);
+        Task<SearchResultsViewModel> getmutuallikes(ProfileModel model);
 
         //update the Initial Catalog= i.e create folders and change profile status from guest to active ?!
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
