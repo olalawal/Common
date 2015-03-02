@@ -8,7 +8,7 @@ using System.Text;
 
 namespace Nmedia.Infrastructure.ExceptionHandling
 {
-    public class CustomExceptionTypes
+    public class CustomExceptionTypes :Exception
     {
 
 
@@ -37,6 +37,11 @@ namespace Nmedia.Infrastructure.ExceptionHandling
 
 
         public enum eReason { CouldNotAccess, ParseError }
+
+        public CustomExceptionTypes(string message)
+            : base(message)
+        {
+        }
 
 
 
