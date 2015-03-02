@@ -1,4 +1,3 @@
-E:\Projects\Common\NET\ServiceContracts\Anewluv.Services.Contracts\obj\Debug\Anewluv.Services.Contracts.csprojResolveAssemblyReference.cache
 E:\Projects\Common\NET\ServiceContracts\Anewluv.Services.Contracts\bin\Debug\Anewluv.Services.Contracts.dll
 E:\Projects\Common\NET\ServiceContracts\Anewluv.Services.Contracts\bin\Debug\Anewluv.Services.Contracts.pdb
 E:\Projects\Common\NET\ServiceContracts\Anewluv.Services.Contracts\bin\Debug\Anewluv.Domain.Data.dll
@@ -22,5 +21,6 @@ E:\Projects\Common\NET\ServiceContracts\Anewluv.Services.Contracts\bin\Debug\Ent
 E:\Projects\Common\NET\ServiceContracts\Anewluv.Services.Contracts\bin\Debug\Nmedia.Infrastructure.pdb
 E:\Projects\Common\NET\ServiceContracts\Anewluv.Services.Contracts\bin\Debug\Microsoft.Practices.ServiceLocation.pdb
 E:\Projects\Common\NET\ServiceContracts\Anewluv.Services.Contracts\bin\Debug\Microsoft.Practices.ServiceLocation.xml
+E:\Projects\Common\NET\ServiceContracts\Anewluv.Services.Contracts\obj\Debug\Anewluv.Services.Contracts.csprojResolveAssemblyReference.cache
 E:\Projects\Common\NET\ServiceContracts\Anewluv.Services.Contracts\obj\Debug\Anewluv.Services.Contracts.dll
 E:\Projects\Common\NET\ServiceContracts\Anewluv.Services.Contracts\obj\Debug\Anewluv.Services.Contracts.pdb
