@@ -36,7 +36,7 @@ namespace Anewluv.Services.Contracts
         /// </summary>    
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
         [WebInvoke(UriTemplate = "/getmyactioncount", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-        Task<int> getmyactioncount(ProfileModel model,actiontypeEnum actiontype);
+        Task<int> getmyactioncount(ProfileModel model);
 
 
         //count methods first
@@ -45,7 +45,7 @@ namespace Anewluv.Services.Contracts
         /// </summary>    
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
         [WebInvoke(UriTemplate = "/getothersactioncount", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-         Task<int> getothersactioncount(ProfileModel model,actiontypeEnum actiontype);
+         Task<int> getothersactioncount(ProfileModel model);
   
 
         //count methods first
@@ -53,7 +53,7 @@ namespace Anewluv.Services.Contracts
         /// count all total interests
        [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
         [WebInvoke(UriTemplate = "/getothersactioncountnew", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-         Task<int> getothersactioncountnew(ProfileModel model,actiontypeEnum actiontype);
+         Task<int> getothersactioncountnew(ProfileModel model);
  
 
         /// <summary>
@@ -61,7 +61,7 @@ namespace Anewluv.Services.Contracts
         /// count all total interests
        [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
         [WebInvoke(UriTemplate = "/getmyaction", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-         Task<SearchResultsViewModel> getmyaction(ProfileModel model, actiontypeEnum actiontype);
+         Task<SearchResultsViewModel> getmyaction(ProfileModel model);
  
         //1/18/2011 modifed results to use correct ordering
         /// <summary>
@@ -69,14 +69,14 @@ namespace Anewluv.Services.Contracts
         /// count all total interests
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
         [WebInvoke(UriTemplate = "/getothersaction", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-         Task<SearchResultsViewModel> getothersaction(ProfileModel model,actiontypeEnum actiontype);
+         Task<SearchResultsViewModel> getothersaction(ProfileModel model);
 
         /// <summary>
         /// //gets all the members who are interested in me, that ive not viewd yet
         /// count all total interests
        [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
         [WebInvoke(UriTemplate = "/getothersactionnew", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-         Task<SearchResultsViewModel> getothersactionnew(ProfileModel model,actiontypeEnum actiontype);
+         Task<SearchResultsViewModel> getothersactionnew(ProfileModel model);
 
 
         /// <summary>
@@ -85,20 +85,20 @@ namespace Anewluv.Services.Contracts
          /// count all total interests
        [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
         [WebInvoke(UriTemplate = "/getmutualactions", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-         Task<SearchResultsViewModel> getmutualactions(ProfileModel model,actiontypeEnum actiontype);
+         Task<SearchResultsViewModel> getmutualactions(ProfileModel model);
   
         /// <summary>
         /// //checks if you already sent and interest to the target profile
           /// count all total interests
        [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
         [WebInvoke(UriTemplate = "/checkaction", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)] 
-         Task<bool> checkaction(ProfileModel model,actiontypeEnum actiontype);
+         Task<bool> checkaction(ProfileModel model);
 
         /// <summary>
         /// Adds a New interest
               [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
         [WebInvoke(UriTemplate = "/addmyaction", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)] 
-         Task addmyaction(ProfileModel model,actiontypeEnum actiontype);
+         Task addmyaction(ProfileModel model);
        
 
         /// <summary>
@@ -108,14 +108,14 @@ namespace Anewluv.Services.Contracts
          /// count all total interests
        [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
         [WebInvoke(UriTemplate = "/removemyactionbyprofileid", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-         Task removemyactionbyprofileid(ProfileModel model,actiontypeEnum actiontype);
+         Task removemyactionbyprofileid(ProfileModel model);
       
         /// <summary>
         ///  Update interest with a view     
        /// count all total interests
        [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
         [WebInvoke(UriTemplate = "/updateotheractionviewstatus", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-         Task updateotheractionviewstatus(ProfileModel model, actiontypeEnum actiontype);
+         Task updateotheractionviewstatus(ProfileModel model);
        
 
         /// <summary>
@@ -125,7 +125,7 @@ namespace Anewluv.Services.Contracts
          /// count all total interests
        [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
         [WebInvoke(UriTemplate = "/removeothersactionnbyprofileid", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-          Task removeothersactionnbyprofileid(ProfileModel model,actiontypeEnum actiontype);
+          Task removeothersactionnbyprofileid(ProfileModel model);
      
         /// <summary>
         ///  //Removes an interest i.e changes the interest to deleted so they do not shwo up to you anymore unless filtered in that person anymore
@@ -134,7 +134,7 @@ namespace Anewluv.Services.Contracts
           /// count all total interests
        [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
         [WebInvoke(UriTemplate = "/restoreothersactionbyprofileid", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-          Task restoreothersactionbyprofileid(ProfileModel model,actiontypeEnum actiontype);
+          Task restoreothersactionbyprofileid(ProfileModel model);
         
 
         /// <summary>
