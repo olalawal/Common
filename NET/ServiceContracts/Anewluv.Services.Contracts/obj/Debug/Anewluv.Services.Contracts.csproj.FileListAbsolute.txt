@@ -19,6 +19,7 @@ E:\Projects\Common\NET\ServiceContracts\Anewluv.Services.Contracts\bin\Debug\Nme
 E:\Projects\Common\NET\ServiceContracts\Anewluv.Services.Contracts\bin\Debug\Nmedia.WCFHelpers.pdb
 E:\Projects\Common\NET\ServiceContracts\Anewluv.Services.Contracts\bin\Debug\Nmedia.Infrastructure.pdb
 E:\Projects\Common\NET\ServiceContracts\Anewluv.Services.Contracts\bin\Debug\EntityFramework.xml
+E:\Projects\Common\NET\ServiceContracts\Anewluv.Services.Contracts\bin\Debug\Microsoft.Practices.ServiceLocation.pdb
 E:\Projects\Common\NET\ServiceContracts\Anewluv.Services.Contracts\bin\Debug\Microsoft.Practices.ServiceLocation.xml
 E:\Projects\Common\NET\ServiceContracts\Anewluv.Services.Contracts\obj\Debug\Anewluv.Services.Contracts.csprojResolveAssemblyReference.cache
 E:\Projects\Common\NET\ServiceContracts\Anewluv.Services.Contracts\obj\Debug\Anewluv.Services.Contracts.dll
