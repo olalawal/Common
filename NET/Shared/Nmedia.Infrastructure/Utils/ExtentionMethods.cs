@@ -94,7 +94,7 @@ namespace Nmedia.Infrastructure
             {
                 sb.Append(word + " ");
             }
-            return sb.ToString().TrimEnd(' ') + "...";
+            return sb.ToString().TrimEnd(' ');//+ ".";
         }
 
         //Move this to extentin methods done !
