@@ -58,7 +58,7 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IMailService.cs" />
+    <Compile Include="IMessagingService.cs" />
     <Compile Include="ICommonService.cs" />
     <Compile Include="IChatService.cs" />
     <Compile Include="IMemberEditService.cs" />
