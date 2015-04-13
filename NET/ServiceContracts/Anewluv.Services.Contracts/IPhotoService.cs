@@ -25,97 +25,96 @@ namespace Anewluv.Services.Contracts
      public  interface IPhotoService
     {
 
-
-        //[OperationContract]
-        //public Stream GetLargeFile()
-        //{
-        //    return new FileStream(path, FileMode.Open, FileAccess.Read);
-        //}
-
-        //[OperationContract]
-        //public void SendLargeFile(Stream stream)
-        //{
-        //    // Handle stream here - e.g. save to disk    
-        //    ProcessStream(stream);
-
-        //    // Close the stream when done processing it
-        //    stream.Close();
-        //}
+        //QUERY methods  
 
 
+        //primary 2
+        Task<string> getpagedphotomodelbyprofileidandstatusandalbumid(ProfileModel model);
 
-        #region "View Photo models"
-
-
-         
 
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
-        [WebGet(UriTemplate = "/getphotomodelbyphotoid/{photoid}/{format}", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-        Task<PhotoModel> getphotomodelbyphotoid(string photoid, string format);
+        [WebGet(UriTemplate = "/getphotoalbumlistbyprofile", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
+        Task<List<PhotoAlbumModel>> getphotoalbumlistbyprofile(ProfileModel model);
+
+        [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
+        [WebGet(UriTemplate = "/getphotomodelbyphotoid", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
+        Task<PhotoModel> getphotomodelbyphotoid(ProfileModel model);
 
          [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
-         [WebGet(UriTemplate = "/getgalleryphotomodelbyprofileid/{profileid}/{format}", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-        Task<PhotoModel> getgalleryphotomodelbyprofileid(string profileid, string format);
+         [WebGet(UriTemplate = "/getgalleryphotomodelbyprofileid", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
+         Task<PhotoModel> getgalleryphotomodelbyprofileid(ProfileModel model);
 
          [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
-         [WebGet(UriTemplate = "/getphotomodelsbyprofileidandstatus/{profileid}/{status}/{format}", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]	 
-        Task<List<PhotoModel>> getphotomodelsbyprofileidandstatus(string profileid, string status, string format);
+         [WebGet(UriTemplate = "/getphotomodelsbyprofileidandstatus", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
+         Task<List<PhotoModel>> getphotomodelsbyprofileidandstatus(ProfileModel model);
 
          [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
-         [WebGet(UriTemplate = "/getpagedphotomodelbyprofileidandstatus/{profileid}/{status}/{format}/{page}/{pagesize}", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-         Task<List<PhotoModel>> getpagedphotomodelbyprofileidandstatus(string profileid, string status, string format, string page, string pagesize);
+         [WebGet(UriTemplate = "/getpagedphotomodelbyprofileidandstatus", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
+         Task<PhotoSearchResultsViewModel> getpagedphotomodelbyprofileidandstatus(ProfileModel model);
         
         //TO DO get photo albums as well ?
          [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
-         [WebGet(UriTemplate = "/getpagedphotoviewmodelbyprofileid/{profileid}/{format}/{page}/{pagesize}", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]	 
-         Task<PhotoViewModel> getpagedphotoviewmodelbyprofileid(string  profileid, string format, string page, string  pagesize);
-        
-        #endregion
-
-        #region "Edititable Photo models
+         [WebGet(UriTemplate = "/getpagedphotoviewmodelbyprofileid", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
+         Task<PhotoViewModel> getpagedphotoviewmodelbyprofileid(ProfileModel model);
+    
 
          [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
-         [WebGet(UriTemplate = "/getphotoeditmodelbyphotoid/{photoid}/{format}", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]	 
-         Task<photoeditmodel> getphotoeditmodelbyphotoid(string photoid, string format);
+         [WebGet(UriTemplate = "/getphotoeditmodelbyphotoid", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]	 
+         Task<PhotoModel> getphotoeditmodelbyphotoid(ProfileModel model);
+
+         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")] 
+         [WebGet(UriTemplate = "/getphotoeditmodelsbyprofileidandstatus", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]	 
+         Task<List<PhotoModel>> getphotoeditmodelsbyprofileidandstatus(ProfileModel model);
 
          [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
-         [WebGet(UriTemplate = "/getphotoeditmodelsbyprofileidandstatus/{profileid}/{status}/{format}", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]	 
-         Task<List<photoeditmodel>> getphotoeditmodelsbyprofileidandstatus(string profileid, string status, string format);
-
-         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
-         [WebGet(UriTemplate = "/getpagedphotoeditmodelsbyprofileidstatus/{profileid}/{status}/{format}/{page}/{pagesize}", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]	 
-         Task<List<photoeditmodel>> getpagedphotoeditmodelsbyprofileidstatus(string profileid, string status, string format, string page, string pagesize);
+         [WebGet(UriTemplate = "/getpagedphotoeditmodelsbyprofileidstatus", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
+         Task<List<PhotoModel>> getpagedphotoeditmodelsbyprofileidstatus(ProfileModel model);
         
         //12-10-2012 this also filters the format
          [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
-         [WebGet(UriTemplate = "/getpagededitphotoviewmodelbyprofileidandformat/{profileid}/{format}/{page}/{pagesize}", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]	 
-         Task<PhotoEditViewModel> getpagededitphotoviewmodelbyprofileidandformat(string profileid, string format, string page, string pagesize);
+         [WebGet(UriTemplate = "/getpagededitphotoviewmodelbyprofileidandformat", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]	 
+         Task<PhotoEditViewModel> getpagededitphotoviewmodelbyprofileidandformat(ProfileModel model);
        
 
-        #endregion
+        //Update models 
+
+         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
+         [WebGet(UriTemplate = "/edituserphoto", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
+         Task<AnewluvMessages> edituserphoto(ProfileModel model);
+  
+        [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
+        [WebGet(UriTemplate = "/deleteuserphotos", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
+        Task<AnewluvMessages> deleteuserphotos(ProfileModel model);
 
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
-        [WebGet(UriTemplate = "/deleteduserphoto/{photoid}", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-        Task<AnewluvMessages> deleteuserphoto(string photoid);
+        [WebGet(UriTemplate ="/makeuserphoto_private", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
+         Task<AnewluvMessages> makeuserphoto_private(ProfileModel model);
 
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
-        [WebGet(UriTemplate = "/makeuserphoto_private/{photoid}", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-         Task<AnewluvMessages> makeuserphoto_private(string photoid);
+        [WebGet(UriTemplate = "/makeuserphotos_private", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
+        Task<AnewluvMessages> makeuserphotos_private(ProfileModel model);
 
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
-        [WebGet(UriTemplate = "/makeuserphoto_public/{photoid}", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-         Task<AnewluvMessages> makeuserphoto_public(string photoid);
+        [WebGet(UriTemplate = "/makeuserphoto_public", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
+         Task<AnewluvMessages> makeuserphoto_public(ProfileModel model);
+
+        [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
+        [WebGet(UriTemplate = "/makeuserphotos_public", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
+        Task<AnewluvMessages> makeuserphotos_public(ProfileModel model);
+               
+        [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
+        [WebGet(UriTemplate = "/editphotoalbum", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
+        Task<AnewluvMessages> editphotoalbum(ProfileModel model);
 
         //9-18-2012 olawal when this is uploaded now we want to do the image conversions as well for the large photo and the thumbnail
         //since photo is only a row no big deal if duplicates but since conversion is required we must roll back if the photo already exists  
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
         [WebInvoke(UriTemplate = "/addphotos", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-        [ServiceKnownType(typeof(PhotoUploadViewModel))]
-        Task<AnewluvMessages> addphotos(PhotoUploadViewModel model);
+        Task<AnewluvMessages> addphotos(ProfileModel model);
 
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
-        [WebInvoke(UriTemplate = "/addsinglephoto/{profileid}", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-        Task<AnewluvMessages> addsinglephoto(PhotoUploadModel newphoto, string profileid);
+        [WebInvoke(UriTemplate = "/addsinglephoto", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
+        Task<AnewluvMessages> addsinglephoto(ProfileModel model);
 
         //[OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
         //[WebInvoke(UriTemplate = "/getgenericerroremail", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
@@ -128,36 +127,36 @@ namespace Anewluv.Services.Contracts
         //Stuff pulled from dating service regular
         // added by Deshola on 5/17/2011   
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
-        [WebGet(UriTemplate = "/getgalleryphotobyscreenname/{screenname}/{format}", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-        Task<string> getgalleryphotobyscreenname(string screenname, string format);
+        [WebGet(UriTemplate = "/getgalleryphotobyscreenname", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
+        Task<string> getgalleryphotobyscreenname(ProfileModel model);
 
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
-        [WebGet(UriTemplate = "/getgalleryimagebyphotoid/{photoid}/{format}", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-        Task<string> getgalleryimagebyphotoid(string photoid, string format);
+        [WebGet(UriTemplate = "/getgalleryimagebyphotoid}", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
+        Task<string> getgalleryimagebyphotoid(ProfileModel model);
 
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
-        [WebGet(UriTemplate = "/getgalleryphotobyprofileid/{profileid}/{format}", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-        Task<string> getgalleryphotobyprofileid(string profileid, string format);
+        [WebGet(UriTemplate = "/getgalleryphotobyprofileid", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
+        Task<string> getgalleryphotobyprofileid(ProfileModel model);
 
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
-        [WebGet(UriTemplate = "/getgalleryimagebynormalizedscreenname/{screenname}/{format}", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-        Task<string> getgalleryimagebynormalizedscreenname(string screenname, string format);
+        [WebGet(UriTemplate = "/getgalleryimagebynormalizedscreenname", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
+        Task<string> getgalleryimagebynormalizedscreenname(ProfileModel model);
 
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
-        [WebGet(UriTemplate = "/checkifphotocaptionalreadyexists/{profileid}/{photocaption}", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-         Task<bool> checkifphotocaptionalreadyexists(string profileid, string photocaption);
+        [WebGet(UriTemplate = "/checkifphotocaptionalreadyexists", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
+        Task<bool> checkifphotocaptionalreadyexists(ProfileModel model);
 
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
-        [WebGet(UriTemplate = "/checkforgalleryphotobyprofileid/{profileid}", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-         Task<bool> checkforgalleryphotobyprofileid(string profileid);
+        [WebGet(UriTemplate = "/checkforgalleryphotobyprofileid", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
+        Task<bool> checkforgalleryphotobyprofileid(ProfileModel model);
 
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
-        [WebGet(UriTemplate = "/checkforuploadedphotobyprofileid/{profileid}", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-         Task<bool> checkforuploadedphotobyprofileid(string profileid);
+        [WebGet(UriTemplate = "/checkforuploadedphotobyprofileid", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
+        Task<bool> checkforuploadedphotobyprofileid(ProfileModel model);
 
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
-        [WebGet(UriTemplate = "/getimageb64stringfromurl/{imageUrl}/{source}", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-        Task<string> getimageb64stringfromurl(string imageUrl, string source); 
+        [WebGet(UriTemplate = "/getimageb64stringfromurl", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
+        Task<string> getimageb64stringfromurl(ProfileModel model); 
      
 
     }

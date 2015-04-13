@@ -37,6 +37,11 @@ namespace Anewluv.Services.Contracts
           [WebGet(UriTemplate = "/getphotoImagersizerformatlist", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]      
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
           List<listitem> getphotoImagersizerformatlist();
+
+          [WebGet(UriTemplate = "/getphotosecurityleveltypelist", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
+          [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
+          List<listitem> getphotosecurityleveltypelist();
+
           [WebGet(UriTemplate = "/getrolelist", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]      
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
           List<lu_role> getrolelist();
