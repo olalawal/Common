@@ -52,9 +52,7 @@ namespace Anewluv.Services.Contracts
         [WebInvoke(UriTemplate = "/getgenderbyscreenname", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
         string getgenderbyscreenname(ProfileModel model);
 
-        [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
-        [WebInvoke(UriTemplate = "/getgenderbyphotoid", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-        string getgenderbyphotoid(ProfileModel model);
+     
         //TO DO this needs to be  linked to roles
 
         //Message and Email Quota stuff
