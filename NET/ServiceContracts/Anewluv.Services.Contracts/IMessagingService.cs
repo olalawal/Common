@@ -21,11 +21,11 @@ namespace Anewluv.Services.Contracts
     
          [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
          [WebInvoke(UriTemplate = "/getmailfolderdetails", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-        Task<List<mailfoldermodel>> getmailfolderdetails(MailModel model);   
+         Task<MailFoldersViewModel> getmailfolderdetails(MailModel model);   
                
          [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
          [WebInvoke(UriTemplate = "/getmailfilteredandpaged", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-         Task<List<mailviewmodel>> getmailfilteredandpaged(MailModel model);
+         Task<List<MailSearchResultsViewModel>> getmailfilteredandpaged(MailModel model);
         
 
          // tobe deleted
