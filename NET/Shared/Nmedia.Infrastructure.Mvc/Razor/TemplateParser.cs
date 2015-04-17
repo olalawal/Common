@@ -33,9 +33,9 @@ namespace Nmedia.Infrastructure.Mvc
         public static string RazorDBTemplate<T>(string templatestring, ref T myobject)
         {
 
-            templatestring = templatestring == "" ? (
-new System.Uri(Assembly.GetExecutingAssembly().CodeBase)
-).AbsolutePath + "\\RazorTemplateParser\\Templates\\" : templatestring;
+            templatestring = templatestring == "" ?
+             (new System.Uri(Assembly.GetExecutingAssembly().CodeBase)).AbsolutePath + "\\RazorTemplateParser\\Templates\\" : 
+             templatestring;
 
             dynamic config = new TemplateServiceConfiguration { Language = RazorEngine.Language.CSharp  };
             dynamic service = new RazorEngine.Templating.TemplateService(config);
