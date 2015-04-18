@@ -25,22 +25,27 @@ namespace Anewluv.Services.Contracts
                
          [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
          [WebInvoke(UriTemplate = "/getmailfilteredandpaged", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-         Task<List<MailSearchResultsViewModel>> getmailfilteredandpaged(MailModel model);
-        
+         Task<MailSearchResultsViewModel> getmailfilteredandpaged(MailModel model);
 
-         // tobe deleted
+
+         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
+         [WebInvoke(UriTemplate = "/updatemessage", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
+         Task<AnewluvMessages> updatemessage(MailModel model);
          [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
          [WebInvoke(UriTemplate = "/sendmessage", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
          Task<AnewluvMessages> sendmessage(MailModel model);
          [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
-         [WebInvoke(UriTemplate = "/deletemessages", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-         Task<AnewluvMessages> deletemessages(MailModel model);
+         [WebInvoke(UriTemplate = "/deletemessagesfromfolder", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
+         Task<AnewluvMessages> deletemessagesfromfolder(MailModel model);
          [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
-         [WebInvoke(UriTemplate = "/movemessages", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-         Task<AnewluvMessages> movemessages(MailModel model);
+         [WebInvoke(UriTemplate = "/movemessagestofolder", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
+         Task<AnewluvMessages> movemessagestofolder(MailModel model);
          [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
-         [WebInvoke(UriTemplate = "/addmailfoxfolder", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-         Task<AnewluvMessages> addmailboxfoxfolder(MailModel model);
+         [WebInvoke(UriTemplate = "/addmailboxfolder", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
+         Task<AnewluvMessages> addmailboxfolder(MailModel model);
+         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
+         [WebInvoke(UriTemplate = "/deletemailboxfolder", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
+         Task<AnewluvMessages> deletemailboxfolder(MailModel model);
                
 
         ////TO DO read out the description feild from enum using sample code
