@@ -73,12 +73,16 @@ namespace Nmedia.Infrastructure.Utils
 
             var prop = (HttpRequestMessageProperty)request.Properties[HttpRequestMessageProperty.Name];
 
+            var dd = prop.Headers[APIKEY];
 
-            Guid apiKey;
-            Guid.TryParse(prop.Headers[APIKEY], out apiKey);
+            if (dd != null)
+            {
+                Guid apiKey;
+                Guid.TryParse(prop.Headers[APIKEY], out apiKey);
 
-            return apiKey;
-
+                return apiKey;
+            }
+            return null;
 
             //var dd = operationContext.IncomingMessageHeaders.Where(p=>p.Name == APIKEY);
 
