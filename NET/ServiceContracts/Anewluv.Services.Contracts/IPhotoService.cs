@@ -33,7 +33,7 @@ namespace Anewluv.Services.Contracts
         Task<List<PhotoAlbumViewModel>> getphotoalbumlistbyprofileid(PhotoModel model);       
  
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
-        [WebInvoke(UriTemplate = "/getphotoalbumlistbyprofile", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
+        [WebInvoke(UriTemplate = "/getfilteredphotospaged", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
         Task<PhotoSearchResultsViewModel> getfilteredphotospaged(PhotoModel model);
        
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
