@@ -88,5 +88,16 @@ namespace Anewluv.Services.Contracts
         [WebInvoke(UriTemplate = "/getgenderbyphotoid", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
         string getgenderbyphotoid(PhotoModel model);
 
+
+        [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
+        [WebInvoke(UriTemplate = "/editphotostatus", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
+        Task<AnewluvMessages> editphotostatus(PhotoModel model);
+
+        [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
+        [WebInvoke(UriTemplate = "/getadminfilteredphotospaged", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
+        Task<PhotoSearchResultsViewModel> getadminfilteredphotospaged(PhotoModel model);
+
+       
+
     }
 }
