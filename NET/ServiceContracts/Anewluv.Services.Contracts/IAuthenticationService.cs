@@ -64,8 +64,12 @@ namespace Anewluv.Services.Contracts
         //AnewLuvMembershipUser  createusercustom(MembershipUserViewModel model);
 
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
-        [WebGet(UriTemplate = "/resetpassword/{profileid}/{answer}", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]	
-        string resetpassword(string profileid, string answer);
+        [WebGet(UriTemplate = "/resetpassword/{username}/{answer}", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]	
+        string resetpassword(string username, string answer);
+
+        [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
+        [WebInvoke(UriTemplate = "/resetpasswordcustom", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
+        string resetpasswordcustom(ProfileModel model);
             
             //handles reseting password duties.  First verifys that security uqestion was correct for the profile ID, the generated a password
             // using the local generatepassword method the send the encyrpted passwoerd and profile ID to the dating service so it can be updated in the DB
@@ -82,7 +86,7 @@ namespace Anewluv.Services.Contracts
 
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
         [WebGet(UriTemplate = "/getuser/{username}/{userisonline}", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]	
-              MembershipUser getuser(string username, string  userIsOnline);
+        MembershipUser getuser(string username, string  userIsOnline);
            
             //custom remapped membership get user function
      
