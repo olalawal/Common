@@ -102,6 +102,7 @@
     <Compile Include="Helpers\GenerateRandomString.cs" />
     <Compile Include="Helpers\b64Converters.cs" />
     <Compile Include="Helpers\ClassEncryption.cs" />
+    <Compile Include="Helpers\GuidHelpers.cs" />
     <Compile Include="Helpers\Serialization.cs" />
     <Compile Include="JsonHelpers\JsonExtentionsMethods.cs" />
     <Compile Include="PagingExtentions\extentions.cs" />
