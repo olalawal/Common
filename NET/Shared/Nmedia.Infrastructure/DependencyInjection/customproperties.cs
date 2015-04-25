@@ -8,8 +8,9 @@ using System.Threading.Tasks;
 //add properties for all Nemedia databases 
 namespace Nmedia.Infrastructure.DependencyInjection
 {
-         public class IAnewluvEntitesScope : Attribute { }
-        public class InSpatialEntitesScope : Attribute { }
+        public class IAnewluvEntitesScope : Attribute { }
+        public class ISpatialEntitesScope : Attribute { }
+        public class INotificationEntitiesScope : Attribute { }
         public class InVariosEntitiesScope : Attribute { }
     
 }

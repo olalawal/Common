@@ -69,6 +69,9 @@
     <Reference Include="Anewluv.Domain.Data">
       <HintPath>..\SharedDLLs\Anewluv.Domain.Data.dll</HintPath>
     </Reference>
+    <Reference Include="Ninject">
+      <HintPath>..\..\..\..\Anewluv\Nmedia.Anewluv.Services\packages\Ninject.3.2.3-unstable-012\lib\net45-full\Ninject.dll</HintPath>
+    </Reference>
     <Reference Include="Nmedia.Infrastructure.Domain.Data">
       <HintPath>..\SharedDLLs\Nmedia.Infrastructure.Domain.Data.dll</HintPath>
     </Reference>
@@ -96,6 +99,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DependencyInjection\customproperties.cs" />
+    <Compile Include="DependencyInjection\predicates.cs" />
     <Compile Include="DTOs\listitem.cs" />
     <Compile Include="ExcecptionHandling\CustomExecptionTypes.cs" />
     <Compile Include="Helpers\Generatedlists.cs" />
