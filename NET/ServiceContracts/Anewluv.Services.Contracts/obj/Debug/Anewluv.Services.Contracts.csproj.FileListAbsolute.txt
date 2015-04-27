@@ -10,6 +10,7 @@ E:\Projects\Common\NET\ServiceContracts\Anewluv.Services.Contracts\bin\Debug\Rep
 E:\Projects\Common\NET\ServiceContracts\Anewluv.Services.Contracts\bin\Debug\EntityFramework.dll
 E:\Projects\Common\NET\ServiceContracts\Anewluv.Services.Contracts\bin\Debug\LinqKit.dll
 E:\Projects\Common\NET\ServiceContracts\Anewluv.Services.Contracts\bin\Debug\Microsoft.Practices.ServiceLocation.dll
+E:\Projects\Common\NET\ServiceContracts\Anewluv.Services.Contracts\bin\Debug\Ninject.dll
 E:\Projects\Common\NET\ServiceContracts\Anewluv.Services.Contracts\bin\Debug\Omu.Awesome.Core.dll
 E:\Projects\Common\NET\ServiceContracts\Anewluv.Services.Contracts\bin\Debug\GeoData.Domain.pdb
 E:\Projects\Common\NET\ServiceContracts\Anewluv.Services.Contracts\bin\Debug\Anewluv.Domain.Data.pdb
@@ -20,6 +21,7 @@ E:\Projects\Common\NET\ServiceContracts\Anewluv.Services.Contracts\bin\Debug\Nme
 E:\Projects\Common\NET\ServiceContracts\Anewluv.Services.Contracts\bin\Debug\Nmedia.Infrastructure.pdb
 E:\Projects\Common\NET\ServiceContracts\Anewluv.Services.Contracts\bin\Debug\EntityFramework.xml
 E:\Projects\Common\NET\ServiceContracts\Anewluv.Services.Contracts\bin\Debug\Microsoft.Practices.ServiceLocation.xml
+E:\Projects\Common\NET\ServiceContracts\Anewluv.Services.Contracts\bin\Debug\Ninject.xml
 E:\Projects\Common\NET\ServiceContracts\Anewluv.Services.Contracts\obj\Debug\Anewluv.Services.Contracts.csprojResolveAssemblyReference.cache
 E:\Projects\Common\NET\ServiceContracts\Anewluv.Services.Contracts\obj\Debug\Anewluv.Services.Contracts.dll
 E:\Projects\Common\NET\ServiceContracts\Anewluv.Services.Contracts\obj\Debug\Anewluv.Services.Contracts.pdb
