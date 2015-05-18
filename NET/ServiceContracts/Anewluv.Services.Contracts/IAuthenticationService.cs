@@ -132,7 +132,14 @@ namespace Anewluv.Services.Contracts
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
         [ServiceKnownType(typeof(AnewluvMessages))]
         [WebInvoke(UriTemplate = "/activateprofile", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-        Task<AnewluvResponse> activateprofile(activateprofilemodel model);
+        Task<AnewluvMessages> activateprofile(activateprofilemodel model);
+
+        [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
+        [ServiceKnownType(typeof(AnewluvMessages))]
+        [WebInvoke(UriTemplate = "/recoveractivationcode", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
+        Task<AnewluvMessages> recoveractivationcode(activateprofilemodel model);
+
+
 
         //new method that we want to use to return the profileID to validate somwhere else
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
