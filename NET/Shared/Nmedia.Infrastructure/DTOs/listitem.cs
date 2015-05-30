@@ -9,6 +9,7 @@ namespace Nmedia.Infrastructure.DTOs
 {    
 
         [DataContract]
+        [Serializable]
         public class listitem
         {          
             [DataMember]
