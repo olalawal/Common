@@ -30,19 +30,19 @@ namespace Anewluv.Services.Contracts
 
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
         [WebInvoke(UriTemplate = "/getbasicsettingsmodel", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-        Task<BasicSettingsModel> getbasicsettingsmodel(EditProfileModel editprofilemodel);
+        Task<BasicSettingsViewModel> getbasicsettingsmodel(EditProfileModel editprofilemodel);
 
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
         [WebInvoke(UriTemplate = "/getappearancesettingsmodel", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-        Task<AppearanceSettingsModel> getappearancesettingsmodel(EditProfileModel editprofilemodel);
+        Task<AppearanceSettingsViewModel> getappearancesettingsmodel(EditProfileModel editprofilemodel);
 
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
         [WebInvoke(UriTemplate = "/getlifestylesettingsmodel", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-        Task<LifeStyleSettingsModel> getlifestylesettingsmodel(EditProfileModel editprofilemodel);
+        Task<LifeStyleSettingsViewModel> getlifestylesettingsmodel(EditProfileModel editprofilemodel);
 
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
         [WebInvoke(UriTemplate = "/getcharactersettingsmodel", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-          Task<CharacterSettingsModel> getcharactersettingsmodel(EditProfileModel editprofilemodel);
+        Task<CharacterSettingsViewModel> getcharactersettingsmodel(EditProfileModel editprofilemodel);
 
 
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
