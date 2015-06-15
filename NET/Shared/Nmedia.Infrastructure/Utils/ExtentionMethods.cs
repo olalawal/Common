@@ -10,6 +10,9 @@ using System.Text;
 
 //using Akismet.NET;
 using System.Configuration;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Runtime.Serialization.Formatters.Binary;
 
 
 namespace Nmedia.Infrastructure
@@ -19,9 +22,24 @@ namespace Nmedia.Infrastructure
     public static class Extensions
     {
 
+        public static IList<T> Clone<T>(this IList<T> listToClone) where T : ICloneable
+        {
+            return listToClone.Select(item => (T)item.Clone()).ToList();
+        }
 
-
-
+        //used to clone generic lists
+        public static T getDeepCopy<T>(T objectToCopy)
+        {
+            T temp;
+            using (MemoryStream ms = new MemoryStream())
+            {
+                BinaryFormatter formatter = new BinaryFormatter();
+                formatter.Serialize(ms, objectToCopy);
+                ms.Position = 0;
+                temp = (T)formatter.Deserialize(ms);
+            }
+            return temp;
+        }
 
         //linq conditinal where helpers stuff
         public static IQueryable<TSource> WhereIf<TSource>(

@@ -10,14 +10,17 @@ namespace Nmedia.Infrastructure.DTOs
 
         [DataContract]
         [Serializable]
-        public class listitem
+        public class listitem 
         {          
             [DataMember]
             public int id { get; set; }
             [DataMember]
             public bool selected { get; set; }
             [DataMember]
-            public string description { get; set; }           
+            public string description { get; set; }         
+  
+
+
         }
     
 }
