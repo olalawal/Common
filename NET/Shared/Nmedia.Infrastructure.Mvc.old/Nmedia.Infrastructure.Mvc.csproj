@@ -1,10 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{C7EA9735-2FB7-47E4-88E8-A786D45753BA}</ProjectGuid>
+    <ProjectGuid>{9B837D01-53FA-4AF3-A6C3-FC854A75C6DB}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Nmedia.Infrastructure.Mvc</RootNamespace>
@@ -48,14 +48,14 @@
   <ItemGroup>
     <Compile Include="Akismet.NET\Comment.cs" />
     <Compile Include="Akismet.NET\IValidator.cs" />
-    <Compile Include="Akismet.NET\SpamHandlingExtentions.cs" />
     <Compile Include="Akismet.NET\Validator.cs" />
     <Compile Include="JainRainAuthentication\Rpx.cs" />
     <Compile Include="JainRainAuthentication\RpxProfile.cs" />
     <Compile Include="JainRainAuthentication\RpxResponsParser.cs" />
+    <Compile Include="Utils\Extentions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Razor\TemplateParser.cs" />
-    <Compile Include="Utils\Extentions.cs" />
+    <Compile Include="Akismet.NET\SpamHandlingExtentions.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
