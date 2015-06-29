@@ -102,6 +102,7 @@
     <Compile Include="DependencyInjection\predicates.cs" />
     <Compile Include="DTOs\listitem.cs" />
     <Compile Include="ExcecptionHandling\CustomExecptionTypes.cs" />
+    <Compile Include="ExtentionMethods\AsyncExtentions.cs" />
     <Compile Include="Helpers\Generatedlists.cs" />
     <Compile Include="Helpers\GenerateRandomString.cs" />
     <Compile Include="Helpers\b64Converters.cs" />
@@ -121,7 +122,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Start\" />
-    <Folder Include="ExtentionMethods\" />
     <Folder Include="SignalR\" />
   </ItemGroup>
   <ItemGroup>
