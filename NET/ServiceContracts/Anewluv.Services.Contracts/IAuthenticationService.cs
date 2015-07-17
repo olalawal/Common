@@ -146,6 +146,11 @@ namespace Anewluv.Services.Contracts
         [WebInvoke(UriTemplate = "/validateuserandgettoken", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
         Task<NmediaToken> validateuserandgettoken(ProfileModel profile); 
 
+        //Logout handling
+        [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
+        [WebInvoke(UriTemplate = "/logoutuserandinvalidatetoken", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
+         Task<Boolean> logoutuserandinvalidatetoken(ProfileModel profile);
+
 
         #endregion
         

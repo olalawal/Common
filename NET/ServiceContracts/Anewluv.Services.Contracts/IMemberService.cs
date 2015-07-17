@@ -8,7 +8,7 @@ using Anewluv.Domain.Data;
 using System.ServiceModel.Web;
 using Anewluv.Domain.Data.ViewModels;
 using System.Threading.Tasks;
-using Anewluv.Domain.Data.Anewluv.ViewModels;
+using Anewluv.Domain.Data.ViewModels;
 
 namespace Anewluv.Services.Contracts
 {
@@ -126,6 +126,11 @@ namespace Anewluv.Services.Contracts
         [OperationContract(AsyncPattern = true), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
         [WebInvoke(UriTemplate = "/addprofileactvity", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
         Task addprofileactvity(ActivityModel model);
+
+        //better method for adding multiple activities in one call 
+        [OperationContract(AsyncPattern = true), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
+        [WebInvoke(UriTemplate = "/addprofileactivities", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
+        Task addprofileactivities(List<ActivityModel> models);
 
          //TO DO convert to asynch
         [OperationContract(AsyncPattern = true), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
