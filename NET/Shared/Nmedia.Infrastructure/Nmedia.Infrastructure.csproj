@@ -66,14 +66,8 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Anewluv.Domain.Data">
-      <HintPath>..\SharedDLLs\Anewluv.Domain.Data.dll</HintPath>
-    </Reference>
     <Reference Include="Ninject">
       <HintPath>..\..\..\..\Anewluv\Nmedia.Anewluv.Services\packages\Ninject.3.2.3-unstable-012\lib\net45-full\Ninject.dll</HintPath>
-    </Reference>
-    <Reference Include="Nmedia.Infrastructure.Domain.Data">
-      <HintPath>..\SharedDLLs\Nmedia.Infrastructure.Domain.Data.dll</HintPath>
     </Reference>
     <Reference Include="Omu.Awesome.Core, Version=1.9.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -101,9 +95,8 @@
     <Compile Include="DependencyInjection\customproperties.cs" />
     <Compile Include="DependencyInjection\predicates.cs" />
     <Compile Include="DTOs\listitem.cs" />
-    <Compile Include="ExcecptionHandling\CustomExecptionTypes.cs" />
     <Compile Include="ExtentionMethods\AsyncExtentions.cs" />
-    <Compile Include="Helpers\Generatedlists.cs" />
+    <Compile Include="Helpers\DataFormatingExtensions.cs" />
     <Compile Include="Helpers\GenerateRandomString.cs" />
     <Compile Include="Helpers\b64Converters.cs" />
     <Compile Include="Helpers\ClassEncryption.cs" />
@@ -119,7 +112,6 @@
     <Compile Include="Utils\EnumHandling.cs" />
     <Compile Include="Utils\ExtentionMethods.cs" />
     <Compile Include="Utils\NullSafe.cs" />
-    <Compile Include="Utils\WCFMessageInpectors.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Start\" />

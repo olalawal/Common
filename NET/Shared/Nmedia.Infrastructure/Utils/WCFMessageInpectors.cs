@@ -12,12 +12,13 @@ using System.IO;
 using System.ServiceModel.Channels;
 
 
+
 namespace Nmedia.Infrastructure.Utils
 {
     public static class WCFMessageInpectors
     {
 
-        public static ProfileModel getprofileidmodelfrombody(ref Message internalCopy)
+        public static ProfileModel getprofilemodelfrombody(ref Message internalCopy)
         {
             //TO DO check if the call body has a profileid in the request body to make sure the user can access the revevant data being called for.
             //if so return use a diffeernt validation call that returns the profileID so we can match against the passed on.
@@ -35,7 +36,29 @@ namespace Nmedia.Infrastructure.Utils
                 // msg.Close();  //kill this since we need it no more.
             }
             //Return empty model
-            return new ProfileModel();
+            return null;
+
+        }
+
+        public static List<ActivityModel> getactivitymodelsfrombody(ref Message internalCopy)
+        {
+            //TO DO check if the call body has a profileid in the request body to make sure the user can access the revevant data being called for.
+            //if so return use a diffeernt validation call that returns the profileID so we can match against the passed on.
+            // Message msg = OperationContext.Current.RequestContext.RequestMessage.CreateBufferedCopy(Int32.MaxValue).CreateMessage();
+            //if we have a body look for the profileid
+            if (!internalCopy.IsEmpty)
+            {
+                var dd = MessageToString(internalCopy);
+                //get the profile id and map and other values as needed to the model if it exists otherwise no nothing
+                if (dd != "" && dd.Contains("profileid"))
+                {
+                    var ActivityModels = JsonExtentionsMethods.Deserialize<ActivityModel>(dd);
+                    return ActivityModels;
+                }
+                // msg.Close();  //kill this since we need it no more.
+            }
+            //Return empty model
+            return null;
 
         }
 
