@@ -25,7 +25,6 @@ E:\Projects\Common\NET\ServiceContracts\Anewluv.Services.Contracts\bin\Debug\Nin
 E:\Projects\Common\NET\ServiceContracts\Anewluv.Services.Contracts\obj\Debug\Anewluv.Services.Contracts.csprojResolveAssemblyReference.cache
 E:\Projects\Common\NET\ServiceContracts\Anewluv.Services.Contracts\obj\Debug\Anewluv.Services.Contracts.dll
 E:\Projects\Common\NET\ServiceContracts\Anewluv.Services.Contracts\obj\Debug\Anewluv.Services.Contracts.pdb
-D:\Projects\Common\NET\ServiceContracts\Anewluv.Services.Contracts\obj\Debug\Anewluv.Services.Contracts.csprojResolveAssemblyReference.cache
 D:\Projects\Common\NET\ServiceContracts\Anewluv.Services.Contracts\bin\Debug\Anewluv.Services.Contracts.dll
 D:\Projects\Common\NET\ServiceContracts\Anewluv.Services.Contracts\bin\Debug\Anewluv.Services.Contracts.pdb
 D:\Projects\Common\NET\ServiceContracts\Anewluv.Services.Contracts\bin\Debug\Anewluv.Domain.Data.dll
@@ -51,5 +50,6 @@ D:\Projects\Common\NET\ServiceContracts\Anewluv.Services.Contracts\bin\Debug\Ent
 D:\Projects\Common\NET\ServiceContracts\Anewluv.Services.Contracts\bin\Debug\Microsoft.Practices.ServiceLocation.pdb
 D:\Projects\Common\NET\ServiceContracts\Anewluv.Services.Contracts\bin\Debug\Microsoft.Practices.ServiceLocation.xml
 D:\Projects\Common\NET\ServiceContracts\Anewluv.Services.Contracts\bin\Debug\Ninject.xml
+D:\Projects\Common\NET\ServiceContracts\Anewluv.Services.Contracts\obj\Debug\Anewluv.Services.Contracts.csprojResolveAssemblyReference.cache
 D:\Projects\Common\NET\ServiceContracts\Anewluv.Services.Contracts\obj\Debug\Anewluv.Services.Contracts.dll
 D:\Projects\Common\NET\ServiceContracts\Anewluv.Services.Contracts\obj\Debug\Anewluv.Services.Contracts.pdb
