@@ -102,6 +102,7 @@
     <Compile Include="Helpers\ClassEncryption.cs" />
     <Compile Include="Helpers\GuidHelpers.cs" />
     <Compile Include="Helpers\Serialization.cs" />
+    <Compile Include="Helpers\Spatialhelpers.cs" />
     <Compile Include="JsonHelpers\JsonExtentionsMethods.cs" />
     <Compile Include="PagingExtentions\extentions.cs" />
     <Compile Include="PagingExtentions\Paging.cs" />
