@@ -93,7 +93,7 @@ namespace Nmedia.Infrastructure.Mvc
                 catch (Exception ex)
                 {
                     var messge = ex.Message;
-                    throw;
+                    throw ex;
 
                 }
         }
