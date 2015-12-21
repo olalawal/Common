@@ -124,8 +124,8 @@ namespace Anewluv.Services.Contracts
         ///  //not inmplemented
          /// count all total interests
        [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
-        [WebInvoke(UriTemplate = "/removeothersactionnbyprofileid", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-          Task removeothersactionnbyprofileid(ProfileModel model);
+        [WebInvoke(UriTemplate = "/removeothersactionbyprofileid", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
+          Task removeothersactionbyprofileid(ProfileModel model);
      
         /// <summary>
         ///  //Removes an interest i.e changes the interest to deleted so they do not shwo up to you anymore unless filtered in that person anymore
@@ -137,29 +137,32 @@ namespace Anewluv.Services.Contracts
           Task restoreothersactionbyprofileid(ProfileModel model);
         
 
-        /// <summary>
-        /// NOT IMPLEMENTED YET
-        ///  //Removes an iterest i.e makes you not interested in that person anymore
-        ///  //removed multiples 
-          /// count all total interests
-         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
-         [WebInvoke(UriTemplate = "/removeactionsbyprofileidandscreennames", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-          Task removeactionsbyprofileidandscreennames(ProfileModel model);
+        ///// <summary>
+        ///// NOT IMPLEMENTED YET
+        /////  //Removes an iterest i.e makes you not interested in that person anymore
+        /////  //removed multiples 
+        //  /// count all total interests
+        // [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
+        // [WebInvoke(UriTemplate = "/removeactionsbyprofileidandscreennames", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
+        //  Task removeactionsbyprofileidandscreennames(ProfileModel model);
  
 
-        /// <summary>
-        ///  //Removes an iterest i.e makes you not interested in that person anymore
-        ///  //removed multiples 
+
+         /// <summary>
+         ///  //Removes an iterest i.e makes you not interested in that person anymore
+         ///  //removed multiples 
          /// count all total interests
-        [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
-        [WebInvoke(UriTemplate = "/restoreothersactionsbyprofileidandscreennames", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-          Task restoreothersactionsbyprofileidandscreennames(ProfileModel model);
-  
+         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
+         [WebInvoke(UriTemplate = "/removeothersactionnbyprofileidbulk", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
+         Task removeothersactionnbyprofileidbulk(ProfileModel model);
 
         
-
-        
-
+         /// <summary>         ///  
+         ///  bulk rmove of this users actions to others i.e blocks or mypeeks etc
+         /// count all total interests
+         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
+         [WebInvoke(UriTemplate = "/removemyactionbyprofileidbulk", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
+         Task removemyactionbyprofileidbulk(ProfileModel model);
 
   
      
