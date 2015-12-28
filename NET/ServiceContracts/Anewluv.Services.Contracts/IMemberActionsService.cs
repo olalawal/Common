@@ -127,14 +127,7 @@ namespace Anewluv.Services.Contracts
         [WebInvoke(UriTemplate = "/removeothersactionbyprofileid", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
           Task removeothersactionbyprofileid(ProfileModel model);
      
-        /// <summary>
-        ///  //Removes an interest i.e changes the interest to deleted so they do not shwo up to you anymore unless filtered in that person anymore
-        ///  Right now it is a straight delete no history i.e you could keep spamming but they can interest u
-        ///  //not inmplemented
-          /// count all total interests
-       [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
-        [WebInvoke(UriTemplate = "/restoreothersactionbyprofileid", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-          Task restoreothersactionbyprofileid(ProfileModel model);
+     
         
 
         ///// <summary>
