@@ -121,9 +121,12 @@ namespace Anewluv.Services.Contracts
         [WebInvoke(UriTemplate = "/getipquicksearch", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
         Task<SearchResultsViewModel> getipquicksearch(quicksearchmodel Model);
 
+      
+
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
         [WebInvoke(UriTemplate = "/getadvancedsearch", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-        Task<SearchResultsViewModel> getadvancedsearch(advancedsearchmodel Model);
+        Task<SearchResultsViewModel> getadvancedsearch(SearchSettingsModel Model);
+
 
 
         //[OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
