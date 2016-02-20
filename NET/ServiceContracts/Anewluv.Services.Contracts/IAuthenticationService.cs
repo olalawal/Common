@@ -44,7 +44,7 @@ namespace Anewluv.Services.Contracts
        
         [OperationContract(Name = "validateuserbyopenid"), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
         [WebInvoke(UriTemplate = "/validateuserbyopenid", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-        bool validateuserbyopenid(ProfileModel profile);
+        Task<bool> validateuserbyopenid(ProfileModel profile);
 
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
         [WebGet(UriTemplate = "/applicationname", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]	      
@@ -107,6 +107,11 @@ namespace Anewluv.Services.Contracts
         [ServiceKnownType(typeof(AnewLuvMembershipUser))]
         [WebInvoke(UriTemplate = "/checkifemailalreadyexists", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
         Task<bool> checkifemailalreadyexists(ProfileModel model);
+
+        [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
+        [ServiceKnownType(typeof(AnewLuvMembershipUser))]
+        [WebInvoke(UriTemplate = "/checkifopenidalreadyexists", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
+        Task<bool> checkifopenidalreadyexists(ProfileModel model);
 
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
         [ServiceKnownType(typeof(AnewLuvMembershipUser))]
