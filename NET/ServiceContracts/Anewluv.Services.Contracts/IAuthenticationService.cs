@@ -142,9 +142,9 @@ namespace Anewluv.Services.Contracts
         Task<NmediaToken> validateuserandgettoken(ProfileModel profile); 
 
          //new method that we want to use to return the profileID to validate somwhere else
-        [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
-        [WebInvoke(UriTemplate = "/validateuserandgettokenbyopenid", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-        Task<NmediaToken> validateuserandgettokenbyopenid(ProfileModel model);
+        //[OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
+        //[WebInvoke(UriTemplate = "/validateuserandgettokenbyopenid", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
+        //Task<NmediaToken> validateuserandgettokenbyopenid(ProfileModel model);
 
         //Logout handling
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]

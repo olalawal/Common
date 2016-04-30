@@ -125,7 +125,7 @@ namespace Anewluv.Services.Contracts
 
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
         [WebInvoke(UriTemplate = "/getadvancedsearch", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-        Task<SearchResultsViewModel> getadvancedsearch(SearchSettingsModel Model);
+        Task<SearchResultsViewModel> getadvancedsearch(AdvancedSearchModel Model);
 
 
 
