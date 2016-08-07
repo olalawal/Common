@@ -55,7 +55,9 @@
     <Compile Include="JainRainAuthentication\RpxResponsParser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Razor\TemplateParser.cs" />
-    <Compile Include="Utils\Extentions.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Utils\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
