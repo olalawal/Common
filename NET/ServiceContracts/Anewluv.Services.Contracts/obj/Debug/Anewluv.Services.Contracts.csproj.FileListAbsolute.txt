@@ -52,6 +52,10 @@ D:\Projects\Common\NET\ServiceContracts\Anewluv.Services.Contracts\bin\Debug\Nin
 D:\Projects\Common\NET\ServiceContracts\Anewluv.Services.Contracts\obj\Debug\Anewluv.Services.Contracts.csprojResolveAssemblyReference.cache
 D:\Projects\Common\NET\ServiceContracts\Anewluv.Services.Contracts\obj\Debug\Anewluv.Services.Contracts.dll
 D:\Projects\Common\NET\ServiceContracts\Anewluv.Services.Contracts\obj\Debug\Anewluv.Services.Contracts.pdb
+E:\Projects\Common\NET\ServiceContracts\Anewluv.Services.Contracts\bin\Debug\SqlServerTypes\x64\msvcr100.dll
+E:\Projects\Common\NET\ServiceContracts\Anewluv.Services.Contracts\bin\Debug\SqlServerTypes\x64\SqlServerSpatial110.dll
+E:\Projects\Common\NET\ServiceContracts\Anewluv.Services.Contracts\bin\Debug\SqlServerTypes\x86\msvcr100.dll
+E:\Projects\Common\NET\ServiceContracts\Anewluv.Services.Contracts\bin\Debug\SqlServerTypes\x86\SqlServerSpatial110.dll
 E:\Projects\Common\NET\ServiceContracts\Anewluv.Services.Contracts\bin\Debug\Anewluv.Services.Contracts.dll
 E:\Projects\Common\NET\ServiceContracts\Anewluv.Services.Contracts\bin\Debug\Anewluv.Services.Contracts.pdb
 E:\Projects\Common\NET\ServiceContracts\Anewluv.Services.Contracts\bin\Debug\Anewluv.Domain.Data.dll
