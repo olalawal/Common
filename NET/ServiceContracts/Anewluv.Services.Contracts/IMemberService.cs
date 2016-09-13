@@ -78,8 +78,8 @@ namespace Anewluv.Services.Contracts
         bool updatepassword(ProfileModel model, string encryptedpassword);
 
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
-        [WebInvoke(UriTemplate = "/addnewopenidforprofile",RequestFormat=WebMessageFormat.Json , ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-        bool addnewopenidforprofile(ProfileModel model);
+        [WebInvoke(UriTemplate = "/addnewopenidforprofile", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
+        Task<bool> addnewopenidforprofile(ProfileModel model);
 
         //check if profile is activated 
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
