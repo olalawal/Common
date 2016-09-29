@@ -108,9 +108,10 @@ namespace Anewluv.Services.Contracts
         [WebInvoke(UriTemplate = "/editphotostatus", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
         Task<AnewluvMessages> editphotostatus(PhotoModel model);
 
-        [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
-        [WebInvoke(UriTemplate = "/getadminfilteredphotospaged", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
-        Task<PhotoSearchResultsViewModel> getadminfilteredphotospaged(PhotoModel model);
+        //rolled it up into the normal method passing in isadmin
+        //[OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
+        //[WebInvoke(UriTemplate = "/getadminfilteredphotospaged", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
+        //Task<PhotoSearchResultsViewModel> getadminfilteredphotospaged(PhotoModel model);
 
        
 
