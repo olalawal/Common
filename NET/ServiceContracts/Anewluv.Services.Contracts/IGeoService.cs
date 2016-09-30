@@ -71,6 +71,11 @@ namespace Anewluv.Services.Contracts
 
 
         [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
+        [WebInvoke(UriTemplate = "/getgpsdatabycountrycitystateprovince", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
+        Task<gpsdata> getgpsdatabycountrycitystateprovince(GeoModel model);
+
+
+        [OperationContract(), FaultContractAttribute(typeof(ServiceFault), Action = "http://Schemas.Testws.Medtox.com")]
         [WebInvoke(UriTemplate = "/getpostalcodebycountrynamecity", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
         Task<postalcode> getpostalcodebycountrynamecity(GeoModel model);
 
